@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          2023 Autumn OOP
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>2023 AUTUMN OOP</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <ul>
+<li><a href="/">Home</a></li>
+</ul>
+<h1 id="Lab"><a class="header-anchor" href="#Lab"></a><strong>Lab</strong></h1>
+<ul>
+<li><a href="/2023/Lab-1">Lab 1</a></li>
+<li><a href="/2023/Lab-2">Lab 2</a></li>
+</ul>
+<h2 id="Lab-Folded"><a class="header-anchor" href="#Lab-Folded"></a><strong>Lab (Folded)</strong></h2>
+<ul>
+<li><a href="/2023/Lab-1">Lab 1</a></li>
+<li><a href="/2023/Lab-2">Lab 2</a></li>
+</ul>
+<h1 id="迭代"><a class="header-anchor" href="#迭代"></a><strong>迭代</strong></h1>
+<ul>
+<li><a href="/2023/Project-1">迭代 1</a></li>
+</ul>
+<h2 id="迭代（折叠）"><a class="header-anchor" href="#迭代（折叠）"></a><strong>迭代（折叠）</strong></h2>
+<ul>
+<li><a href="/2023/Project-1">迭代 1</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <h1 id="BUAA-2023-Autumn-OOP"><a class="header-anchor" href="#BUAA-2023-Autumn-OOP"></a>BUAA 2023 Autumn OOP</h1>
+<hr>
+<h2 id="Title-Test"><a class="header-anchor" href="#Title-Test"></a>Title Test</h2>
+<h1 id="H1"><a class="header-anchor" href="#H1"></a>H1</h1>
+<h2 id="H2"><a class="header-anchor" href="#H2"></a>H2</h2>
+<h3 id="H3"><a class="header-anchor" href="#H3"></a>H3</h3>
+<h4 id="H4"><a class="header-anchor" href="#H4"></a>H4</h4>
+<h5 id="H5"><a class="header-anchor" href="#H5"></a>H5</h5>
+<h6 id="H6"><a class="header-anchor" href="#H6"></a>H6</h6>
+<hr>
+<h2 id="Plain-Text-Test"><a class="header-anchor" href="#Plain-Text-Test"></a>Plain Text Test</h2>
+<p>Greetings, young adventurer!</p>
+<p>Video provides a powerful way to help you prove your point. When you click Online Video, you can paste in the embed code for the video you want to add. You can also type a keyword to search online for the video that best fits your document.</p>
+<p>To make your document look professionally produced, Word provides header, footer, cover page, and text box designs that complement each other. For example, you can add a matching cover page, header, and sidebar. Click Insert and then choose the elements you want from the different galleries.</p>
+<p>Themes and styles also help keep your document coordinated. When you click Design and choose a new Theme, the pictures, charts, and SmartArt graphics change to match your new theme. When you apply styles, your headings change to match the new theme.</p>
+<p>Save time in Word with new buttons that show up where you need them. To change the way a picture fits in your document, click it and a button for layout options appears next to it. When you work on a table, click where you want to add a row or a column, and then click the plus sign.</p>
+<p>Reading is easier, too, in the new Reading view. You can collapse parts of the document and focus on the text you want. If you need to stop reading before you reach the end, Word remembers where you left off - even on another device.</p>
+<p>Here are some quotes: “”‘’.</p>
+<p>So long, adventurer!</p>
+<p>（中文显示效果应该也不错吧？）</p>
+<hr>
+<h2 id="Code-Test"><a class="header-anchor" href="#Code-Test"></a>Code Test</h2>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token class-name">Scene</span><span class="token double-colon punctuation">::</span><span class="token function">AddObjects</span><span class="token punctuation">(</span>std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>GameObject<span class="token operator">*</span><span class="token operator">></span><span class="token operator">&amp;</span> pool<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>m_isUpdating<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">auto</span> it <span class="token operator">=</span> pool<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it <span class="token operator">!=</span> pool<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#123;</span>
+            <span class="token punctuation">(</span><span class="token operator">*</span>it<span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">SetScene</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            m_pendingObjects<span class="token punctuation">.</span><span class="token function">AddObject</span><span class="token punctuation">(</span><span class="token operator">*</span>it<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">auto</span> it <span class="token operator">=</span> pool<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it <span class="token operator">!=</span> pool<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#123;</span>
+            <span class="token punctuation">(</span><span class="token operator">*</span>it<span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">SetScene</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            m_gameObjects<span class="token punctuation">.</span><span class="token function">AddObject</span><span class="token punctuation">(</span><span class="token operator">*</span>it<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<h2 id="List-Test"><a class="header-anchor" href="#List-Test"></a>List Test</h2>
+<ul>
+<li>1st level
+<ul>
+<li>2nd level
+<ul>
+<li>3rd level
+<ul>
+<li>4th level
+<ul>
+<li>5th level
+<ul>
+<li>6th level</li>
+</ul>
+</li>
+<li>5th level</li>
+</ul>
+</li>
+<li>4th level</li>
+</ul>
+</li>
+<li>3rd level</li>
+</ul>
+</li>
+<li>2nd level</li>
+</ul>
+</li>
+<li>1st level</li>
+</ul>
+<hr>
+<h2 id="Block-Test"><a class="header-anchor" href="#Block-Test"></a>Block Test</h2>
+<blockquote>
+<p>This is a simple block.</p>
+<blockquote>
+<p>This is a nested block.</p>
+<blockquote>
+<p>Nested block again.</p>
+</blockquote>
+<p>This is a nested block.</p>
+</blockquote>
+<p>This is a simple block.</p>
+</blockquote>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure class="avatar avatar-lg">
+          <img src="/avatar.png" alt="...">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>Lovely T.A. 🥰</div>
+      <div>2023-07-23</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+</body>
+</html>
+
+
+<script src="/js/book.js"></script>
