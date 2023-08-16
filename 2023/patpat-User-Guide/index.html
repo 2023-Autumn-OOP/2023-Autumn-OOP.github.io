@@ -142,7 +142,8 @@ function sidebar_toggle() {
 <h1 id="1-patpat-下载"><a class="header-anchor" href="#1-patpat-下载">¶ </a>1. patpat 下载</h1>
 <p>本学期使用的各个版本的 patpat 下载链接如下：</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://bhpan.buaa.edu.cn/#/link/8B635B2D402A06B578BD509EF9ED0DCA">https://bhpan.buaa.edu.cn/#/link/8B635B2D402A06B578BD509EF9ED0DCA</a></li>
+<li><a target="_blank" rel="noopener" href="https://bhpan.buaa.edu.cn:443/link/8B635B2D402A06B578BD509EF9ED0DCA">https://bhpan.buaa.edu.cn:443/link/8B635B2D402A06B578BD509EF9ED0DCA</a><br>
+有效期限：2024-09-12 23:59</li>
 </ul>
 <p>支持 Windows，Linux 和 MacOS，包括：</p>
 <ul>
@@ -220,7 +221,8 @@ function sidebar_toggle() {
 <p><strong>多行输入，单行输出</strong></p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">data:</span></span><br><span class="line">  <span class="bullet">-</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">|</span>                      <span class="comment"># 多行输入</span></span><br><span class="line">      <span class="string">quit</span></span><br><span class="line">      <span class="string">quit</span> <span class="string">again</span></span><br><span class="line">      <span class="string">QUIT</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">-----</span> <span class="string">Good</span> <span class="string">Bye!</span> <span class="string">-----</span>  <span class="comment"># 单行输出</span></span><br></pre></td></tr></table></figure>
 <p><strong>多行输入，多行输出</strong></p>
-<div class="admonition warning"><p class="admonition-title">Warning</p><p>类比以上写法，但不建议使用。😈</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">data:</span></span><br><span class="line">  <span class="bullet">-</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">|</span>  <span class="comment"># 多行输入</span></span><br><span class="line">      <span class="number">3</span></span><br><span class="line">      <span class="number">2</span></span><br><span class="line">      <span class="number">1</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">|</span>  <span class="comment"># 多行输出</span></span><br><span class="line">      <span class="string">Ready</span></span><br><span class="line">      <span class="string">Go!</span></span><br></pre></td></tr></table></figure>
+<div class="admonition warning"><p class="admonition-title">Warning</p><p>不建议使用带有多行输入与多行输出的测试点。😈</p>
 </div>
 <div class="admonition note"><p class="admonition-title">note</p><p>这里 <code>data</code> 部分的数据类型相当于 <code>String[n][2]</code>。第一级的 <code>-</code> 表示一个测试点，第二级的第一个 <code>-</code> 对应输入，第二个（如果有的话）对应输出。第二级的输入是必须的，可以无输出，即至少为 1 个，至多为 2 个。</p>
 </div>
