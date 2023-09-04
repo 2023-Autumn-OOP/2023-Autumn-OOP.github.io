@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          Lab-Template - BUAA 2023 OOP
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="/css/collapse.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>BUAA 2023 OOP</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <h1 id="Lab-🔬"><a class="header-anchor" href="#Lab-🔬">¶ </a><strong>Lab 🔬</strong></h1>
+<ul>
+<li><a href="/2023/Lab-1">Lab 1</a></li>
+<li>To Be Continued… 🫣</li>
+</ul>
+<h1 id="迭代任务-📽️"><a class="header-anchor" href="#迭代任务-📽️">¶ </a><strong>迭代任务 📽️</strong></h1>
+<ul>
+<li>To Be Continued… 🙈</li>
+</ul>
+<h1 id="帮助中心-💁🏻"><a class="header-anchor" href="#帮助中心-💁🏻">¶ </a><strong>帮助中心 💁🏻</strong></h1>
+<ul>
+<li><a href="/2023/Lab-Template">Lab 实验报告模板</a></li>
+<li><a href="/2023/patpat-User-Guide">patpat 使用指南</a></li>
+<li><a href="/2023/Java-Features-Summary">Java 8 - 17 新特性总结</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <h1 id="Lab-报告模板"><a class="header-anchor" href="#Lab-报告模板">¶ </a>Lab 报告模板</h1>
+<h2 id="提交须知"><a class="header-anchor" href="#提交须知">¶ </a>提交须知</h2>
+<p>每次实验主要包括问答和编码部分，具体提交内容请以题面说明为准。</p>
+<p>你需要在<strong>云平台</strong>上提交一个压缩包，命名中应包含学号、姓名，如 <code>22373000-XXX-第 X 次实验</code>。所有问答题的回答和截图放在一个 PDF 文件中，可通过 Markdown 或 Word 导出。如有需要提交代码的问题，则新建一个文件夹用于存放所有代码，并在相应题目的回答中做出说明。提交的文件结构如下（仅供参考）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">22373000-XXX-第 1 次实验</span><br><span class="line">|-- 22373000-XXX-第 1 次实验.pdf</span><br><span class="line">|-- Q2</span><br><span class="line">|   \-- Main.java</span><br><span class="line">|-- Q3</span><br><span class="line">|   |-- Test.java</span><br><span class="line">|   \-- Hello.java</span><br><span class="line">\-- Q6</span><br><span class="line">    \-- Test.java</span><br></pre></td></tr></table></figure>
+<div class="admonition warning"><p class="admonition-title">Warning</p><p>记得仔细阅读问答题目，不要遗漏问答，更不要忘记提交实验报告哦。😵‍💫</p>
+</div>
+<hr>
+<h2 id="报告格式"><a class="header-anchor" href="#报告格式">¶ </a>报告格式</h2>
+<div class="admonition info"><p class="admonition-title">Info</p><p>以下是每次 Lab 任务问答题的报告模板，仅作参考，结构清晰即可，不必完全相同。😋</p>
+</div>
+<h1 id="Lab-XX-实验报告"><a class="header-anchor" href="#Lab-XX-实验报告">¶ </a>Lab XX 实验报告</h1>
+<blockquote>
+<p>班级：</p>
+<p>学号：</p>
+<p>姓名：</p>
+</blockquote>
+<h2 id="Question-1"><a class="header-anchor" href="#Question-1">¶ </a>Question 1</h2>
+<p>你的回答…</p>
+<h2 id="Question-2"><a class="header-anchor" href="#Question-2">¶ </a>Question 2</h2>
+<p>你的回答…</p>
+<h2 id="…"><a class="header-anchor" href="#…">¶ </a>…</h2>
+<p>…</p>
+<hr>
+<h2 id="Markdown-模板"><a class="header-anchor" href="#Markdown-模板">¶ </a>Markdown 模板</h2>
+<p>问答部分的报告推荐使用 Markdown 编写，相对方便快捷，完成之后导出 PDF 提交即可。下面给出一个简单的模板供大家参考。</p>
+<div class='collapse'>
+      <div class='collapse-ctrl collapse-cardtitle' onclick='collapseToggle(this)'><div class='collapse-hint-ico'><img style="pointer-events: none;" width="12" height="12" src="/expand.png"/></div><span class='collapse-hint-show'>Show</span><span class='collapse-hint-hide'>Hide</span></div>
+      <div class='collapse-content'><div class='content-flex collapse-cardborder'><div>
+          <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># Lab 02 Assignment</span></span><br><span class="line"></span><br><span class="line"><span class="quote">&gt; 班级：222100</span></span><br><span class="line"><span class="quote">&gt; </span></span><br><span class="line"><span class="quote">&gt; 学号：22370000</span></span><br><span class="line"><span class="quote">&gt; </span></span><br><span class="line"><span class="quote">&gt; 姓名：BUAAer</span></span><br><span class="line"></span><br><span class="line"><span class="section">## Question 1</span></span><br><span class="line"></span><br><span class="line">Java 是一门面向对象的编程语言。</span><br><span class="line"></span><br><span class="line"><span class="section">## Question 2</span></span><br><span class="line"></span><br><span class="line"><span class="code">`ArrayList`</span> 和 <span class="code">`LinkedList`</span> 均实现了 <span class="code">`List`</span> 的接口，都具列表的功能，区别在于 <span class="code">`ArrayList`</span> 使用动态数组作为储存容器，而 <span class="code">`LinkedList`</span> 采用双向链表作为储存容器。</span><br><span class="line"></span><br><span class="line">相关代码见 <span class="code">`\Solution\Question 2`</span> 目录下的 <span class="code">`ArraryListTest.java`</span> 和 <span class="code">`LinkedListTest.java`</span>。</span><br></pre></td></tr></table></figure>
+</div></div>
+      </div>
+  </div>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure class="avatar avatar-lg">
+          <img src="/avatar.svg" alt="...">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>Love. T.A. 🥰</div>
+      <div>2023-09-04</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+<!-- hexo injector body_end start -->
+<script src="/js/collapse.js"></script>
+<!-- hexo injector body_end end --></body>
+</html>
+
+
+<script src="/js/book.js"></script>

@@ -60,20 +60,18 @@ document.addEventListener('DOMContentLoaded', function () {
   </a>
 </div>
     <div id="menu" class="book-menu hide">
-  <ul>
-<li><a href="/">Home</a></li>
-</ul>
-<h1 id="Lab-🔬"><a class="header-anchor" href="#Lab-🔬">¶ </a><strong>Lab 🔬</strong></h1>
+  <h1 id="Lab-🔬"><a class="header-anchor" href="#Lab-🔬">¶ </a><strong>Lab 🔬</strong></h1>
 <ul>
 <li><a href="/2023/Lab-1">Lab 1</a></li>
-<li><a href="/2023/Lab-2">Lab 2</a></li>
+<li>To Be Continued… 🫣</li>
 </ul>
-<h1 id="迭代-📽️"><a class="header-anchor" href="#迭代-📽️">¶ </a><strong>迭代 📽️</strong></h1>
+<h1 id="迭代任务-📽️"><a class="header-anchor" href="#迭代任务-📽️">¶ </a><strong>迭代任务 📽️</strong></h1>
 <ul>
-<li><a href="/2023/Project-1">迭代 1</a></li>
+<li>To Be Continued… 🙈</li>
 </ul>
 <h1 id="帮助中心-💁🏻"><a class="header-anchor" href="#帮助中心-💁🏻">¶ </a><strong>帮助中心 💁🏻</strong></h1>
 <ul>
+<li><a href="/2023/Lab-Template">Lab 实验报告模板</a></li>
 <li><a href="/2023/patpat-User-Guide">patpat 使用指南</a></li>
 <li><a href="/2023/Java-Features-Summary">Java 8 - 17 新特性总结</a></li>
 </ul>
@@ -134,16 +132,132 @@ function sidebar_toggle() {
         </div>
         <div class="book-content">
           <div class="book-post">
-  <h1 id="BUAA-2023-OOP-Lab-1"><a class="header-anchor" href="#BUAA-2023-OOP-Lab-1">¶ </a>BUAA 2023 OOP Lab 1</h1>
-<p>Introduction to Java…</p>
-<div class="admonition note"><p class="admonition-title">Note</p><p>note</p>
+  <h1 id="Lab-01-认识-Java"><a class="header-anchor" href="#Lab-01-认识-Java">¶ </a>Lab 01: 认识 Java</h1>
+<div class="admonition error"><p class="admonition-title">截止日期
+</p><p>本次 Lab 时长为 3 周，DDL 为 <strong>9 月 25 日</strong> 24:00。😁</p>
 </div>
-<div class="admonition info"><p class="admonition-title">Info</p><p>info, todo</p>
+<h2 id="写在前面"><a class="header-anchor" href="#写在前面">¶ </a>写在前面</h2>
+<p>每次实验主要包括问答和编码部分，具体提交内容请以题面说明为准。</p>
+<p>你需要在<strong>云平台</strong>上提交一个压缩包，命名中应包含学号、姓名，如 <strong>22373000-XXX-第X次实验</strong>，所有问答题和截图放在一个 PDF 文件中，有需要提交代码的，另建一个文件夹并放入。例如（仅作参考）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">22373000-XXX-第 1 次实验</span><br><span class="line">|-- 22373000-XXX-第 1 次实验.pdf</span><br><span class="line">|-- Q2</span><br><span class="line">|   \-- Main.java</span><br><span class="line">|-- Q3</span><br><span class="line">|   |-- Test.java</span><br><span class="line">|   \-- Hello.java</span><br><span class="line">\-- Q6</span><br><span class="line">    \-- Test.java</span><br></pre></td></tr></table></figure>
+<div class="admonition info"><p class="admonition-title">Info</p><p>内容模板可参考 <a href="/2023/Lab-Template">Lab Solution 报告模板</a>。🤪</p>
 </div>
-<div class="admonition warning"><p class="admonition-title">Warning</p><p>warning, attention, caution</p>
+<hr>
+<h2 id="1-实验目的"><a class="header-anchor" href="#1-实验目的">¶ </a>1. 实验目的</h2>
+<ol>
+<li>掌握 Java 环境配置。</li>
+<li>使用 CMD 编译运行 Java 程序。</li>
+<li>使用 IDE 编译运行 Java 应用程序。</li>
+<li>理解 Java 语言中的关键字、标识符并能灵活使用。</li>
+<li>理解、掌握 Java 语言的简单数据类型并能灵活使用（重点强制类型转换）。</li>
+<li>理解引用数据类型，理解简单数据类型和引用数据类型的特点。</li>
+<li>理解、掌握 Java 语言中的运算符并能灵活使用。</li>
+<li>理解、掌握常量与变量的概念并能灵活使用。</li>
+</ol>
+<h2 id="2-Hello-World"><a class="header-anchor" href="#2-Hello-World">¶ </a>2. Hello, World!</h2>
+<p><strong>Question01</strong></p>
+<p>借助身边的工具，学习 <code>java</code>， <code>javac</code> 等命令的使用，并尝试编译运行一个 Java 程序。</p>
+<p>掌握基本使用即可，不需要提交任何内容。</p>
+<p><strong>Question02</strong></p>
+<p>学习一个新语言的第一步，自然是输出 <code>Hello, World!</code>。</p>
+<p>但在这里我们略微增加一点点难度 ~ 你需要输出很多 <code>Hello, World!</code></p>
+<p>本题需要你实现一个 <code>Test</code> 类：</p>
+<ul>
+<li>
+<p>程序开始运行，进入<code>main</code>方法，并输出你的学号和姓名</p>
+</li>
+<li>
+<p>当终端输入<code>QUIT</code>时，系统退出，并在终端打印一行字符：</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">----- Good Bye! -----</span><br></pre></td></tr></table></figure>
+<ul>
+<li>对于其他的输入，在终端中输出一行 <code>Hello, World!</code>，等待下一行输入</li>
+</ul>
+<p>你需要用<strong>命令行</strong>运行该程序，并<strong>提交运行时的截图</strong>。😉</p>
+<h3 id="程序退出"><a class="header-anchor" href="#程序退出">¶ </a>程序退出</h3>
+<p>和 C 语言的 <code>return 0</code> 类似，Java 程序也有其退出码，整个程序的正常的退出码应该为 0，而不应该为 -1、1 等。</p>
+<blockquote>
+<p>在测评机中，退出状态非 0 则会被认为是程序未正常结束，很容易导致你的作业被错判，因此请务必注意在循环等进行程序退出时，确保退出状态为 0</p>
+</blockquote>
+<p>下面给出 Java 中退出的一个例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Example</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            x++;</span><br><span class="line">            <span class="keyword">if</span> (x &gt; <span class="number">100</span>) &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;get 100&quot;</span>);</span><br><span class="line">                System.exit(<span class="number">0</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这只是退出程序的一种方法</span></span><br><span class="line"><span class="comment">// 你也可以直接使用 break，跳出 while 循环，直接到达整个程序的退出区域（默认退出状态为 0）</span></span><br></pre></td></tr></table></figure>
+<h3 id="参考实现"><a class="header-anchor" href="#参考实现">¶ </a>参考实现</h3>
+<p>Java 打印字符串与其他语言有所区别，一般不直接调用 <code>print</code> 函数，可以用如下语句：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;Hello world!&quot;</span></span><br><span class="line">System.out.println(str);</span><br></pre></td></tr></table></figure>
+<p>Java 连续读取输入行的一种实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Scanner</span> <span class="variable">in</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">String argStr;</span><br><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    argStr = in.nextLine();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="admonition note"><p class="admonition-title">Note</p><p>当然，<code>System.out</code>中也有其他的打印方法，如<code>print</code> <code>printf</code>等，同学们也可以按需使用。</p>
 </div>
-<div class="admonition error"><p class="admonition-title">Error</p><p>error, failure, missing, fail</p>
-</div>
+<h2 id="3-IDE-的使用"><a class="header-anchor" href="#3-IDE-的使用">¶ </a>3. IDE 的使用</h2>
+<p><strong>Question03</strong></p>
+<p>(1) 编写以下程序，并运行。<strong>将运行结果截图提交。</strong></p>
+<p>(2) 将断点设置在第八行，查看变量 <code>a</code> 的值，<strong>提交此刻的屏幕截图。</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World!&quot;</span>);</span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">        a = a + <span class="number">1</span>;</span><br><span class="line">        a = a + <span class="number">2</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;a is &quot;</span> + a);</span><br><span class="line">        a = a + <span class="number">3</span>;  <span class="comment">//断点行</span></span><br><span class="line">        a = a + <span class="number">4</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;a is &quot;</span> + a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-基本数据类型"><a class="header-anchor" href="#4-基本数据类型">¶ </a>4. 基本数据类型</h2>
+<p><strong>Question04</strong></p>
+<p>复制下列代码至 IDE 中，查看程序输出结果，<strong>并提交结果内容或截图</strong>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">App1</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span> &#123;</span><br><span class="line">        <span class="comment">// 定义整形变量a和双精度浮点变量b、c</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">126</span>;</span><br><span class="line">        <span class="type">double</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">0.2</span>;</span><br><span class="line">        <span class="type">double</span> <span class="variable">c</span> <span class="operator">=</span> <span class="number">1.6</span>;</span><br><span class="line">        <span class="comment">// 创建字符串对象</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">str1</span> <span class="operator">=</span> <span class="string">&quot;Hello World&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;字符串不是基本数据类型&quot;</span>);</span><br><span class="line">        <span class="comment">// 输出各个变量</span></span><br><span class="line">        System.out.println(<span class="string">&quot;a =&quot;</span> + a);</span><br><span class="line">        System.out.println(<span class="string">&quot;b + c = &quot;</span> + (b + c));</span><br><span class="line">        System.out.println(<span class="string">&quot;b + c = &quot;</span> + b + c);</span><br><span class="line">        System.out.println(str);</span><br><span class="line">        System.out.println(str1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Question05</strong></p>
+<p>看程序输出结果，<strong>并提交结果内容或截图</strong>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">VarDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">byte</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">0x55</span>;</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">B</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="type">short</span> <span class="variable">s</span> <span class="operator">=</span> <span class="number">0x55ff</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1000000</span>;</span><br><span class="line">        <span class="type">long</span> <span class="variable">l</span> <span class="operator">=</span> <span class="number">0xffffL</span>;</span><br><span class="line">        <span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> <span class="string">&#x27;c&#x27;</span>;</span><br><span class="line">        <span class="type">float</span> <span class="variable">f</span> <span class="operator">=</span> <span class="number">0.23F</span>;</span><br><span class="line">        <span class="type">double</span> <span class="variable">d</span> <span class="operator">=</span> <span class="number">0.7E-3</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">S</span> <span class="operator">=</span> <span class="string">&quot;This is a string&quot;</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;字节型变量 b = &quot;</span> + b);</span><br><span class="line">        System.out.println(<span class="string">&quot;短整型变量 s = &quot;</span> + s);</span><br><span class="line">        System.out.println(<span class="string">&quot;整型变量 i = &quot;</span> + i);</span><br><span class="line">        System.out.println(<span class="string">&quot;长整型变量 l = &quot;</span> + l);</span><br><span class="line">        System.out.println(<span class="string">&quot;字符型变量 c = &quot;</span> + c);</span><br><span class="line">        System.out.println(<span class="string">&quot;浮点型变量 f = &quot;</span> + f);</span><br><span class="line">        System.out.println(<span class="string">&quot;双精度变量 d = &quot;</span> + d);</span><br><span class="line">        System.out.println(<span class="string">&quot;布尔型变量 B = &quot;</span> + B);</span><br><span class="line">        System.out.println(<span class="string">&quot;字符串对象 S = &quot;</span> + S);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Question06</strong></p>
+<p>编写一段代码验证 Java 中类的基本数据类型字段（成员变量）的默认初始化值，请按照对应类型的字面量填写。<strong>在报告中填写下面的表格。</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">基本类型</th>
+<th style="text-align:center">默认值</th>
+<th style="text-align:center">基本类型</th>
+<th style="text-align:center">默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong><code>byte</code></strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><strong><code>boolean</code></strong></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><code>short</code></strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><strong><code>char</code></strong></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><code>int</code></strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><strong><code>float</code></strong></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><code>long</code></strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><strong><code>double</code></strong></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-三元运算符"><a class="header-anchor" href="#6-三元运算符">¶ </a>6. 三元运算符</h2>
+<p><strong>Question07</strong></p>
+<p>看程序输出结果，<strong>并提交结果内容或截图</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FindMinMax</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">double</span> temp, max, min;</span><br><span class="line">        <span class="type">double</span> <span class="variable">d1</span> <span class="operator">=</span> <span class="number">1</span>, d2 = -<span class="number">9.9</span>, d3 = <span class="number">96.9</span>;</span><br><span class="line">        temp = d1 &gt; d2 ? d1 : d2;</span><br><span class="line">        temp = temp &gt; d3 ? temp : d3;</span><br><span class="line">        max = temp;</span><br><span class="line">        temp = d1 &lt; d2 ? d1 : d2;</span><br><span class="line">        temp = temp &lt; d3 ? temp : d3;</span><br><span class="line">        min = temp;</span><br><span class="line">        System.out.println(<span class="string">&quot;max=&quot;</span> + max);</span><br><span class="line">        System.out.println(<span class="string">&quot;min=&quot;</span> + min);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="7-短路"><a class="header-anchor" href="#7-短路">¶ </a>7. 短路</h2>
+<p><strong>Question08</strong></p>
+<p>阅读下面这段代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ShortCircuit.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ShortCircuit</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">print</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">test1</span><span class="params">(<span class="type">int</span> val)</span> &#123;</span><br><span class="line">        print(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> val &lt; <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">test2</span><span class="params">(<span class="type">int</span> val)</span> &#123;</span><br><span class="line">        print(<span class="string">&quot;2&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> val &lt; <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">test3</span><span class="params">(<span class="type">int</span> val)</span> &#123;</span><br><span class="line">        print(<span class="string">&quot;3&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> val &lt; <span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">b</span> <span class="operator">=</span> test1(<span class="number">0</span>) &amp;&amp; test2(<span class="number">2</span>) &amp;&amp; test3(<span class="number">2</span>);</span><br><span class="line">        print(<span class="string">&quot;b is &quot;</span> + b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行该程序，程序的输出是什么？<strong>给出结果或截图。</strong></p>
+<p>请解释 Java 执行串联逻辑运算时的流程，<strong>可以用文字、流程图、伪代码描述</strong>。</p>
+<p>思考如何利用短路这个机制来优化程序，<strong>写出你的想法</strong>。</p>
+<h2 id="8-全局变量"><a class="header-anchor" href="#8-全局变量">¶ </a>8. 全局变量</h2>
+<p><strong>Question09</strong></p>
+<p>看程序输出结果，并<strong>提交结果内容或截图</strong>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">GlobalVar</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">10</span>; <span class="comment">// 全局变量,下同</span></span><br><span class="line">    <span class="type">double</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">GlobalVar</span> <span class="variable">globalVar</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">GlobalVar</span>();</span><br><span class="line">        System.out.println(<span class="string">&quot;全局变量  a = &quot;</span> + globalVar.a);</span><br><span class="line">        <span class="comment">// System.out.println(&quot;全局变量  a = &quot; +a); 错误写法</span></span><br><span class="line">        globalVar.print();</span><br><span class="line">        System.out.println(<span class="string">&quot;全局变量变化后  a = &quot;</span> + globalVar.a);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">print</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;在print()中, 全局变量　a = &quot;</span> + a + <span class="string">&quot;, b = &quot;</span> + b);</span><br><span class="line">        a = <span class="number">30</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;在print()中, 全局变量　a = &quot;</span> + a + <span class="string">&quot;, b = &quot;</span> + b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="9-局部变量"><a class="header-anchor" href="#9-局部变量">¶ </a>9. 局部变量</h2>
+<p><strong>Question10</strong></p>
+<p>看程序输出结果，并<strong>提交结果内容或截图</strong>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LocalVar</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">LocalVar</span> <span class="variable">localVar</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">LocalVar</span>();</span><br><span class="line">        <span class="comment">// System.out.println(&quot;局部变量 a = &quot; + localVar.a); 引用错误，下同</span></span><br><span class="line">        localVar.print();</span><br><span class="line">        <span class="comment">// System.out.println(&quot;变化后的局部变量  a = &quot; + localVar.a);</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">print</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">10</span>; <span class="comment">// 局部变量，下同</span></span><br><span class="line">        <span class="type">double</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;在print()中的局部变量　a = &quot;</span> + a + <span class="string">&quot;, b = &quot;</span> + b);</span><br><span class="line">        a = <span class="number">30</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;在print()中的局部变量　a = &quot;</span> + a + <span class="string">&quot;, b = &quot;</span> + b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </div>
 
@@ -181,7 +295,7 @@ function sidebar_toggle() {
     <!-- Author title -->
     <div class="author-title">
       <div>Love. T.A. 🥰</div>
-      <div>2023-07-23</div>
+      <div>2023-09-05</div>
     </div>
   </div>
 
