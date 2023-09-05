@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </ul>
 <h1 id="帮助中心-💁🏻"><a class="header-anchor" href="#帮助中心-💁🏻">¶ </a><strong>帮助中心 💁🏻</strong></h1>
 <ul>
-<li><a href="/2023/Lab-Template">Lab 实验报告模板</a></li>
+<li><a href="/2023/Lab-Template">Lab 问答报告模板</a></li>
 <li><a href="/2023/patpat-User-Guide">patpat 使用指南</a></li>
 <li><a href="/2023/Java-Features-Summary">Java 8 - 17 新特性总结</a></li>
 </ul>
@@ -150,19 +150,18 @@ function sidebar_toggle() {
 <li>patpat-macos-arm64</li>
 <li>patpat-windows-amd64.exe</li>
 </ul>
-<div class="admonition info"><p class="admonition-title">Info</p><p>对于 Mac 与 Linux 用户，需要首先 <code>chmod +x patpat</code>，使评测机程序具有可执行权限。</p>
+<div class="admonition info"><p>对于 Mac 与 Linux 用户，需要首先 <code>chmod +x patpat</code>，使评测机程序具有可执行权限。</p>
 </div>
-<div class="admonition error"><p class="admonition-title">Danger
-</p><p>请勿使用往届的 patpat，可能会有版本差异！🫣</p>
+<div class="admonition error"><p>请勿使用往届的 patpat，可能会有版本差异！🫣</p>
 </div>
 <hr>
 <h1 id="2-patpat-使用方法"><a class="header-anchor" href="#2-patpat-使用方法">¶ </a>2. patpat 使用方法</h1>
 <h2 id="2-1-评测文件准备"><a class="header-anchor" href="#2-1-评测文件准备">¶ </a>2.1 评测文件准备</h2>
 <p>请<strong>严格按照</strong>如下的目录层级与命名准备好评测相关文件：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/                 <span class="comment"># 存放所有评测文件的根目录</span></span><br><span class="line">├── patpat.exe        <span class="comment"># Mac 与 Linux 用户程序无后缀，可重命名</span></span><br><span class="line">├── 1-22******-Name/  <span class="comment"># 第几次作业-学号-姓名</span></span><br><span class="line">│   └── src/              <span class="comment"># Java 项目源代码</span></span><br><span class="line">│       ├── Test.java         <span class="comment"># 程序入口</span></span><br><span class="line">│       ├── *.java            <span class="comment"># 其余 Java 文件</span></span><br><span class="line">│       └── com/buaa/main     <span class="comment"># Java 包（可选）</span></span><br><span class="line">└── <span class="built_in">test</span>/             <span class="comment"># 本地测评文件</span></span><br><span class="line">    ├── judge.yaml        <span class="comment"># 用于告知评测机需要评测哪些测试点</span></span><br><span class="line">    ├── testcase1.yaml    <span class="comment"># 具体测试点 1</span></span><br><span class="line">    ├── testcase2.yaml    <span class="comment"># 具体测试点 2</span></span><br><span class="line">    └── ...</span><br></pre></td></tr></table></figure>
-<div class="admonition info"><p class="admonition-title">Info</p><p>在 <code>1-22******-Name/src/</code> 目录下，必须有 <code>Test.java</code> 作为程序入口。其他 Java 文件可以与 <code>Test.java</code> 并列，但是推荐按照一定结构放在单独的 Java 包中。😉</p>
+<div class="admonition info"><p>在 <code>1-22******-Name/src/</code> 目录下，必须有 <code>Test.java</code> 作为程序入口。其他 Java 文件可以与 <code>Test.java</code> 并列，但是推荐按照一定结构放在单独的 Java 包中。😉</p>
 </div>
-<div class="admonition note"><p class="admonition-title">note</p><p><code>judge.yaml</code> 与 <code>testcase.yaml</code> 的编写方式见<a href="#3-%E6%9C%AC%E5%9C%B0%E6%B5%8B%E8%AF%84%E6%8C%87%E5%8D%97">本地测评指南</a>。🤔</p>
+<div class="admonition note"><p><code>judge.yaml</code> 与 <code>testcase.yaml</code> 的编写方式见<a href="#3-%E6%9C%AC%E5%9C%B0%E6%B5%8B%E8%AF%84%E6%8C%87%E5%8D%97">本地测评指南</a>。🤔</p>
 </div>
 <h2 id="2-2-自评自测"><a class="header-anchor" href="#2-2-自评自测">¶ </a>2.2 自评自测</h2>
 <p><strong>运行方式</strong></p>
@@ -178,7 +177,7 @@ function sidebar_toggle() {
 <h3 id="2-3-1-注册账号"><a class="header-anchor" href="#2-3-1-注册账号">¶ </a>2.3.1  注册账号</h3>
 <p>查询助教评测结果前，需要注册账号 (<code>sid</code> 为您的学号)，注册命令如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./patpat reg -sid your_sid -<span class="built_in">pwd</span> your_password</span><br><span class="line"><span class="comment"># 例：./patpat reg -sid 18373722 -pwd buaa-se-oop</span></span><br></pre></td></tr></table></figure>
-<div class="admonition error"><p class="admonition-title">Danger
+<div class="admonition error"><p class="admonition-title">Danger 
 </p><p>账号创建后，密码<strong>不支持修改</strong>。如需修改，请联系助教。</p>
 </div>
 <h3 id="2-3-2-查询评测结果"><a class="header-anchor" href="#2-3-2-查询评测结果">¶ </a>2.3.2 查询评测结果</h3>
@@ -188,19 +187,18 @@ function sidebar_toggle() {
 <p>首先，确保自己的程序能够通过<a href="#2-2-%E8%87%AA%E8%AF%84%E8%87%AA%E6%B5%8B">线上自评自测</a>，然后再将 Java 源代码文件夹打包，压缩为 <code>.zip</code> 格式，上传至云平台。</p>
 <p>压缩包内文件结构如下（和自评自测时相同）：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1-22******-Name/  <span class="comment"># 第几次作业-学号-姓名</span></span><br><span class="line">└── src/              <span class="comment"># Java 项目源代码</span></span><br><span class="line">    ├── Test.java         <span class="comment"># 程序入口</span></span><br><span class="line">    ├── *.java            <span class="comment"># 其余 Java 文件</span></span><br><span class="line">    └── com/buaa/main     <span class="comment"># Java 包（可选）</span></span><br></pre></td></tr></table></figure>
-<div class="admonition note"><p class="admonition-title">Note</p><p>压缩包内需要包括 <code>1-22******-Name/</code> 文件夹哦。👻</p>
+<div class="admonition note"><p>压缩包内需要包括 <code>1-22******-Name/</code> 文件夹哦。👻</p>
 </div>
-<div class="admonition error"><p class="admonition-title">Danger
-</p><p>请务必<strong>反复确认</strong>文件的命名，如有误将无法评测！🥴</p>
+<div class="admonition error"><p>请务必<strong>反复确认</strong>文件的命名，如有误将无法评测！🥴</p>
 </div>
 <hr>
 <h1 id="3-本地测评指南"><a class="header-anchor" href="#3-本地测评指南">¶ </a>3. 本地测评指南</h1>
 <h2 id="3-1-judge-yaml的编写"><a class="header-anchor" href="#3-1-judge-yaml的编写">¶ </a>3.1 <code>judge.yaml</code>的编写</h2>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 请将本 judge.yaml 置于 test/ 目录下</span></span><br><span class="line"><span class="attr">tests:</span> [<span class="string">testcase1.yaml</span>, <span class="string">testcase2.yaml</span>] <span class="comment"># 可以添加更多 .yaml 测试点</span></span><br></pre></td></tr></table></figure>
-<div class="admonition warning"><p class="admonition-title">Warning</p><p>在自评自测时，<code>judge.yaml</code> 中 <code>tests</code> 列表中的测试点名称，需要与 <code>test</code> 目录下的文件名一致。🧐</p>
+<div class="admonition warning"><p>在自评自测时，<code>judge.yaml</code> 中 <code>tests</code> 列表中的测试点名称，需要与 <code>test</code> 目录下的文件名一致。🧐</p>
 </div>
 <h2 id="3-2-testcase-yaml-的编写"><a class="header-anchor" href="#3-2-testcase-yaml-的编写">¶ </a>3.2 <code>testcase.yaml</code> 的编写</h2>
-<div class="admonition note"><p class="admonition-title">note</p><p><code>testcase.yaml</code> 由两部分组成，名称和数据。</p>
+<div class="admonition note"><p><code>testcase.yaml</code> 由两部分组成，名称和数据。</p>
 </div>
 <h3 id="3-2-1-测试名称"><a class="header-anchor" href="#3-2-1-测试名称">¶ </a>3.2.1 测试名称</h3>
 <p>任意名称即可。</p>
@@ -220,9 +218,9 @@ function sidebar_toggle() {
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">data:</span></span><br><span class="line">  <span class="bullet">-</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">|</span>                      <span class="comment"># 多行输入</span></span><br><span class="line">      <span class="string">quit</span></span><br><span class="line">      <span class="string">quit</span> <span class="string">again</span></span><br><span class="line">      <span class="string">QUIT</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">-----</span> <span class="string">Good</span> <span class="string">Bye!</span> <span class="string">-----</span>  <span class="comment"># 单行输出</span></span><br></pre></td></tr></table></figure>
 <p><strong>多行输入，多行输出</strong></p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">data:</span></span><br><span class="line">  <span class="bullet">-</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">|</span>  <span class="comment"># 多行输入</span></span><br><span class="line">      <span class="number">3</span></span><br><span class="line">      <span class="number">2</span></span><br><span class="line">      <span class="number">1</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">|</span>  <span class="comment"># 多行输出</span></span><br><span class="line">      <span class="string">Ready</span></span><br><span class="line">      <span class="string">Go!</span></span><br></pre></td></tr></table></figure>
-<div class="admonition warning"><p class="admonition-title">Warning</p><p>不建议使用带有多行输入与多行输出的测试点。😈</p>
+<div class="admonition warning"><p>不建议使用带有多行输入与多行输出的测试点。😈</p>
 </div>
-<div class="admonition note"><p class="admonition-title">note</p><p>这里 <code>data</code> 部分的数据类型相当于 <code>String[n][2]</code>。第一级的 <code>-</code> 表示一个测试点，第二级的第一个 <code>-</code> 对应输入，第二个（如果有的话）对应输出。第二级的输入是必须的，可以无输出，即至少为 1 个，至多为 2 个。</p>
+<div class="admonition note"><p>这里 <code>data</code> 部分的数据类型相当于 <code>String[n][2]</code>。第一级的 <code>-</code> 表示一个测试点，第二级的第一个 <code>-</code> 对应输入，第二个（如果有的话）对应输出。第二级的输入是必须的，可以无输出，即至少为 1 个，至多为 2 个。</p>
 </div>
 <h3 id="3-2-3-测试文件示例"><a class="header-anchor" href="#3-2-3-测试文件示例">¶ </a>3.2.3 测试文件示例</h3>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">testcase</span></span><br><span class="line"><span class="attr">data:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="comment"># 单行输入，无输出</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">SUDO</span></span><br><span class="line">  <span class="bullet">-</span> <span class="comment"># 单行输入，单行输出</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">nc</span> <span class="string">hh12345678</span> <span class="string">oop6324</span> [<span class="number">10086</span>,<span class="number">10001</span>] <span class="number">1</span> [<span class="number">1</span><span class="number">-16</span>]<span class="number">2</span><span class="string">,3</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">Course</span> <span class="string">add</span> <span class="string">illegal.</span></span><br><span class="line">  <span class="bullet">-</span> <span class="comment"># 单行输入，多行输出</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">myc</span> <span class="number">1</span> <span class="number">1000</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">|</span></span><br><span class="line"><span class="string">      Page:1</span></span><br><span class="line"><span class="string">      1.CID:bh00000002,Name:oop6326,Teachers:[A,B,10086],Capacity:1/100,Time:[1-10]1,5</span></span><br><span class="line"><span class="string">      2.CID:bh00000004,Name:oop6328,Teachers:[A,B],Capacity:1/100,Time:[11-18]1,5</span></span><br><span class="line"><span class="string">      3.CID:bh00000005,Name:oop6329,Teachers:[A,B],Capacity:1/100,Time:[1-18]1,6</span></span><br><span class="line"><span class="string">      n-next page, l-last page, q-quit</span></span><br><span class="line"><span class="string"></span>  <span class="bullet">-</span> <span class="comment"># 多行输入，无输出</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">|</span></span><br><span class="line"><span class="string">      quit</span></span><br><span class="line"><span class="string">      quit again</span></span><br><span class="line"><span class="string">      quit quit</span></span><br><span class="line"><span class="string"></span>  <span class="bullet">-</span> <span class="comment"># 多行输入，单行输出</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">|</span></span><br><span class="line"><span class="string">      quit</span></span><br><span class="line"><span class="string">      quit again</span></span><br><span class="line"><span class="string">      QUIT</span></span><br><span class="line"><span class="string"></span>    <span class="bullet">-</span> <span class="string">-----</span> <span class="string">Good</span> <span class="string">Bye!</span> <span class="string">-----</span></span><br></pre></td></tr></table></figure>
