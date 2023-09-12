@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          Lab-2 - BUAA 2023 OOP
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="/css/collapse.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>BUAA 2023 OOP</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <h1 id="Lab-🔬"><a class="header-anchor" href="#Lab-🔬">¶ </a><strong>Lab 🔬</strong></h1>
+<ul>
+<li><a href="/2023/Lab-1">Lab 1</a></li>
+<li><a href="/2023/Lab-2">Lab 2</a></li>
+<li>To Be Continued… 🫣</li>
+</ul>
+<h1 id="迭代任务-📽️"><a class="header-anchor" href="#迭代任务-📽️">¶ </a><strong>迭代任务 📽️</strong></h1>
+<ul>
+<li>To Be Continued… 🙈</li>
+</ul>
+<h1 id="帮助中心-💁🏻"><a class="header-anchor" href="#帮助中心-💁🏻">¶ </a><strong>帮助中心 💁🏻</strong></h1>
+<ul>
+<li><a href="/2023/Lab-Template">Lab 问答报告模板</a></li>
+<li><a href="/2023/patpat-User-Guide">patpat 使用指南</a></li>
+<li><a href="/2023/Java-Features-Summary">Java 8 - 17 新特性总结</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <h1 id="Lab-2-Java-语法-面向对象初步"><a class="header-anchor" href="#Lab-2-Java-语法-面向对象初步">¶ </a>Lab 2: Java 语法 &amp; 面向对象初步</h1>
+<div class="admonition error"><p>本次 Lab 时长为 <strong>2</strong> 周，DDL 为 <strong>9 月 25 日 23:59</strong>。😁</p>
+</div>
+<div class="admonition note"><p>附件下载（包括问答题和实验报告模板）：<a target="_blank" rel="noopener" href="https://bhpan.buaa.edu.cn/link/AA96D0CA694BB74ABFA070F38B6C527AC6">https://bhpan.buaa.edu.cn/link/AA96D0CA694BB74ABFA070F38B6C527AC6</a></p>
+</div>
+<h2 id="1-实验目的"><a class="header-anchor" href="#1-实验目的">¶ </a>1. 实验目的</h2>
+<ol>
+<li>掌握 Java 环境配置</li>
+<li>使用 CMD 编译运⾏ Java 程序</li>
+<li>使用 IDE 编译运⾏ Java 应用程序</li>
+<li>理解 Java 语言中的关键字、标识符并能灵活使用</li>
+<li>理解、掌握 Java 语言的简单数据类型并能灵活使用（重点强制类型转换）</li>
+<li>理解引用数据类型，理解简单数据类型和引用数据类型的特点</li>
+<li>理解、掌握 Java 语言中的运算符并能灵活使用</li>
+<li>理解、掌握常量与变量的概念并能灵活使用</li>
+<li>理解、掌握 Java 语言的流程控制（重点 <code>switch</code> <code>case</code> <code>break</code> 语句）并能灵活使用</li>
+<li>理解、掌握 Java 语言的数组的声明、赋值及使用</li>
+<li>理解掌握面向对象思维方式，确定问题域，使用面向对象思维解决实际问题</li>
+</ol>
+<h2 id="2-Class-初步"><a class="header-anchor" href="#2-Class-初步">¶ </a>2. Class 初步</h2>
+<p><strong>Question01</strong></p>
+<p>阅读下列 Java 源文件，并回答问题。<strong>将你的作答以文字或截图形式呈现。</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">speakHello</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.print(<span class="string">&quot;您好，很高兴认识您&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot; nice to meet you&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">      <span class="type">Person</span> <span class="variable">zhang</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line">      zhang.speakHello();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>(1) 上述源文件的名字是什么？</p>
+<p>(2) 编译上述源文件将生成几个字节码文件？这些字节码文件的名字都是什么？</p>
+<p>(3) 在命令行执行 <code>java Person</code> 得到怎样的错误提示？执行 <code>java test</code> 得到怎样的错误提示？执行 <code>java Test.class</code> 得到怎样的错误提示？执行 <code>java Test</code> 得到怎样的输出结果？</p>
+<h2 id="3-Unicode-编码"><a class="header-anchor" href="#3-Unicode-编码">¶ </a>3. Unicode 编码</h2>
+<p><strong>Question02</strong></p>
+<p>看程序输出结果，并<strong>提交结果内容或截图</strong>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Unicode</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> <span class="string">&#x27;大&#x27;</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;\&#x27;&quot;</span> + c + <span class="string">&quot;\&#x27;的 Unicode 编码：&quot;</span> + (<span class="type">int</span>) c);</span><br><span class="line">        <span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> <span class="number">23398</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;Unicode 编码为&quot;</span> + num + <span class="string">&quot;的字符是：&quot;</span> + (<span class="type">char</span>) num);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-数组"><a class="header-anchor" href="#4-数组">¶ </a>4. 数组</h2>
+<p><strong>Question03</strong></p>
+<p>看程序输出结果，并<strong>提交结果内容或截图</strong>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UseIntArray</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> intArray[] = &#123; <span class="number">8</span>, <span class="number">9</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span> &#125;;</span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; intArray.length; i++)</span><br><span class="line">            sum += intArray[i];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; intArray.length; i++)</span><br><span class="line">            System.out.println(<span class="string">&quot;intArray[&quot;</span> + i + <span class="string">&quot;]=&quot;</span> + intArray[i]);</span><br><span class="line">        System.out.println();</span><br><span class="line">        System.out.println(<span class="string">&quot;sum = &quot;</span> + sum);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Question04</strong></p>
+<p>看程序输出结果，并<strong>提交结果内容或截图</strong>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">TwoDimensionArray</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> b[][] = &#123; &#123; <span class="number">11</span> &#125;, &#123; <span class="number">21</span>, <span class="number">22</span> &#125;, &#123; <span class="number">31</span>, <span class="number">32</span>, <span class="number">33</span> &#125; &#125;;</span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        b[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1000</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; b.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; b[i].length; j++)</span><br><span class="line">                sum += b[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;b[0][0] = &quot;</span> + b[<span class="number">0</span>][<span class="number">0</span>] + <span class="string">&#x27;\n&#x27;</span> +</span><br><span class="line">                           <span class="string">&quot;sum = &quot;</span> + sum + <span class="string">&#x27;\n&#x27;</span> +</span><br><span class="line">                           <span class="string">&quot;b.lengh = &quot;</span> + b.length);</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> arr1[][] = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">3</span>][<span class="number">4</span>];</span><br><span class="line">        <span class="type">int</span> arr2[][] = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">3</span>][];</span><br><span class="line">        <span class="type">int</span> arr3[][] = &#123; &#123; <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span> &#125;, &#123; <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> &#125;, &#123; <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span> &#125; &#125;;</span><br><span class="line">        <span class="type">int</span> i, j, k = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// arr1[][]赋值</span></span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">            <span class="comment">// arr1为3行4列</span></span><br><span class="line">            <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">4</span>; j++) &#123;</span><br><span class="line">                arr1[i][j] = k++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// arr2[][]开辟内存空间</span></span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">            <span class="comment">// arr2每一行是变长的，元素个数为3、4、5</span></span><br><span class="line">            arr2[i] = <span class="keyword">new</span> <span class="title class_">int</span>[i + <span class="number">3</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// arr2[][]赋值</span></span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; arr2[i].length; j++) &#123;</span><br><span class="line">                arr2[i][j] = k++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 输出arr1</span></span><br><span class="line">        System.out.println(<span class="string">&quot; arr1:&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">4</span>; j++) &#123;</span><br><span class="line">                System.out.print(<span class="string">&quot; &quot;</span> + arr1[i][j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 输出arr2</span></span><br><span class="line">        System.out.println(<span class="string">&quot; arr2:&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; arr2[i].length; j++) &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot; &quot;</span> + arr2[i][j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 输出arr3</span></span><br><span class="line">        System.out.println(<span class="string">&quot; arr3:&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">            <span class="comment">// arr3为3行3列</span></span><br><span class="line">            <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">                System.out.print(<span class="string">&quot; &quot;</span> + arr3[i][j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="5-switch"><a class="header-anchor" href="#5-switch">¶ </a>5. switch</h2>
+<p><strong>Question05</strong></p>
+<p>阅读下面程序，<strong>给出程序的输出结果，并解释原因</strong>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SwitchExample</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span> <span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt;= <span class="number">4</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">switch</span> (i) &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">1</span>:  c = <span class="string">&#x27;J&#x27;</span>;</span><br><span class="line">                    System.out.print(c);</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>:  c = <span class="string">&#x27;e&#x27;</span>;</span><br><span class="line">                    System.out.print(c);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">3</span>:  c = <span class="string">&#x27;p&#x27;</span>;</span><br><span class="line">                    System.out.print(c);</span><br><span class="line">                <span class="keyword">default</span>: System.out.print(<span class="string">&quot;好&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="6-循环"><a class="header-anchor" href="#6-循环">¶ </a>6. 循环</h2>
+<p><strong>Question06</strong></p>
+<p>实现程序输出下面这种数字方阵。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1 2 3 4 5</span><br><span class="line">6 7 8 9 10</span><br><span class="line">11 12 13 14 15</span><br><span class="line">16 17 18 19 20</span><br><span class="line">21 22 23 24 25</span><br></pre></td></tr></table></figure>
+<p>在标准输入中输入<code>5</code>，则输出上面这个 5×5 的方阵。如果输入<code>7</code>，则输出一个 7×7 的方阵。你需要提交**<code>.java</code>代码及运行结果截图**。任意选几个有代表性的输入即可。</p>
+<p><strong>Question07</strong></p>
+<p>实现程序输出下面这种星塔。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  *</span><br><span class="line"> ***</span><br><span class="line">*****</span><br><span class="line"> ***</span><br><span class="line">  *</span><br></pre></td></tr></table></figure>
+<p>在标准输入中输入<code>5</code>，则输出上面这个 5 层星塔。如果输入<code>7</code>，则输出 7 层星塔。假设输入参数都是奇数。你需要提交**<code>.java</code>代码及运行结果截图**。任意选几个有代表性的输入即可。</p>
+<p><strong>Question08</strong></p>
+<p>编写静态方法 <code>double getPi(int n)</code>，利用公式 $\pi = 4\sum_{i=0}<sup>{n}{\frac{\left(-1\right)</sup>{i}}{2i+1}}$，求圆周率 $\pi$ 的近似值，需求如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 下面这种注释是 Java 中一种比较规范的注释，一般可以用 IDE 自动生成格式 */</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 利用公式\pi = 4\sum_&#123;i=0&#125;^&#123;n&#125;&#123;\frac&#123;\left(-1\right)^&#123;i&#125;&#125;&#123;2i+1&#125;&#125;求指定精度的圆周率</span></span><br><span class="line"><span class="comment">* 如果n是负数，视其为0</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> n 公式中的i的上限</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return</span> 圆周率的近似值</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">double</span> <span class="title function_">getPi</span><span class="params">(<span class="type">int</span> n)</span>;</span><br></pre></td></tr></table></figure>
+<p>你需要提交**<code>.java</code>代码**。</p>
+<blockquote>
+<p><strong>题外话</strong></p>
+<ul>
+<li>
+<p>如果 n 是负数，视其为 0</p>
+</li>
+<li>
+<p>有穷求和的区间是闭区间，上限 n 对应的级数项也是要被计算的。</p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Question09: 快速排序</strong></p>
+<p>编写静态方法<code>int[] qsort(int[] arr)</code>，需求如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 对一个int数组快速排序，结果是升序的，并且不会开辟额外的数组空间</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> arr 待排序的数组</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return</span> 升序排列好的 arr，如果 arr == null，则返回 null</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>[] qsort(<span class="type">int</span>[] arr);</span><br></pre></td></tr></table></figure>
+<p>你需要提交 <strong><code>.java</code> 代码</strong>。<strong>这一次请不要使用 <code>java.util.Array.sort()</code> 之类的操作。</strong></p>
+<blockquote>
+<p><strong>约束</strong></p>
+<ul>
+<li>
+<p>返回值必须是原数组，即 <code>return arr</code>。</p>
+</li>
+<li>
+<p>可以任意次创建指向原数组的引用，但是请不要在排序过程中创建新的数组。</p>
+</li>
+<li>
+<p>可以根据需要定义新的方法。</p>
+</li>
+<li>
+<p>如果数组是 <code>null</code>，返回 <code>null</code>。</p>
+</li>
+<li>
+<p>对于空数组(即 <code>arr.length == 0</code>)，原样返回，而不是 <code>null</code>。</p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Question10</strong></p>
+<p>现有一组数据：<code>12, 45, 67, 89, 123, -45, 67</code>，实现以下两步</p>
+<p>(1) 对这组数据排序后，按照<strong>从小到大</strong>的顺序打印；</p>
+<p>(2) 从键盘输入任意整数，判断该整数是否存在该数组中，是输出<code>Yes</code>，否则输出<code>No</code>。</p>
+<p>你需要提交**<code>.java</code>代码和运行结果截图**，其中第二问任意测试几个数据即可。</p>
+<p><strong>Question11</strong></p>
+<p>阅读下面代码并<strong>给出输出结果</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ForInString</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">char</span> c : <span class="string">&quot;An African Swallow&quot;</span>.toCharArray())</span><br><span class="line">      System.out.print(c + <span class="string">&quot; &quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="7-引用"><a class="header-anchor" href="#7-引用">¶ </a>7. 引用</h2>
+<p><strong>Question12</strong></p>
+<p>阅读下面这段代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Point</span> &#123;</span><br><span class="line">    <span class="type">int</span> x, y;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">setXY</span><span class="params">(<span class="type">int</span> m, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">        x = m;</span><br><span class="line">        y = n;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Reference</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        Point p1, p2;</span><br><span class="line">        p1 = <span class="keyword">new</span> <span class="title class_">Point</span>();</span><br><span class="line">        p2 = <span class="keyword">new</span> <span class="title class_">Point</span>();</span><br><span class="line">        System.out.println(<span class="string">&quot;p1 的引用: &quot;</span> + p1);</span><br><span class="line">        System.out.println(<span class="string">&quot;p2 的引用: &quot;</span> + p2);</span><br><span class="line">        p1.setXY(<span class="number">1111</span>, <span class="number">2222</span>);</span><br><span class="line">        p2.setXY(-<span class="number">100</span>, -<span class="number">200</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;p1 的 x, y 坐标: &quot;</span> + p1.x + <span class="string">&quot;, &quot;</span> + p1.y); <span class="comment">// 1</span></span><br><span class="line">        System.out.println(<span class="string">&quot;p2 的 x, y 坐标: &quot;</span> + p2.x + <span class="string">&quot;, &quot;</span> + p2.y); <span class="comment">// 2</span></span><br><span class="line">        p1 = p2;</span><br><span class="line">        p1.setXY(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;p1 的引用: &quot;</span> + p1);</span><br><span class="line">        System.out.println(<span class="string">&quot;p2 的引用: &quot;</span> + p2);</span><br><span class="line">        System.out.println(<span class="string">&quot;p1 的 x, y 坐标: &quot;</span> + p1.x + <span class="string">&quot;, &quot;</span> + p1.y); <span class="comment">// 3</span></span><br><span class="line">        System.out.println(<span class="string">&quot;p2 的 x, y 坐标: &quot;</span> + p2.x + <span class="string">&quot;, &quot;</span> + p2.y); <span class="comment">// 4</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>(1) 指出代码中注释标注出的四行输出的内容会是什么。</p>
+<p>(2) 什么是<strong>浅拷贝</strong>？什么是<strong>深拷贝</strong>？请你查阅一些资料，并给出你的资讯。</p>
+<p>(3) 如果你要为一个类实现 <code>copy()</code> 方法，思考如何避免引用间赋值导致的浅拷贝？或者说，如何确保进行的是深拷贝。</p>
+<p>(4) 解释<code>String</code>的 <code>==</code> 和 <code>equals()</code> 的区别。</p>
+<p><strong>Question13</strong></p>
+<p>阅读下面程序，<strong>给出程序的输出结果，并解释原因</strong>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArrayReference</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] a = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">        <span class="type">int</span>[] b = &#123; <span class="number">100</span>, <span class="number">200</span>, <span class="number">300</span> &#125;;</span><br><span class="line">        System.out.println(<span class="string">&quot;数组 a 的元素个数 = &quot;</span> + a.length);</span><br><span class="line">        System.out.println(<span class="string">&quot;数组 b 的元素个数 = &quot;</span> + b.length);</span><br><span class="line">        System.out.println(<span class="string">&quot;数组 a 的引用 = &quot;</span> + a);</span><br><span class="line">        System.out.println(<span class="string">&quot;数组 b 的引用 = &quot;</span> + b);</span><br><span class="line">        a = b;</span><br><span class="line">        System.out.println(<span class="string">&quot;数组 a 的元素个数 = &quot;</span> + a.length);</span><br><span class="line">        System.out.println(<span class="string">&quot;数组 b 的元素个数 = &quot;</span> + b.length);</span><br><span class="line">        System.out.println(<span class="string">&quot;a[0] = &quot;</span> + a[<span class="number">0</span>] + <span class="string">&quot;, a[1] = &quot;</span> + a[<span class="number">1</span>] + <span class="string">&quot;, a[2] = &quot;</span> + a[<span class="number">2</span>]);</span><br><span class="line">        System.out.print(<span class="string">&quot;b[0] = &quot;</span> + b[<span class="number">0</span>] + <span class="string">&quot;, b[1] = &quot;</span> + b[<span class="number">1</span>] + <span class="string">&quot;, b[2 = &quot;</span> + b[<span class="number">2</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="8-可变参数"><a class="header-anchor" href="#8-可变参数">¶ </a>8. 可变参数</h2>
+<p><strong>Question14</strong></p>
+<p>看程序输出结果,并<strong>提交结果内容或截图</strong>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">VarArg</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        f(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">        f(-<span class="number">1</span>, -<span class="number">2</span>, -<span class="number">3</span>, -<span class="number">4</span>);  <span class="comment">// 给参数传值时，实参的个数很灵活</span></span><br><span class="line">        f(<span class="number">9</span>, <span class="number">7</span>, <span class="number">6</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">f</span><span class="params">(<span class="type">int</span>... x)</span> &#123;     <span class="comment">// x是可变参数的代表，代表若干个 int 型参数</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; x.length; i++) &#123;   <span class="comment">// x.length 是 x 代表的参数的个数</span></span><br><span class="line">            System.out.println(x[i]);   <span class="comment">// x[i] 是 x 代表的第 i 个参数(类似数组)</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Question15</strong></p>
+<p>编写静态方法<code>String strscat(String... args)</code>，需求如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 将任意个字符串顺序连接，不应该改变任意一个原有参数</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> args 字符串们</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return</span> args中的字符串顺序连接组成的新字符串</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">strscat</span><span class="params">(String... args)</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>样例：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">调用方法</th>
+<th style="text-align:center">返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>strscat(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;&quot;, &quot;e&quot;)</code></td>
+<td style="text-align:center"><code>&quot;abce&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>strscat(&quot;str&quot;)</code></td>
+<td style="text-align:center"><code>&quot;str&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<p>你需要提交 <strong><code>.java</code> 代码文件并给出几个有代表性的测试的截图。随后回答下面几个问题：</strong></p>
+<p>(1) 尝试理解 Java 可变参数的实现机制，说说你的想法。</p>
+<p>(2) 调用 <code>strscat(new String[]&#123;&quot;a&quot;, &quot;b&quot;&#125;)</code> 能通过编译吗？为什么？</p>
+<p>(3) 如果还有静态方法 <code>String strscat(String[] args)</code> 同时存在，代码能通过编译吗？给出 IDE 的编译结果的截图。</p>
+<p>(4) 如果我们声明的是 <code>String strscat(String[] args)</code>，<code>strscat(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)</code> 这样的调用还能通过编译吗？给出 IDE 的编译结果的截图。</p>
+<h2 id="9-面向对象（复习并完成课堂知识点）"><a class="header-anchor" href="#9-面向对象（复习并完成课堂知识点）">¶ </a>9. 面向对象（复习并完成课堂知识点）</h2>
+<p><strong>Question16</strong></p>
+<p><strong>减肥</strong>。小王本来体重 70 kg，经过减肥，体重降到 45 kg，试从这个问题领域中识别对象、类、属性、行为、状态，和状态变化。尝试将你抽象出来的类用 Java 代码实现出来，并编写一个测试类，来描述上述过程。你需要提交 <strong><code>.java</code> 代码文件。</strong>（能用代码体现你的思考即可，没有标准答案，也没有 online judge）</p>
+<p><strong>Question17</strong></p>
+<p><strong>制作一桌丰盛的年夜饭</strong>。定义采购员类和厨师类的属性和行为，在测试类中产生采购员的对象：姑姑，妈妈和你，在测试类中产生出厨师的对象：爸爸和婶婶，协同制作年夜饭。你需要提交 <strong><code>.java</code>代码文件</strong>。（能用代码体现你的思考即可，没有标准答案，也没有 online judge）</p>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure class="avatar avatar-lg">
+          <img src="/avatar.svg" alt="...">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>Love. T.A. 🥰</div>
+      <div>2023-09-12</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+<!-- hexo injector body_end start -->
+<script src="/js/collapse.js"></script>
+<!-- hexo injector body_end end --></body>
+</html>
+
+
+<script src="/js/book.js"></script>
