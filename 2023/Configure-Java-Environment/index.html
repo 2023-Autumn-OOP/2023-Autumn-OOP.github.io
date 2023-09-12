@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          Configure Java Environment - BUAA 2023 OOP
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="/css/collapse.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>BUAA 2023 OOP</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <h1 id="Lab-🔬"><a class="header-anchor" href="#Lab-🔬">¶ </a><strong>Lab 🔬</strong></h1>
+<ul>
+<li><a href="/2023/Lab-1">Lab 1</a></li>
+<li><a href="/2023/Lab-2">Lab 2</a></li>
+<li>To Be Continued… 🫣</li>
+</ul>
+<h1 id="迭代任务-📽️"><a class="header-anchor" href="#迭代任务-📽️">¶ </a><strong>迭代任务 📽️</strong></h1>
+<ul>
+<li>To Be Continued… 🙈</li>
+</ul>
+<h1 id="帮助中心-💁🏻"><a class="header-anchor" href="#帮助中心-💁🏻">¶ </a><strong>帮助中心 💁🏻</strong></h1>
+<ul>
+<li><a href="/2023/Configure-Java-Environment">Java 环境配置</a></li>
+<li><a href="/2023/Q-A">Q &amp; A</a></li>
+<li><a href="/2023/Lab-Template">Lab 问答报告模板</a></li>
+<li><a href="/2023/patpat-User-Guide">patpat 使用指南</a></li>
+<li><a href="/2023/Java-Features-Summary">Java 8 - 17 新特性总结</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <h1 id="Java-环境配置"><a class="header-anchor" href="#Java-环境配置">¶ </a>Java 环境配置</h1>
+<div class="admonition info"><p class="admonition-title">Info</p><p>这篇文章会详细介绍如何配置 Java 环境，包括 JDK，JRE 与 CLASSPATH，从而可以在命令行编译运行 Java。</p>
+</div>
+<h2 id="1-安装-JDK"><a class="header-anchor" href="#1-安装-JDK">¶ </a>1. 安装 JDK</h2>
+<p>首先，在官网找到自己心仪的 JDK 版本，下载对应的 JDK。安装时，可以自行更改路径。</p>
+<ul>
+<li>Oracle: <a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/downloads/">Java Downloads</a></li>
+</ul>
+<div class="admonition note"><p class="admonition-title">Note</p><p>在 Oracle 官网下载会需要注册账号，没有的话注册即可。</p>
+</div>
+<hr>
+<h2 id="2-配置环境变量"><a class="header-anchor" href="#2-配置环境变量">¶ </a>2. 配置环境变量</h2>
+<p>安装好 Java 后，我们需要配置 Java 相关的环境变量。</p>
+<div class="admonition warning"><p class="admonition-title">Warning</p><p>以下所有环境变量均为<strong>系统环境变量</strong>。</p>
+</div>
+<h3 id="2-1-删除-Oracle-默认路径"><a class="header-anchor" href="#2-1-删除-Oracle-默认路径">¶ </a>2.1 删除 Oracle 默认路径</h3>
+<p>Oracle 提供的 JDK 安装包可能会自动帮你添加对应的环境变量，个人<strong>不推荐</strong>这种方式，可以删除默认添加的环境变量。</p>
+<p>打开环境变量界面，编辑 <code>Path</code> 变量，找到所有带有 <code>Oracle</code>，<code>javapath</code> 之类字样的值，删除即可。</p>
+<img src="https://buaa-2023-oop-1308383348.cos.ap-nanjing.myqcloud.com/blog/java-env/oop-java-00.png" style="zoom:50%;" />
+<h3 id="2-2-添加-JDK-与-JRE-路径"><a class="header-anchor" href="#2-2-添加-JDK-与-JRE-路径">¶ </a>2.2 添加 JDK 与 JRE 路径</h3>
+<p>下载 JDK 时，会自动包括 JRE，但是高版本的 JDK 已经<strong>没有</strong>单独的 <code>jre\</code> 目录了，<code>java</code> 与 <code>javac</code> 都在 <code>bin</code> 目录下，因此<strong>网上很多文章都具有一定的误导性</strong>，是没有必要再单独下载 JRE 的。</p>
+<img src="https://buaa-2023-oop-1308383348.cos.ap-nanjing.myqcloud.com/blog/java-env/oop-java-01.png" style="zoom:50%;" />
+<p>首先，我们添加 <code>JAVA_HOME</code> 变量，如下，具体路径改为你的安装路径即可，路径结尾不加 <code>\</code>。</p>
+<img src="https://buaa-2023-oop-1308383348.cos.ap-nanjing.myqcloud.com/blog/java-env/oop-java-02.png" style="zoom:50%;" />
+<p>接下来，在 <code>Path</code> 变量里添加 Java 路径，如下。</p>
+<img src="https://buaa-2023-oop-1308383348.cos.ap-nanjing.myqcloud.com/blog/java-env/oop-java-03.png" style="zoom:50%;" />
+<h3 id="2-3-添加-CLASSPATH"><a class="header-anchor" href="#2-3-添加-CLASSPATH">¶ </a>2.3 添加 CLASSPATH</h3>
+<p>与 <code>JAVA_HOME</code> 变量添加方式相同，我们需要在系统环境变量中添加 <code>CLASSPATH</code>，具体值如下，注意开头的 <code>.</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;</span><br></pre></td></tr></table></figure>
+<h3 id="2-4-测试-Java-环境"><a class="header-anchor" href="#2-4-测试-Java-环境">¶ </a>2.4 测试 Java 环境</h3>
+<p>配置好环境变量后，打开命令行，输入如下命令测试，如果两条命令均无报错，且<strong>版本一致</strong>，那么恭喜你（大概率）完成了 Java 环境的配置。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; java <span class="literal">-version</span></span><br><span class="line">openjdk version <span class="string">&quot;20.0.2&quot;</span> <span class="number">2023</span><span class="literal">-07-18</span></span><br><span class="line">OpenJDK Runtime Environment (build <span class="number">20.0</span>.<span class="number">2</span>+<span class="number">9</span><span class="literal">-78</span>)</span><br><span class="line">OpenJDK <span class="number">64</span><span class="literal">-Bit</span> Server VM (build <span class="number">20.0</span>.<span class="number">2</span>+<span class="number">9</span><span class="literal">-78</span>, mixed mode, sharing)</span><br><span class="line">&gt; javac <span class="literal">-version</span></span><br><span class="line">javac <span class="number">20.0</span>.<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<div class="admonition error"><p class="admonition-title">Error</p><p>低版本 <code>java</code> 无法运行高版本 <code>javac</code> 编译出的字节码，因此最好保证二者版本相同。</p>
+</div>
+<hr>
+<h2 id="3-Java-的命令行编译与运行"><a class="header-anchor" href="#3-Java-的命令行编译与运行">¶ </a>3. Java 的命令行编译与运行</h2>
+<p>我们通过一个简单的示例来演示如何在命令行中编译与运行 Java。</p>
+<div class="admonition info"><p class="admonition-title">Info</p><p>开始之前，请确保你通过了 <a href="#2-4-%E6%B5%8B%E8%AF%95-Java-%E7%8E%AF%E5%A2%83">2.4</a> 的测试。</p>
+</div>
+<h3 id="3-1-无包名"><a class="header-anchor" href="#3-1-无包名">¶ </a>3.1 无包名</h3>
+<p>对于没有包名的程序，我们书写以下 Java 代码，位于 <code>src\</code> 目录下。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;May the Force be with you!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在命令行中，通过 <code>javac</code> 进行编译，如果没有输出，表示编译成功，并且可以看到目录下多了同名的 <code>.class</code> 文件。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">src&gt; javac Main.java</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果输出中文出现乱码报错，可以添加 <code>-encoding</code> 参数更改默认编码，如下。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">src&gt; javac Main.java <span class="literal">-encoding</span> UTF<span class="literal">-8</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>接下来，通过 <code>java</code> 命令运行生成的字节码。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">src&gt; java Main</span><br><span class="line">May the Force be with you!</span><br></pre></td></tr></table></figure>
+<p>如果一切正常，那么恭喜你，你真正完成了 Java 环境的配置！🥳</p>
+<h3 id="3-2-有包名"><a class="header-anchor" href="#3-2-有包名">¶ </a>3.2 有包名</h3>
+<p>利用包管理 Java 代码是好的编程习惯，因此推荐大家多多了解。对于有包名的情况，我们需要在运行时加上包名。我们的程序如下，将其放在 <code>src/top/tony/</code> 目录下，<code>src/</code> 为项目根目录，包名为 <code>top.tony</code>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> top.tony;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Greetings from inside of the package!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>现在，编译和运行的命令如下，编译与无包名相同，指名 <code>.java</code> 路径即可，运行时需要在项目根目录执行 <code>java</code> 命令，并指定包名。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">src&gt; javac .\top\tony\Main.java</span><br><span class="line">src&gt; java top.tony.Main</span><br><span class="line">Greetings from inside of the package!</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Troubleshoot"><a class="header-anchor" href="#Troubleshoot">¶ </a>Troubleshoot</h2>
+<h3 id="1-无法找到主类"><a class="header-anchor" href="#1-无法找到主类">¶ </a>1. 无法找到主类</h3>
+<p>配置过程中，一个常见的问题是 <code>Error: Could not find or load main class ...</code>，关于该错误，可以参考这一篇文章。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.baeldung.com/java-could-not-find-load-main-class">Java – “Could Not Find or Load Main Class” Error</a></li>
+</ul>
+<h3 id="PS"><a class="header-anchor" href="#PS">¶ </a>PS:</h3>
+<p>如果还是有问题，可以自行搜索解决方案，实在无法解决可以联系助教寻求帮助。🫡</p>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure class="avatar avatar-lg">
+          <img src="/avatar.svg" alt="...">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>Love. T.A. 🥰</div>
+      <div>2023-09-12</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+<!-- hexo injector body_end start -->
+<script src="/js/collapse.js"></script>
+<!-- hexo injector body_end end --></body>
+</html>
+
+
+<script src="/js/book.js"></script>
