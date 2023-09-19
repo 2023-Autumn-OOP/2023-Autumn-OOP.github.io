@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          Project-1 - BUAA 2023 OOP
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="/css/collapse.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>BUAA 2023 OOP</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <h1 id="Lab-🔬"><a class="header-anchor" href="#Lab-🔬">¶ </a><strong>Lab 🔬</strong></h1>
+<ul>
+<li><a href="/2023/Lab-1">Lab 1</a></li>
+<li><a href="/2023/Lab-2">Lab 2</a></li>
+<li><a href="/2023/Lab-3">Lab 3</a> ✨</li>
+<li>To Be Continued… 🫣</li>
+</ul>
+<h1 id="迭代任务-📽️"><a class="header-anchor" href="#迭代任务-📽️">¶ </a><strong>迭代任务 📽️</strong></h1>
+<!-- - [迭代 1](/2023/Project-1) ✨ -->
+<ul>
+<li>To Be Continued… 🙈</li>
+</ul>
+<h1 id="帮助中心-💁🏻"><a class="header-anchor" href="#帮助中心-💁🏻">¶ </a><strong>帮助中心 💁🏻</strong></h1>
+<ul>
+<li><a href="/2023/Configure-Java-Environment">Java 环境配置</a></li>
+<li><a href="/2023/Java-Features-Summary">Java 8 - 17 新特性总结</a></li>
+<li><a href="/2023/Lab-Template">Lab 问答报告模板</a></li>
+<li><a href="/2023/patpat-User-Guide">patpat 使用指南</a></li>
+<li><a href="/2023/Q-A">Q &amp; A</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <h2 id="写在前面"><a class="header-anchor" href="#写在前面">¶ </a>写在前面</h2>
+<p>同学们，从本周开始，我们将逐步开发一个网上交易平台（Transaction Management System）。每两周，我们都会添加新的需求，来不断完善系统功能。例如，TMS-1 阶段需要大家完成账号注册和登录系统，而 TMS-2 阶段则需要在 TMS-1 的基础上实现商品上架和购买等功能。</p>
+<p>在开始编写代码之前，建议大家<strong>先仔细阅读需求说明</strong>和文末的 <a href="#%E5%9B%9B%E3%80%81HINTS">HINTS</a>，再开始编写代码，编写好的代码需要经过 patpat 评测。通过所有的测试点后，<strong>需将整个项目文件打包上传到云平台</strong>，即可完成本次实验。希望大家能够认真完成，<strong>不作弊不抄袭</strong>。</p>
+<div class="admonition note"><p>patpat 的下载和使用说明请参考：<a href="/2023/patpat-User-Guide/">patpat 使用指南</a>。</p>
+</div>
+<hr>
+<h1 id="实验说明"><a class="header-anchor" href="#实验说明">¶ </a>实验说明</h1>
+<h2 id="一、实验目标"><a class="header-anchor" href="#一、实验目标">¶ </a>一、实验目标</h2>
+<ol>
+<li>熟悉 Java 语法；了解 Java 项目的目录结构。</li>
+<li>区分类变量与成员变量；区分类方法（静态方法）与成员函数。</li>
+<li>学会适当封装，了解对象继承与多态的使用方式。</li>
+</ol>
+<h2 id="二、实验的重难点"><a class="header-anchor" href="#二、实验的重难点">¶ </a>二、实验的重难点</h2>
+<ol>
+<li>逻辑处理。实验过程中需要判断不同情况，同学们需要处理好这部分的逻辑。</li>
+<li>抽象。同学们需要将实验题目中涉及的实体、功能抽象为不同的类，不建议将大量的属性与功能塞到一个类中，<strong>不建议整个项目只有一个 Test 类</strong>。同时，建议将类型、功能相近的类归到一个<strong>包</strong>（可以认为是一个文件夹）下。</li>
+<li>成员方法、静态方法的使用场景。</li>
+</ol>
+<h2 id="三、关键技术"><a class="header-anchor" href="#三、关键技术">¶ </a>三、关键技术</h2>
+<ul>
+<li>输入与输出。</li>
+<li>列表、哈希表、集合等类的使用。</li>
+</ul>
+<h2 id="四、相关资料"><a class="header-anchor" href="#四、相关资料">¶ </a>四、相关资料</h2>
+<ul>
+<li><a href="/2023/Java-Features-Summary/">Java 8 - 17 新特性总结</a></li>
+</ul>
+<h2 id="五、DDL及其他说明"><a class="header-anchor" href="#五、DDL及其他说明">¶ </a>五、DDL及其他说明</h2>
+<ul>
+<li>实验持续 <strong>3 周</strong>，截止时间以云平台为准。⚠️</li>
+<li>注意输出是否有空格。一般情况下，如果没有特殊说明，每条输出均没有多余的空白符（如一条命令的开头没有空白符），同学们在复制粘贴时需要注意。</li>
+</ul>
+<hr>
+<h1 id="实验内容"><a class="header-anchor" href="#实验内容">¶ </a>实验内容</h1>
+<h2 id="一、题目背景"><a class="header-anchor" href="#一、题目背景">¶ </a>一、题目背景</h2>
+<p>咔啡国因其得天独厚的咖啡资源而极度繁荣昌盛。随着商业的蓬勃发展，人们意识到开发一款高效且便捷的交易平台系统的重要性。这个交易平台系统将为咔啡国的从业者提供一个全面的市场，使得他们能够方便地买卖各种产品。通过这个系统，店家可以将自己的货品以公正的价格出售，顾客可以方便地购买到高品质的产品。这款交易平台系统的开发将进一步推动咔啡国商业的发展，而这个任务将由你来完成！</p>
+<h2 id="二、命令概览"><a class="header-anchor" href="#二、命令概览">¶ </a>二、命令概览</h2>
+<p>本次迭代需要你完成如下命令：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>命令符</strong></th>
+<th style="text-align:left"><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">quit</td>
+<td style="text-align:left">关机</td>
+</tr>
+<tr>
+<td style="text-align:left">register 卡号  姓名 密码 确认密码 身份类型</td>
+<td style="text-align:left">用户注册</td>
+</tr>
+<tr>
+<td style="text-align:left">login  卡号 密码</td>
+<td style="text-align:left">用户登录</td>
+</tr>
+<tr>
+<td style="text-align:left">logout</td>
+<td style="text-align:left">用户登出</td>
+</tr>
+<tr>
+<td style="text-align:left">printInfo</td>
+<td style="text-align:left">打印用户个人信息</td>
+</tr>
+<tr>
+<td style="text-align:left">printInfo 卡号</td>
+<td style="text-align:left">打印其他用户信息</td>
+</tr>
+</tbody>
+</table>
+<h2 id="三、功能描述"><a class="header-anchor" href="#三、功能描述">¶ </a>三、功能描述</h2>
+<h3 id="1-开关机"><a class="header-anchor" href="#1-开关机">¶ </a>1. 开关机</h3>
+<blockquote>
+<p><strong>实现基本的命令读入和退出功能。</strong></p>
+</blockquote>
+<p>首先，你的任务是编写一个 <code>Test</code> 类，当程序启动时，进入<code>main</code>方法，等待用户输入，输入命令的基本格式为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令 [参数1] [参数2] [参数3] ... [参数n]</span><br></pre></td></tr></table></figure>
+<p>其中</p>
+<ul>
+<li>用户的每一行输入都视为一条命令</li>
+<li>对于每一条命令，如果命令符未定义，那么请输出信息</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Command &#x27;命令&#x27; not found</span><br></pre></td></tr></table></figure>
+<p><strong>在所有的错误信息中，该条信息的优先级最高。</strong></p>
+<ul>
+<li>对于每一条命令，失败时有且仅有一条错误信息输出</li>
+<li>参数的数目是不定的（n ≥ 0）</li>
+<li>命令和参数之间，参数和参数之间由一个或多个空白符分隔</li>
+<li>命令之前和最后一个参数之后可以没有空格，也可以有若干个空格<br>
+以下命令在格式上是合法的：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">command arg1 arg2    arg3     arg4</span><br></pre></td></tr></table></figure>
+<p>当终端输入 <code>quit</code> 时，系统退出（程序退出状态为0），并在终端输出如下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">----- Good Bye! -----</span><br></pre></td></tr></table></figure>
+<h3 id="2-用户注册"><a class="header-anchor" href="#2-用户注册">¶ </a>2. 用户注册</h3>
+<h4 id="2-1-格式说明"><a class="header-anchor" href="#2-1-格式说明">¶ </a>2.1 格式说明</h4>
+<p>交易平台提供三类身份：管理员、店主以及顾客。在注册时，用户需要选择自己的身份。</p>
+<p>xx 国的居民使用的身份证称为“Kakafee 卡”，注册交易平台账号时需要填写 Kakafee 卡号、姓名、密码、确认密码以及身份类型。</p>
+<p>命令格式为</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>命令符</strong></th>
+<th style="text-align:left"><strong>参数 1</strong></th>
+<th style="text-align:left"><strong>参数 2</strong></th>
+<th style="text-align:left"><strong>参数 3</strong></th>
+<th style="text-align:left"><strong>参数 4</strong></th>
+<th style="text-align:left"><strong>参数 5</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">register</td>
+<td style="text-align:left">卡号</td>
+<td style="text-align:left">姓名</td>
+<td style="text-align:left">密码</td>
+<td style="text-align:left">确认密码</td>
+<td style="text-align:left">申请身份类型</td>
+</tr>
+</tbody>
+</table>
+<p><strong>姓名</strong></p>
+<ol>
+<li>
+<p>由英文字母（大小写均可）和下划线构成。</p>
+</li>
+<li>
+<p>第一位不能为下划线。</p>
+</li>
+<li>
+<p>长度在 4-16 字符之间。</p>
+</li>
+</ol>
+<p><strong>Kakafee 卡号</strong></p>
+<ol>
+<li>Kakafee 卡号一共 12 位，全国唯一。</li>
+<li>前 4 位为区域代码，范围 [0001, 4500]。</li>
+<li>中间 4 位为出生年份代码，范围 [1785, 1886]。</li>
+<li>最后 4 位为识别码，范围 [1000, 3000]。</li>
+</ol>
+<p><strong>密码</strong></p>
+<ol>
+<li>长度为 8-16 位。</li>
+<li>由英文字母（大小写均可）、数字和特殊字符（<code>@</code>，<code>_</code>，<code>%</code>，<code>$</code>）三类构成，每类至少有一个字符。</li>
+</ol>
+<p><strong>确认密码</strong></p>
+<ul>
+<li>两次输入的密码一致。</li>
+<li>只需要判断确认密码和密码是否一致，不需要再判断确认密码的合法性。</li>
+</ul>
+<p><strong>身份类型</strong></p>
+<ol>
+<li>Administrator 管理员</li>
+<li>Merchant 商家</li>
+<li>Customer 顾客</li>
+</ol>
+<h4 id="2-2-命令反馈说明"><a class="header-anchor" href="#2-2-命令反馈说明">¶ </a>2.2 命令反馈说明</h4>
+<p><strong>2.2.1 注册成功</strong></p>
+<p>当所有条件都满足时，注册成功并在终端输出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Register success</span><br></pre></td></tr></table></figure>
+<p><strong>2.2.2 参数格式不符合规定</strong></p>
+<p>在 <code>register</code> 命令中，共有 5 个参数。如果参数数量不等于 5 ，那么输出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal argument count</span><br></pre></td></tr></table></figure>
+<p>如果参数数量合法，那么按照如下顺序检查信息</p>
+<p><strong>2.2.3 用户已登录</strong></p>
+<p>如果系统有用户在线时，无法注册，输出如下信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Already logged in</span><br></pre></td></tr></table></figure>
+<p><strong>2.2.4 卡号格式不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal Kakafee number </span><br></pre></td></tr></table></figure>
+<p><strong>2.2.5 用户已注册</strong></p>
+<p>用户已经注册过，再次注册应在终端输出如下信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Kakafee number exists</span><br></pre></td></tr></table></figure>
+<p><strong>2.2.6 姓名格式不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal name</span><br></pre></td></tr></table></figure>
+<p><strong>2.2.7 密码格式不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal password</span><br></pre></td></tr></table></figure>
+<p><strong>2.2.8 确认密码与密码不一致</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Passwords do not match </span><br></pre></td></tr></table></figure>
+<p><strong>2.2.9 身份类型不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal identity</span><br></pre></td></tr></table></figure>
+<p>如果存在多种不合法情况，按上述顺序只输出最先发生的非法信息。</p>
+<h3 id="3-用户登录"><a class="header-anchor" href="#3-用户登录">¶ </a>3. 用户登录</h3>
+<blockquote>
+<p><strong>对于已注册的用户，登录平台时需要输入 Kakafee 卡号以及密码</strong></p>
+</blockquote>
+<h4 id="3-1-格式说明"><a class="header-anchor" href="#3-1-格式说明">¶ </a>3.1 格式说明</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>命令符</strong></th>
+<th style="text-align:left"><strong>参数1</strong></th>
+<th style="text-align:left"><strong>参数2</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">login</td>
+<td style="text-align:left">Kakafee 卡号</td>
+<td style="text-align:left">密码</td>
+</tr>
+</tbody>
+</table>
+<h4 id="3-2-命令反馈说明"><a class="header-anchor" href="#3-2-命令反馈说明">¶ </a>3.2 命令反馈说明</h4>
+<p><strong>3.2.1 登录成功</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Welcome to TMS</span><br></pre></td></tr></table></figure>
+<p><strong>3.2.2 参数数量不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal argument count</span><br></pre></td></tr></table></figure>
+<p><strong>3.2.3 用户已登录</strong></p>
+<p>该系统只允许一个用户在线。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Already logged in</span><br></pre></td></tr></table></figure>
+<p>如果一个人重复登录，那么同样输出上述信息。</p>
+<p><strong>3.2.4 卡号格式不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal Kakafee number </span><br></pre></td></tr></table></figure>
+<p><strong>3.2.5 用户未注册</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Kakafee number not exists</span><br></pre></td></tr></table></figure>
+<p><strong>3.2.6 密码错误</strong></p>
+<p>无论密码格式是否正确，只要与注册时的密码不一致，均输出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Wrong password</span><br></pre></td></tr></table></figure>
+<h3 id="4-用户登出"><a class="header-anchor" href="#4-用户登出">¶ </a>4.用户登出</h3>
+<h4 id="4-1-格式说明"><a class="header-anchor" href="#4-1-格式说明">¶ </a>4.1 格式说明</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>命令符</strong></th>
+<th style="text-align:left"><strong>参数</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">logout</td>
+<td style="text-align:left">无</td>
+</tr>
+</tbody>
+</table>
+<h4 id="4-2-命令反馈说明"><a class="header-anchor" href="#4-2-命令反馈说明">¶ </a>4.2 命令反馈说明</h4>
+<p><strong>4.2.1 登出成功</strong></p>
+<p>当系统有在线用户时，输入该命令则（迫使在线用户）成功登出。</p>
+<p>终端输出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Bye~</span><br></pre></td></tr></table></figure>
+<p><strong>4.2.2 参数数量不合法</strong></p>
+<p><code>logout</code> 命令后不带有参数，如果命令符后带有参数，仍输出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal argument count</span><br></pre></td></tr></table></figure>
+<p><strong>4.2.3 无用户在线</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please log in first</span><br></pre></td></tr></table></figure>
+<h3 id="5-打印信息"><a class="header-anchor" href="#5-打印信息">¶ </a>5. 打印信息</h3>
+<div class="admonition note"><p>建议同学们重写 <code>Object</code> 类的 <code>toString()</code> 方法完成这项功能，当然也可以通过设计专门的格式化类来实现。</p>
+</div>
+<h4 id="5-1-格式说明"><a class="header-anchor" href="#5-1-格式说明">¶ </a>5.1 格式说明</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>命令符</strong></th>
+<th style="text-align:left"><strong>可选参数</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">printInfo</td>
+<td style="text-align:left">[Kakafee卡号]</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>无参数表示打印用户的个人信息，有参数则表示打印他人信息。</li>
+<li>顾客和商家只可查看个人信息，管理员可查看任何人信息。</li>
+</ul>
+<h4 id="5-2-命令反馈说明"><a class="header-anchor" href="#5-2-命令反馈说明">¶ </a>5.2 命令反馈说明</h4>
+<p><strong>5.2.1 成功</strong></p>
+<p>输出信息应包括：姓名、卡号以及身份。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Name: username</span><br><span class="line">Kakafee number: KakafeeNumber</span><br><span class="line">Type: Administrator/Merchant/Customer</span><br></pre></td></tr></table></figure>
+<div class="admonition warning"><p>冒号为英文冒号，且冒号后有一个空格。</p>
+</div>
+<p><strong>5.2.2 参数格式不符合规定</strong></p>
+<p>参数只能为空或者 1 个。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal argument count</span><br></pre></td></tr></table></figure>
+<p><strong>5.2.3 未登录</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please log in first</span><br></pre></td></tr></table></figure>
+<p><strong>5.2.4 权限不足</strong></p>
+<p>商家或顾客调用带有参数的 printInfo 时，提示权限不足。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Permission denied</span><br></pre></td></tr></table></figure>
+<p><strong>5.2.5 Kakafee 卡号不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal Kakafee number</span><br></pre></td></tr></table></figure>
+<p><strong>5.2.6 用户不存在</strong></p>
+<p>当 Kakafee 卡号对应的用户未注册时，提示 Kakafee 卡号不存在。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Kakafee number not exist </span><br></pre></td></tr></table></figure>
+<h2 id="四、HINTS"><a class="header-anchor" href="#四、HINTS">¶ </a>四、HINTS</h2>
+<h3 id="1-命令优先级"><a class="header-anchor" href="#1-命令优先级">¶ </a>1. 命令优先级</h3>
+<p>首先，输入命令未定义时，输出命令不存在，替换下面的 <code>cmd</code> 为具体的命令名称。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Command &#x27;cmd&#x27; not found</span><br></pre></td></tr></table></figure>
+<p>例如输入 <code>logged out</code>，由于命令 <code>logged</code> 未定义，所以输出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Command &#x27;logged&#x27; not found</span><br></pre></td></tr></table></figure>
+<p>其次，当输入命令有定义但参数个数不合法时，输出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal argument count</span><br></pre></td></tr></table></figure>
+<p>当命令有定义，参数个数正确时，才会进一步输出 <code>Already logged in</code>、<code>Bye ~</code> 等成功或失败信息。</p>
+<p>当一句命令存在多种非法情况，按<a href="#%E4%B8%89%E3%80%81%E5%8A%9F%E8%83%BD%E6%8F%8F%E8%BF%B0">上述顺序</a>只输出最先发生的非法信息。</p>
+<h3 id="2-实现思路"><a class="header-anchor" href="#2-实现思路">¶ </a>2. 实现思路</h3>
+<div class="admonition info"><p class="admonition-title">Info</p><p>这里的实现思路仅供参考，具体同学们可以自行发挥。🙂</p>
+</div>
+<h4 id="2-1-实体类"><a class="header-anchor" href="#2-1-实体类">¶ </a>2.1 实体类</h4>
+<p>对于用户，你可以设计一个 <code>User</code> 类（不限定类的名字，但一个好的名字是十分重要的），该类<strong>至少</strong>包括如下属性：</p>
+<ul>
+<li>
+<p>卡号</p>
+</li>
+<li>
+<p>姓名</p>
+</li>
+<li>
+<p>密码</p>
+</li>
+<li>
+<p>身份类型（可以通过一个字段表示，也可以设计为三种身份继承自一个 <code>User</code> 基类）</p>
+</li>
+</ul>
+<div class="admonition note"><p>建议将属性设置为私有属性（<code>private</code>），并为其编写相应的 <code>getter</code>/<code>setter</code>。</p>
+</div>
+<h4 id="2-2-工具类"><a class="header-anchor" href="#2-2-工具类">¶ </a>2.2 工具类</h4>
+<p>对于一些具有一定通用性或者不依附实体对象的方法，例如检查卡号格式、检查密码格式、判断登录状态、判断注册状态、格式化输出实体类等，可以设计一些工具类，在其中实现这些方法，一般设计为静态方法即可。</p>
+<h4 id="2-3-全局变量管理"><a class="header-anchor" href="#2-3-全局变量管理">¶ </a>2.3 全局变量管理</h4>
+<p>为了完成实验，同学们不免要设计一些全局变量。对于全局变量的管理，同学们可以设计一个类，相关的全局变量设置为 <code>static</code>；也可以设计一个类，而将全局变量设置为成员变量，之后通过创建一个对象来操作全局变量。</p>
+<h4 id="2-4-正则表达式"><a class="header-anchor" href="#2-4-正则表达式">¶ </a>2.4 正则表达式</h4>
+<p>在判断姓名，密码是否合法时，建议大家用正则表达式来判断。例如，想要判断名字是否合法时，可以<strong>参考</strong>下列代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">judgeName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">name_pattern</span> <span class="operator">=</span> <span class="string">&quot;[A-Za-z][A-Za-z_]&#123;3,15&#125;&quot;</span>;</span><br><span class="line">    <span class="keyword">if</span> (!name.matches(name_pattern)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>正则表达式通常用于匹配字符串模式，不太适合处理范围验证，所以对于卡号的判断，可以分割字符串后再验证范围。正则表达式的更多用法，大家可以查看：<a target="_blank" rel="noopener" href="https://www.runoob.com/regexp/regexp-tutorial.html">正则表达式 - 教程</a>。</p>
+<h4 id="2-5-List、Map-等的使用"><a class="header-anchor" href="#2-5-List、Map-等的使用">¶ </a>2.5 List、Map 等的使用</h4>
+<p>在开发时， 合理使用<code>List</code>和<code>Map</code>加快我们的开发效率。</p>
+<p>对于<code>List</code> ，常用的方式如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// List&lt;YourClass&gt; list = new LinkedList&lt;&gt;();</span></span><br><span class="line">        List&lt;TargetClass&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(); <span class="comment">// 一般来说，用ArrayList&lt;&gt;()</span></span><br><span class="line"></span><br><span class="line">        list.add(targetObject); <span class="comment">// 在列表的尾部插入数据</span></span><br><span class="line">        list.remove(index); <span class="comment">// 根据下标删除元素。注意，index &gt;= 0 &amp;&amp; index &lt; list.size()</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于<code>Map</code> ，常用的方式如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">final</span> String id;</span><br><span class="line">        <span class="keyword">public</span> String name;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="title function_">Person</span><span class="params">(String id, String name)</span> &#123;</span><br><span class="line">            <span class="built_in">this</span>.id = id;</span><br><span class="line">            <span class="built_in">this</span>.name = name;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// Map&lt;key, value&gt; map = new HashMap&lt;&gt;();</span></span><br><span class="line">        <span class="comment">// Map&lt;Key, value&gt; map = new TreeMap&lt;&gt;();</span></span><br><span class="line">        Map&lt;String, Person&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="type">Person</span> <span class="variable">person</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;1234&quot;</span>, <span class="string">&quot;xiaoming&quot;</span>);</span><br><span class="line"></span><br><span class="line">        map.put(person.id, person);    <span class="comment">// 向表中添加数据</span></span><br><span class="line">        map.containsKey(person.id);    <span class="comment">// 判断key是否存在</span></span><br><span class="line">        <span class="type">Person</span> <span class="variable">p</span> <span class="operator">=</span> map.get(person.id); <span class="comment">// 根据key获取value</span></span><br><span class="line">        map.remove(person.id);         <span class="comment">// 删除key对应的value</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>更多的使用方法同学们可以查阅相关资料，这里就不展开了。<code>List</code>和<code>Map</code>还涉及到“泛型”，感兴趣的同学可以提前了解了解。</p>
+<h2 id="五、测试样例"><a class="header-anchor" href="#五、测试样例">¶ </a>五、测试样例</h2>
+<p>每次迭代有测试样例，测试样例也是 patpat 评测数据，大家可以参考样例修改自己的代码。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">QUisnjfg 7856</span><br><span class="line">Command &#x27;QUisnjfg&#x27; not found</span><br><span class="line">register 439917962023 buaaer A123a456@ A123a456@ Administrator</span><br><span class="line">Register success</span><br><span class="line">register 439917962000 dlam 123456 MG</span><br><span class="line">Illegal argument count</span><br><span class="line">register 439917962023 buaaer 234567 234567 Administrator</span><br><span class="line">Kakafee number exists</span><br><span class="line">login 439917962000 456789</span><br><span class="line">Kakafee number not exists</span><br><span class="line">login 439917962023 237895</span><br><span class="line">Wrong password</span><br><span class="line">login 439917962023 A123a456@</span><br><span class="line">Welcome to TMS</span><br><span class="line">printInfo</span><br><span class="line">Name: buaaer</span><br><span class="line">Kakafee number: 439917962023</span><br><span class="line">Type: Administrator</span><br><span class="line">logout</span><br><span class="line">Bye~</span><br><span class="line">printInfo</span><br><span class="line">Please log in first</span><br><span class="line">logout</span><br><span class="line">Please log in first</span><br><span class="line">quit</span><br><span class="line">----- Good Bye! -----</span><br></pre></td></tr></table></figure>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure class="avatar avatar-lg">
+          <img src="/avatar.svg" alt="...">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>Love. T.A. 🥰</div>
+      <div>2023-09-19</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+<!-- hexo injector body_end start -->
+<script src="/js/collapse.js"></script>
+<!-- hexo injector body_end end --></body>
+</html>
+
+
+<script src="/js/book.js"></script>
