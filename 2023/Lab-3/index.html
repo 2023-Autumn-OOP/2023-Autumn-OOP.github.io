@@ -192,7 +192,7 @@ function sidebar_toggle() {
 <p>写一个音乐类，并编写测试类显示音乐信息（音乐名称、音乐类型）。</p>
 <p>写一个手机类，并编写测试类显示手机信息（手机品牌、手机型号）。</p>
 <p><strong>除了提交 <code>.java</code> 代码外，你需要在解答中说明如下内容：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">目录名为：Question5（或者你自己的命名）</span><br><span class="line">文件名有：(如果你放了一个项目进来，则说明你的项目结构以及入口位置)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">目录名为：Question4（或者你自己的命名）</span><br><span class="line">文件名有：(如果你放了一个项目进来，则说明你的项目结构以及入口位置)</span><br></pre></td></tr></table></figure>
 <p><strong>唠叨两句</strong>：手机类和音乐类都需要完成“显示信息”这样的功能，那我们能否将这一功能封装起来实现呢？</p>
 <p>比如我们可以让手机类和音乐类都实现一个 <code>IMessage</code> 接口， 他们就有了统一的测试方法。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">IMessage</span> <span class="variable">music</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Music</span>();</span><br><span class="line">        <span class="type">IMessage</span> <span class="variable">mobile</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Mobile</span>();</span><br><span class="line">        music.print();</span><br><span class="line">        mobile.print();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -220,7 +220,7 @@ function sidebar_toggle() {
 </li>
 </ul>
 <p><strong>除了提交 <code>.java</code> 代码外，你需要在解答中说明如下内容</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">目录名为：Question6（或者你自己的命名）</span><br><span class="line">文件名有：(如果你放了一个项目进来，则说明你的项目结构以及入口位置)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">目录名为：Question5（或者你自己的命名）</span><br><span class="line">文件名有：(如果你放了一个项目进来，则说明你的项目结构以及入口位置)</span><br></pre></td></tr></table></figure>
 <h3 id="Question-6"><a class="header-anchor" href="#Question-6">¶ </a>Question 6</h3>
 <p>编写一个 Java 命令行程序，<strong>只从标准输入读取一行用户输入</strong>，判断这行输入是否是一个没有前导 0 的无符号整数；如果是，则还要判断该数字是否是一个回文数。<strong>自定义你程序的输出</strong>，要求能直观展现程序判断的结果。</p>
 <p>对于“没有前导 0 的无符号整数”的定义：</p>
@@ -254,7 +254,7 @@ function sidebar_toggle() {
 </ul>
 <p>本题将输入的一行字符视为一个完整的字符串，如果输入的是诸如“121 121”这样包含空格的串，虽然 121 是回文数，<strong>但是整个串不应该被认为是回文数</strong>。如果将字符集扩充为包含空格的其他字符集，那么“121 121”就是一个该字符集下的回文串，不过本题的字符集限定为由 0 ~ 9 这十个数字组成的字符集。</p>
 <p><strong>除了提交 <code>.java</code> 代码外，你需要在解答中说明如下内容：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">目录名为：Question7 （或者你自己的命名）</span><br><span class="line">文件名有：(如果你放了一个项目进来，则说明你的项目结构以及入口位置)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">目录名为：Question6 （或者你自己的命名）</span><br><span class="line">文件名有：(如果你放了一个项目进来，则说明你的项目结构以及入口位置)</span><br></pre></td></tr></table></figure>
 
 </div>
 
