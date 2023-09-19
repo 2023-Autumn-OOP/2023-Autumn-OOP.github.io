@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          Lab-3 - BUAA 2023 OOP
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="/css/collapse.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>BUAA 2023 OOP</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <h1 id="Lab-🔬"><a class="header-anchor" href="#Lab-🔬">¶ </a><strong>Lab 🔬</strong></h1>
+<ul>
+<li><a href="/2023/Lab-1">Lab 1</a></li>
+<li><a href="/2023/Lab-2">Lab 2</a></li>
+<li><a href="/2023/Lab-3">Lab 3</a></li>
+<li>To Be Continued… 🫣</li>
+</ul>
+<h1 id="迭代任务-📽️"><a class="header-anchor" href="#迭代任务-📽️">¶ </a><strong>迭代任务 📽️</strong></h1>
+<ul>
+<li>To Be Continued… 🙈</li>
+</ul>
+<h1 id="帮助中心-💁🏻"><a class="header-anchor" href="#帮助中心-💁🏻">¶ </a><strong>帮助中心 💁🏻</strong></h1>
+<ul>
+<li><a href="/2023/Configure-Java-Environment">Java 环境配置</a></li>
+<li><a href="/2023/Java-Features-Summary">Java 8 - 17 新特性总结</a></li>
+<li><a href="/2023/Lab-Template">Lab 问答报告模板</a></li>
+<li><a href="/2023/patpat-User-Guide">patpat 使用指南</a></li>
+<li><a href="/2023/Q-A">Q &amp; A</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <h1 id="Lab-3-类与对象"><a class="header-anchor" href="#Lab-3-类与对象">¶ </a>Lab 3: 类与对象</h1>
+<div class="admonition error"><p>本次 Lab 时长为 <strong>2</strong> 周，DDL 为 <strong>10 月 2 日 23:59</strong>。😁</p>
+</div>
+<div class="admonition note"><p>附件下载（包括问答题和实验报告模板）：<a target="_blank" rel="noopener" href="https://bhpan.buaa.edu.cn/link/AA96D0CA694BB74ABFA070F38B6C527AC6">https://bhpan.buaa.edu.cn/link/AA96D0CA694BB74ABFA070F38B6C527AC6</a></p>
+</div>
+<h2 id="实验目的"><a class="header-anchor" href="#实验目的">¶ </a>实验目的</h2>
+<ul>
+<li>理解并掌握类的概念</li>
+<li>理解并掌握对象的概念</li>
+<li>理解类与对象的关系</li>
+<li>理解面向对象中抽象过程</li>
+<li>理解面向对象中的消息</li>
+<li>理解 Java 程序的基本结构并能灵活使用</li>
+<li>理解并掌握 Java 类的定义（成员变量、成员方法和方法重载）</li>
+<li>理解并掌握 Java 类的构造函数（默认构造函数、带参数构造函数），理解重<br>
+载的构造函数并灵活使用</li>
+<li>理解 Java 垃圾内存自动回收机制</li>
+<li>理解并掌握 Java 类变量和类方法</li>
+</ul>
+<div class="admonition note"><p>本次代码量相对较多，请大家注意文件结构的规划。🫡</p>
+</div>
+<hr>
+<h2 id="1-类的定义"><a class="header-anchor" href="#1-类的定义">¶ </a>1. 类的定义</h2>
+<h3 id="Question-1"><a class="header-anchor" href="#Question-1">¶ </a>Question 1</h3>
+<p>编译 Sample 类，并查看编译结果。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Sample</span> &#123;</span><br><span class="line">    <span class="type">int</span> x; <span class="comment">// 1</span></span><br><span class="line">    <span class="type">long</span> <span class="variable">y</span> <span class="operator">=</span> x; <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">f</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="type">int</span> m; <span class="comment">// 3</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">t</span> <span class="operator">=</span> n + m; <span class="comment">// 4</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Sample</span> <span class="variable">t</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Sample</span>();</span><br><span class="line">        t.f(<span class="number">5</span>);</span><br><span class="line">        System.out.println(t.x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注释标记的哪些行会导致编译错误？<strong>将错误截图，并说明原因。</strong></p>
+<hr>
+<h2 id="2-函数重载"><a class="header-anchor" href="#2-函数重载">¶ </a>2. 函数重载</h2>
+<h3 id="Question-2"><a class="header-anchor" href="#Question-2">¶ </a>Question 2</h3>
+<p>阅读下面代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Overload</span> &#123;</span><br><span class="line">    Overload(<span class="type">int</span> m) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    Overload(<span class="type">double</span> m) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="title function_">Overload</span><span class="params">(<span class="type">int</span> m)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">23</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">Overload</span><span class="params">(<span class="type">double</span> m)</span> &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于 <code>Overload</code> 类，下面哪些叙述是错误的？<strong>给出你的回答，并说明原因。</strong></p>
+<ul>
+<li>a. <code>Overload(int m)</code> 与 <code>Overload(double m) </code>互为重载的构造方法。</li>
+<li>b. <code>int Overload(int m)</code> 与 <code>void Overload(double m)</code> 互为重载的非构造方法。</li>
+<li>c. <code>Overload</code> 类有 2 个构造方法，尝试调用默认构造方法 <code>Overload()</code> 会无法通过编译。</li>
+<li>d. <code>Overload</code> 类有 3 个构造方法。</li>
+</ul>
+<h3 id="Question-3"><a class="header-anchor" href="#Question-3">¶ </a>Question 3</h3>
+<p>阅读下面这段代码。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Overload2</span> &#123;</span><br><span class="line">    <span class="type">int</span> a, b;</span><br><span class="line">    <span class="type">int</span> <span class="variable">c</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Overload2</span><span class="params">()</span> &#123;</span><br><span class="line">        a = -<span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Overload2</span><span class="params">(<span class="type">int</span> p1, <span class="type">int</span> p2)</span> &#123;</span><br><span class="line">        a = p1;</span><br><span class="line">        b = p2;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Overload2</span><span class="params">(<span class="type">int</span> p1, <span class="type">int</span> p2, <span class="type">int</span> p3)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>(p1, p2);</span><br><span class="line">        c = p3;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> String.format(<span class="string">&quot;(a,b,c)=(%d,%d,%d)&quot;</span>, a, b, c);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Overload2</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Overload2</span>();</span><br><span class="line">        System.out.println(s);</span><br><span class="line">        System.out.println(<span class="keyword">new</span> <span class="title class_">Overload2</span>(<span class="number">5</span>, <span class="number">6</span>));</span><br><span class="line">        System.out.println((<span class="keyword">new</span> <span class="title class_">Overload2</span>(<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)).toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>运行 <code>main</code> 函数，将程序的输出<strong>截图</strong>。</p>
+<div class="admonition info"><p class="admonition-title">题外话
+</p><p>根据 <code>void java.io.PrintStream.print()</code> 系列函数的实现，当传入的 <code>String</code> 或 <code>Object</code> 是 <code>null</code> 时，最后都会导致输出字符串 <code>null</code>，而不是什么都不输出。</p>
+<p>进行字符串连接时也一样：<code>&quot; &quot; + null</code> 的结果是 <code>null</code>。</p>
+<p>因此当涉及相关操作时需要稍微注意一下。</p>
+<p>具体原因参见 <code>java.io.PrintStream</code>、<code>java.lang.String</code> 的源代码。</p>
+</div>
+<hr>
+<h2 id="3-编程题"><a class="header-anchor" href="#3-编程题">¶ </a>3. 编程题</h2>
+<h3 id="Question-4"><a class="header-anchor" href="#Question-4">¶ </a>Question 4</h3>
+<p>写一个音乐类，并编写测试类显示音乐信息（音乐名称、音乐类型）。</p>
+<p>写一个手机类，并编写测试类显示手机信息（手机品牌、手机型号）。</p>
+<p><strong>除了提交 <code>.java</code> 代码外，你需要在解答中说明如下内容：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">目录名为：Question5（或者你自己的命名）</span><br><span class="line">文件名有：(如果你放了一个项目进来，则说明你的项目结构以及入口位置)</span><br></pre></td></tr></table></figure>
+<p><strong>唠叨两句</strong>：手机类和音乐类都需要完成“显示信息”这样的功能，那我们能否将这一功能封装起来实现呢？</p>
+<p>比如我们可以让手机类和音乐类都实现一个 <code>IMessage</code> 接口， 他们就有了统一的测试方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">IMessage</span> <span class="variable">music</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Music</span>();</span><br><span class="line">        <span class="type">IMessage</span> <span class="variable">mobile</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Mobile</span>();</span><br><span class="line">        music.print();</span><br><span class="line">        mobile.print();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="admonition info"><p>当然，在这个题中，使用这样的实现方式未免有点“过度封装”。如果之后完成个人/团队大作业时遇到了类似的场景，不妨在想一想能否应用上述的模式进行设计。</p>
+</div>
+<h3 id="Question-5"><a class="header-anchor" href="#Question-5">¶ </a>Question 5</h3>
+<p>编写程序，在其中定义两个类</p>
+<ul>
+<li><code>Person</code> 类：
+<ul>
+<li>属性有 <code>name</code>、<code>age</code> 和 <code>sex</code>；</li>
+<li>提供你认为必要的构造方法；</li>
+<li>方法 <code>setAge()</code> 设置人的合法年龄（<code>0</code>~<code>130</code>）；</li>
+<li>方法 <code>getAge()</code> 返回人的年龄；</li>
+<li>方法 <code>work()</code> 输出字符串 <code>working</code>；</li>
+<li>方法 <code>showAge()</code> 输出 <code>age</code> 值。</li>
+</ul>
+</li>
+<li><code>TestPerson</code> 类：
+<ul>
+<li>创建 <code>Person</code> 类的对象，设置该对象的 <code>name</code>、<code>age</code> 和 <code>sex</code> 属性；</li>
+<li>调用 <code>setAge()</code> 和 <code>getAge()</code> 方法，体会 Java 的封装性；</li>
+<li>创建第二个对象，执行上述操作，体会同一个类的不同对象之间的关系。</li>
+</ul>
+</li>
+</ul>
+<p><strong>除了提交 <code>.java</code> 代码外，你需要在解答中说明如下内容</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">目录名为：Question6（或者你自己的命名）</span><br><span class="line">文件名有：(如果你放了一个项目进来，则说明你的项目结构以及入口位置)</span><br></pre></td></tr></table></figure>
+<h3 id="Question-6"><a class="header-anchor" href="#Question-6">¶ </a>Question 6</h3>
+<p>编写一个 Java 命令行程序，<strong>只从标准输入读取一行用户输入</strong>，判断这行输入是否是一个没有前导 0 的无符号整数；如果是，则还要判断该数字是否是一个回文数。<strong>自定义你程序的输出</strong>，要求能直观展现程序判断的结果。</p>
+<p>对于“没有前导 0 的无符号整数”的定义：</p>
+<ul>
+<li>是一个字符串 <code>s</code>；</li>
+<li><code>s</code> 的长度至少是 <code>1</code>，没有上限要求；</li>
+<li><code>s</code> 的字符集 <code>&#123;0, 1, 2, 3, 4, 5, 6, 7, 8, 9&#125;</code>，其他所有字符都不应该出现在 <code>s</code> 中；</li>
+<li>当 <code>s</code> 的长度大于 <code>1</code> 时，若从其首部开始有若干个连续字符 <code>0</code>，那么这些字符 <code>0</code> 都叫做 <code>s</code> 的“前导 0”。
+<ul>
+<li>比如数字串 00010020，有三个前导 0</li>
+<li>比如数字串 01，有 1 个前导 0</li>
+<li>比如数字串 102030，没有前导 0</li>
+<li>比如数字串 0，没有前导 0</li>
+</ul>
+</li>
+</ul>
+<p>本题对于回文数的定义：</p>
+<ul>
+<li>是一个字符串 <code>s</code></li>
+<li><code>s</code> 的长度至少是 <code>1</code>，没有上限要求</li>
+<li><code>s</code> 的字符集 <code>&#123;0, 1, 2, 3, 4, 5, 6, 7, 8, 9&#125;</code>，其他所有字符都不应该出现在 <code>s</code> 中</li>
+<li>将 <code>s</code> 中的字符逆序排列并去除前导 <code>0</code> 得到的数字串 <code>r</code> ，有 <code>s</code> 和 <code>r</code> 完全相同
+<ul>
+<li>s = 123 时，r = 321，不相同，s 和 r 都不是回文数</li>
+<li>s = 12321 时，r = 12321，相同，s 是回文数</li>
+<li>s = 12100 时，r = 121，不相同，s 不是回文数，但 r 是回文数</li>
+<li>s = 1 时，r = 1，相同，s 是回文数</li>
+<li>s = 0 时，r = 0，相同，s 是回文数</li>
+</ul>
+</li>
+</ul>
+<p>本题将输入的一行字符视为一个完整的字符串，如果输入的是诸如“121 121”这样包含空格的串，虽然 121 是回文数，<strong>但是整个串不应该被认为是回文数</strong>。如果将字符集扩充为包含空格的其他字符集，那么“121 121”就是一个该字符集下的回文串，不过本题的字符集限定为由 0 ~ 9 这十个数字组成的字符集。</p>
+<p><strong>除了提交 <code>.java</code> 代码外，你需要在解答中说明如下内容：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">目录名为：Question7 （或者你自己的命名）</span><br><span class="line">文件名有：(如果你放了一个项目进来，则说明你的项目结构以及入口位置)</span><br></pre></td></tr></table></figure>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure class="avatar avatar-lg">
+          <img src="/avatar.svg" alt="...">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>Love. T.A. 🥰</div>
+      <div>2023-09-19</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+<!-- hexo injector body_end start -->
+<script src="/js/collapse.js"></script>
+<!-- hexo injector body_end end --></body>
+</html>
+
+
+<script src="/js/book.js"></script>
