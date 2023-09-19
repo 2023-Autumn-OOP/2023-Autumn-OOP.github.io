@@ -64,11 +64,12 @@ document.addEventListener('DOMContentLoaded', function () {
 <ul>
 <li><a href="/2023/Lab-1">Lab 1</a></li>
 <li><a href="/2023/Lab-2">Lab 2</a></li>
-<li><a href="/2023/Lab-3">Lab 3</a></li>
+<li><a href="/2023/Lab-3">Lab 3</a> ✨</li>
 <li>To Be Continued… 🫣</li>
 </ul>
 <h1 id="迭代任务-📽️"><a class="header-anchor" href="#迭代任务-📽️">¶ </a><strong>迭代任务 📽️</strong></h1>
 <ul>
+<li><a href="/2023/Project-1">迭代 1</a> ✨</li>
 <li>To Be Continued… 🙈</li>
 </ul>
 <h1 id="帮助中心-💁🏻"><a class="header-anchor" href="#帮助中心-💁🏻">¶ </a><strong>帮助中心 💁🏻</strong></h1>
@@ -163,7 +164,7 @@ function sidebar_toggle() {
 </p><p><a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html">Lambda Expressions</a></p>
 </div>
 <p>Lambda 表达式的基本语法如下，其对应一个函数式接口（即只有一个方法的接口）。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(param1, param2, ...) -&gt; expression 或</span><br><span class="line">(param1, param2, ...) -&gt;&#123; statements; &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(param1, param2, ...) -&gt; expression 或</span><br><span class="line">(param1, param2, ...) -&gt; &#123; statements; &#125;</span><br></pre></td></tr></table></figure>
 <p>Stream API 用于处理集合和数组等数据源的元素序列，提供了一种流式操作的方式，可以用于对数据进行过滤、映射、排序、聚合等各种操作，从而更加方便和高效地处理数据。结合 Stream API 与 Lambda 表达式，代码可以变得更加简洁易懂。</p>
 <p>在 Java 8 之前，如果我们想过滤列表中的数据，我们只能这样做：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LambdaExpressions</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> List&lt;Car&gt; <span class="title function_">findCarsOldWay</span><span class="params">(List&lt;Car&gt; cars)</span> &#123;</span><br><span class="line">        List&lt;Car&gt; selectedCars = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (Car car : cars) &#123;</span><br><span class="line">            <span class="keyword">if</span> (car.kilometers &lt; <span class="number">50000</span>) &#123;</span><br><span class="line">                selectedCars.add(car);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> selectedCars;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>

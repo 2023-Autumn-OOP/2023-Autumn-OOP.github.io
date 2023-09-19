@@ -313,7 +313,7 @@ img {
 
 .off-canvas-content .book-content .highlight,
 .off-canvas-content .book-content pre {
-  font-family: 'Consolas', 'Microsoft YaHei UI';
+  font-family: 'Consolas', 'Microsoft YaHei', 'sans-serif';
   background: #f7f7f7;
   color: #4d4d4c;
   line-height: 1.2rem;
@@ -328,11 +328,12 @@ img {
 }
 
 .off-canvas-content .book-content code {
-  font-family: 'Consolas', 'Microsoft YaHei UI';
+  font-family: 'Consolas', 'Microsoft YaHei', 'sans-serif';
   border-radius: 3px;
   padding: 2px 4px;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  font-size: 100% !important;
 }
 
 .off-canvas-content .book-content pre {
