@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          Lab-4 - BUAA 2023 OOP
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="/css/collapse.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>BUAA 2023 OOP</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <h1 id="Lab-🔬"><a class="header-anchor" href="#Lab-🔬">¶ </a><strong>Lab 🔬</strong></h1>
+<ul>
+<li><a href="/2023/Lab-1"><s>Lab 1</s></a></li>
+<li><a href="/2023/Lab-2"><s>Lab 2</s></a></li>
+<li><a href="/2023/Lab-3">Lab 3</a> ⏳</li>
+<li><a href="/2023/Lab-4">Lab 4</a> ✨</li>
+<li>To Be Continued… 🫣</li>
+</ul>
+<h1 id="迭代任务-📽️"><a class="header-anchor" href="#迭代任务-📽️">¶ </a><strong>迭代任务 📽️</strong></h1>
+<ul>
+<li><a href="/2023/Project-1">迭代 1</a> ✨</li>
+<li>To Be Continued… 🙈</li>
+</ul>
+<h1 id="帮助中心-💁🏻"><a class="header-anchor" href="#帮助中心-💁🏻">¶ </a><strong>帮助中心 💁🏻</strong></h1>
+<ul>
+<li><a href="/2023/Configure-Java-Environment">Java 环境配置</a></li>
+<li><a href="/2023/Java-Features-Summary">Java 8 - 17 新特性总结</a></li>
+<li><a href="/2023/Lab-Template">Lab 问答报告模板</a></li>
+<li><a href="/2023/patpat-User-Guide">patpat 使用指南</a></li>
+<li><a href="/2023/Q-A">Q &amp; A</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <h1 id="Lab-4-封装（Encapsulation）"><a class="header-anchor" href="#Lab-4-封装（Encapsulation）">¶ </a>Lab 4: 封装（Encapsulation）</h1>
+<div class="admonition error"><p>本次 Lab 时长为 <strong>2+</strong> 周，DDL 为 <strong>10 月 13 日 23:59</strong>，希望大家度过一个愉快的国庆假期。🥳</p>
+</div>
+<div class="admonition note"><p>附件下载（包括问答题和实验报告模板）：<a target="_blank" rel="noopener" href="https://bhpan.buaa.edu.cn/link/AA96D0CA694BB74ABFA070F38B6C527AC6">https://bhpan.buaa.edu.cn/link/AA96D0CA694BB74ABFA070F38B6C527AC6</a></p>
+</div>
+<h2 id="实验目的"><a class="header-anchor" href="#实验目的">¶ </a>实验目的</h2>
+<ul>
+<li>理解封装含义</li>
+<li>理解信息隐藏的必要性</li>
+<li>掌握访问控制修饰符的使用
+<ul>
+<li>私有成员（变量和方法）的理解和使用</li>
+<li>共有成员的理解和使用</li>
+<li>保护成员的理解和使用</li>
+<li>使用不加任何权限修饰符的成员</li>
+</ul>
+</li>
+<li>加深对“类和对象”的理解</li>
+</ul>
+<h2 id="注意事项"><a class="header-anchor" href="#注意事项">¶ </a>注意事项</h2>
+<p>随着代码量的增加，建议建立一个自己的统一且良好的<strong>代码风格</strong>，比如<strong>命名风格</strong>（camelCase、PascalCase 等）、缩进方式（空格数量、switch-case 缩不缩进等）、开闭大括号换不换行等容易引发战争（迫真）的东西，以养成良好的编程习惯。</p>
+<div class="admonition info"><p>比如命名规范，可以参考 Oracle 官网的 <a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/javase/codeconventions-namingconventions.html">Naming Conventions</a>。</p>
+</div>
+<p>编程题最好为每一个类编写一个完备的测试类，覆盖尽可能多的输入、函数调用、输出，以证明代码正确实现了功能。</p>
+<p>如果编程题使用了 package 语句，应当确保提交时目录结构和 package 语句表达的包结构相同。（IDE 很多时候会帮你做。）</p>
+<p>编程题在给出了具体需求的情况下，<strong>可以根据自己的需要添加额外的方法</strong>，合理即可。</p>
+<hr>
+<h2 id="1-初始化（Initialization）"><a class="header-anchor" href="#1-初始化（Initialization）">¶ </a>1. 初始化（Initialization）</h2>
+<p>阅读并运行下面这段代码，尝试理解 Java 中初始化的顺序。</p>
+<div class='collapse'>
+      <div class='collapse-ctrl collapse-cardtitle' onclick='collapseToggle(this)'><div class='collapse-hint-ico'><img style="pointer-events: none;" width="12" height="12" src="/expand.png"/></div><span class='collapse-hint-show'>展开代码</span><span class='collapse-hint-hide'>收起代码</span></div>
+      <div class='collapse-content'><div class='content-flex collapse-cardborder'><div>
+          <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line">    <span class="type">int</span> value;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">A</span> <span class="variable">a1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">A</span>(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">A</span><span class="params">(<span class="type">int</span> i)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;initialize A&quot;</span> + i);</span><br><span class="line">        value = i;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">A</span><span class="params">(A a)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;copy from A&quot;</span> + a.value);</span><br><span class="line">        value = a.value;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="type">A</span> <span class="variable">a2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">A</span>(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span> &#123;</span><br><span class="line">    A a8;</span><br><span class="line">    <span class="comment">// A a7 = new A(a6);</span></span><br><span class="line">    <span class="type">A</span> <span class="variable">a6</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">A</span>(<span class="number">6</span>);</span><br><span class="line">    <span class="keyword">static</span> <span class="type">A</span> <span class="variable">a3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">A</span>(<span class="number">3</span>);</span><br><span class="line">    <span class="keyword">static</span> A a4;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        a4 = <span class="keyword">new</span> <span class="title class_">A</span>(<span class="number">4</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="type">A</span> <span class="variable">a5</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">A</span>(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">B</span><span class="params">(<span class="type">int</span> i)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;initialize B&quot;</span> + i);</span><br><span class="line">        a8 = <span class="keyword">new</span> <span class="title class_">A</span>(<span class="number">8</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">A</span> <span class="variable">a7</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">A</span>(a6);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Initialization</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">B</span> <span class="variable">b1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">B</span>(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">static</span> B b2;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;main begins&quot;</span>);</span><br><span class="line">        <span class="type">A</span> <span class="variable">a9</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">A</span>(<span class="number">9</span>);</span><br><span class="line">        b2 = <span class="keyword">new</span> <span class="title class_">B</span>(<span class="number">2</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;main ends&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</div></div>
+      </div>
+  </div>
+<div class="admonition note"><p>Question 1 至 Question 4 均基于该段代码。</p>
+</div>
+<h3 id="Quesion-1"><a class="header-anchor" href="#Quesion-1">¶ </a>Quesion 1</h3>
+<p>阅读这段代码，<strong>给出程序的输出</strong>。</p>
+<h3 id="Question-2"><a class="header-anchor" href="#Question-2">¶ </a>Question 2</h3>
+<p>对于非静态属性，它的初始化方法有两种：</p>
+<ul>
+<li>在属性定义处显式初始化（如本例中的 <code>a6</code>）</li>
+<li>在构造方法或非静态方法中初始化（如本例中的 <code>a8</code>）</li>
+</ul>
+<p><strong>回答下面两个问题：</strong></p>
+<ol>
+<li>这段代码能够证明“在属性定义处初始化的属性，比在方法中初始化的属性先被初始化”吗？</li>
+<li>这段代码能够证明“在属性定义处初始化的属性，初始化顺序等同于他们在类定义中出现的顺序”吗？</li>
+</ol>
+<h3 id="Question-3"><a class="header-anchor" href="#Question-3">¶ </a>Question 3</h3>
+<p>请尝试仿照 Question2 的内容，<strong>描述静态属性的初始化方式和实际初始化时的顺序</strong>。</p>
+<h3 id="Question-4"><a class="header-anchor" href="#Question-4">¶ </a>Question 4</h3>
+<p>已知 <code>static</code> 属性的初始化、<code>static</code> 块的执行，只在 JVM 进行类加载的时候执行，<strong>请回答下面的问题</strong>。</p>
+<p>这段代码能够证明“在类的实例第一次被构造、或类的静态属性和静态方法第一次被访问时，JVM 会执行类加载”吗？如果不能，请尝试修改代码并证明。</p>
+<blockquote>
+<p><strong>题外话</strong></p>
+<p>懒加载：Lazy Load，对某资源只在需要时才寻找其存在并初始化；对立面是预加载。</p>
+<p>预加载：提前加载好所有资源，等待使用资源的那一刻。</p>
+<p>对于一些使用频率较低但初始化开销很大的资源，懒加载可以避免他们给程序的初始化增加过多的负担。</p>
+<p>JVM 的类加载是懒加载，只有在程序第一次使用到某个类时才去尝试读取其<code>.class</code>文件。类加载只会进行一次，这一次类加载会完成所有的静态初始化工作。更多内容会在后续课程讲解 RTTI 和反射的时候提到。</p>
+<p>例如，在游戏编程中，当某一个类的所有实例都使用同一批贴图文件时，可以将贴图资源声明为 static 属性并直接（或在 static 块）初始化。让类的贴图属性引用这些静态资源，这样就可以避免为每一个对象构造单独的贴图文件导致的内存浪费和时间浪费。</p>
+</blockquote>
+<hr>
+<h2 id="2-单例模式（Singleton-Pattern）"><a class="header-anchor" href="#2-单例模式（Singleton-Pattern）">¶ </a>2. 单例模式（Singleton Pattern）</h2>
+<p>阅读下面这段代码，它实现了经典设计模式之一：单例模式。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Singleton 一个最简单的单例模式的实现</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Singleton</span> <span class="variable">uniqueInstance</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Singleton</span>();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title function_">getInstance</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> uniqueInstance;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">foo</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Aha!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Question-5"><a class="header-anchor" href="#Question-5">¶ </a>Question 5</h3>
+<p>其他的外部类可以通过 <code>new Singleton()</code> 来构造一个新的 <code>Singleton</code> 变量吗？</p>
+<h3 id="Question-6"><a class="header-anchor" href="#Question-6">¶ </a>Question 6</h3>
+<p>本题给出的 <code>Singleton</code> 类的写法被称为单例模式，是因为这个类最多只可能有 1 个实例同时存在。<strong>为什么只可能有 1 个？这个唯一的实例在什么时候被构造？</strong></p>
+<h3 id="Question-7"><a class="header-anchor" href="#Question-7">¶ </a>Question 7</h3>
+<p>请写出任意一种外部类调用 Singleton 类的 <code>foo()</code> 的方法。</p>
+<blockquote>
+<p><strong>题外话</strong></p>
+<p>这里的 <code>uniqueInstance</code> 初始化方法不是懒加载（Lazy Load）的，因为 <code>uniqueInstance</code> 在类加载时就被初始化了，虽然我们可能最终并用不到它。你可以思考一下如何实现一个懒加载的单例模式。(不要求写在问答报告里。）</p>
+</blockquote>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure class="avatar avatar-lg">
+          <img src="/avatar.svg" alt="...">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>Love. T.A. 🥰</div>
+      <div>2023-09-26</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+<!-- hexo injector body_end start -->
+<script src="/js/collapse.js"></script>
+<!-- hexo injector body_end end --></body>
+</html>
+
+
+<script src="/js/book.js"></script>
