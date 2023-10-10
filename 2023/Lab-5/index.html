@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          Lab-5 - BUAA 2023 OOP
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="/css/collapse.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>BUAA 2023 OOP</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <h1 id="Lab-🔬"><a class="header-anchor" href="#Lab-🔬">¶ </a><strong>Lab 🔬</strong></h1>
+<ul>
+<li><a href="/2023/Lab-1"><s>Lab 1</s></a></li>
+<li><a href="/2023/Lab-2"><s>Lab 2</s></a></li>
+<li><a href="/2023/Lab-3"><s>Lab 3</s></a></li>
+<li><a href="/2023/Lab-4">Lab 4</a> ⚠️</li>
+<li><a href="/2023/Lab-5">Lab 5</a> ✨</li>
+<li>To Be Continued… 🫣</li>
+</ul>
+<h1 id="迭代任务-📽️"><a class="header-anchor" href="#迭代任务-📽️">¶ </a><strong>迭代任务 📽️</strong></h1>
+<ul>
+<li><a href="/2023/Project-1">迭代一</a> ⚠️</li>
+<li><a href="/2023/Project-2">迭代二</a> ✨</li>
+<li>To Be Continued… 🙈</li>
+</ul>
+<h1 id="帮助中心-💁🏻"><a class="header-anchor" href="#帮助中心-💁🏻">¶ </a><strong>帮助中心 💁🏻</strong></h1>
+<ul>
+<li><a href="/2023/Configure-Java-Environment">Java 环境配置</a></li>
+<li><a href="/2023/Java-Features-Summary">Java 8 - 17 新特性总结</a></li>
+<li><a href="/2023/Lab-Template">Lab 问答报告模板</a></li>
+<li><a href="/2023/patpat-User-Guide">patpat 使用指南</a></li>
+<li><a href="/2023/Q-A">Q &amp; A</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <h1 id="Lab-5-继承（Inheritance）"><a class="header-anchor" href="#Lab-5-继承（Inheritance）">¶ </a>Lab 5: 继承（Inheritance）</h1>
+<div class="admonition error"><p>本次 Lab 时长为 <strong>2</strong> 周，DDL 为 <strong>10 月 23 日 23:59</strong>。</p>
+</div>
+<div class="admonition note"><p>附件下载（包括问答题和实验报告模板）：<a target="_blank" rel="noopener" href="https://bhpan.buaa.edu.cn/link/AA96D0CA694BB74ABFA070F38B6C527AC6">https://bhpan.buaa.edu.cn/link/AA96D0CA694BB74ABFA070F38B6C527AC6</a></p>
+</div>
+<h2 id="实验目的"><a class="header-anchor" href="#实验目的">¶ </a>实验目的</h2>
+<ul>
+<li>理解继承的必要性</li>
+<li>理解继承的基本概念：单继承，多继承</li>
+<li>掌握继承的使用
+<ul>
+<li>子类属性、构造方法和一般成员方法的书写的编写</li>
+<li>变量隐藏</li>
+<li><code>this</code> 和 <code>super</code> 的使用</li>
+<li>向上映射</li>
+<li>在继承的基础上加深理解权限控制符的使用</li>
+<li>保护成员的使用</li>
+<li>方法覆盖（初步，重点放在多态一章）</li>
+</ul>
+</li>
+<li>复合与继承的区别及使用</li>
+</ul>
+<h2 id="注意事项"><a class="header-anchor" href="#注意事项">¶ </a>注意事项</h2>
+<p>随着代码量的增加，建议建立一个自己的统一且良好的<strong>代码风格</strong>，比如<strong>命名风格</strong>（camelCase、PascalCase 等）、缩进方式（空格数量、switch-case 缩不缩进等）、开闭大括号换不换行等容易引发战争（迫真）的东西，以养成良好的编程习惯。</p>
+<div class="admonition info"><p>比如命名规范，可以参考 Oracle 官网的 <a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/javase/codeconventions-namingconventions.html">Naming Conventions</a>。大家可以在 IDEA、VSCode 中上找到对应的代码风格检查工具，也可以自己设置自己的代码风格文件，例如：<a target="_blank" rel="noopener" href="https://github.com/jdneo/vscode-checkstyle">VSCode 插件 checkstyle</a>。</p>
+</div>
+<p>编程题最好为每一个类编写一个完备的测试类，覆盖尽可能多的输入、函数调用、输出，以证明代码正确实现了功能。</p>
+<p>如果编程题使用了 <code>package</code> 语句，应当确保提交时目录结构和 <code>package</code> 语句表达的包结构相同。（IDE 很多时候会帮你做。）</p>
+<h2 id="实验题目"><a class="header-anchor" href="#实验题目">¶ </a>实验题目</h2>
+<div class="admonition info"><p>本次 Lab 的示例代码位于<a target="_blank" rel="noopener" href="https://bhpan.buaa.edu.cn/link/AA96D0CA694BB74ABFA070F38B6C527AC6">北航云盘</a>的附件里。</p>
+</div>
+<h3 id="Question1：Package"><a class="header-anchor" href="#Question1：Package">¶ </a>Question1：Package</h3>
+<p>浏览 Code 目录下的 Question01 目录，不允许变更目录结构和文件位置，只允许在文件中添加 <code>package</code> 和 <code>import</code> 语句，使根目录下 <code>build</code> 和 <code>test</code> 文件中的指令可以无报错顺利执行。</p>
+<p>你可以把 Question01 目录复制到解答的压缩包中，或者在解答报告中直接以文字或截图说明你的改动。</p>
+<h3 id="Question2：权限"><a class="header-anchor" href="#Question2：权限">¶ </a>Question2：权限</h3>
+<p>阅读 Code 目录下的 Question02 目录，根据你对访问权限的理解。将文件中所有无法通过编译的语句注释掉。</p>
+<p>你遇到的问题可能会集中在 <code>protected</code> 和默认访问权限。<br>
+从这次实验和上一次实验，可以引申出两个问题，你需要在解答中说出你的想法。</p>
+<ul>
+<li>Lab 3 中的单例模式，或者说所有构造方法都是 <code>private</code> 时，可能有子类吗？</li>
+<li><code>final</code> 类可以视为所有构造方法都是 <code>private</code> 的类吗？</li>
+</ul>
+<blockquote>
+<p>如果不知道怎么编译和运行，参见第一题。</p>
+</blockquote>
+<p>你可以把 Question02 目录复制到解答的压缩包中，或者在解答报告中直接以文字或截图说明你的改动。</p>
+<h3 id="Question3：-Hide-和-Override"><a class="header-anchor" href="#Question3：-Hide-和-Override">¶ </a>Question3： Hide 和 Override</h3>
+<p>阅读下面代码（或参见 Code 目录下的 Question 03）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Parent</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">foo</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;foo() of Parent&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">bar</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;bar() of Parent&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Child</span> <span class="keyword">extends</span> <span class="title class_">Parent</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">foo</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;foo() of Child&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">bar</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;bar() of Child&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Parent</span> <span class="variable">f1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Parent</span>();</span><br><span class="line">        System.out.println(f1.num);</span><br><span class="line"></span><br><span class="line">        <span class="type">Parent</span> <span class="variable">f2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Child</span>();</span><br><span class="line">        System.out.println(f2.num);</span><br><span class="line"></span><br><span class="line">        <span class="type">Child</span> <span class="variable">c</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Child</span>();</span><br><span class="line">        System.out.println(c.num);</span><br><span class="line"></span><br><span class="line">        f1.foo();</span><br><span class="line">        f2.foo();</span><br><span class="line">        c.foo();</span><br><span class="line"></span><br><span class="line">        f1.bar();</span><br><span class="line">        f2.bar();</span><br><span class="line">        c.bar();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>回答下面问题。</p>
+<ol>
+<li>执行 <code>java Test</code>，程序的运行结果是什么？</li>
+<li>如果将子类的 <code>protected void foo()</code> 改为默认访问权限，程序还能通过编译吗？</li>
+<li>如果将子类的 <code>protected void bar()</code> 改为默认访问权限，程序还能通过编译吗？</li>
+<li><code>foo</code> 和 <code>bar</code> 的测试输出结果表现一致吗？</li>
+<li>属性、静态方法、非静态方法，哪些可以覆盖（重写 / override），哪些可以隐藏？</li>
+</ol>
+<blockquote>
+<p><strong>题外话：</strong></p>
+<p>在想要覆盖的时候，主动写一个 <code>@Override</code> 注解，可以提高代码可读性，也可以防止你想要覆盖但是写成了重载的情况发生。不想让父类方法在子类中被覆盖的时候，将父类方法声明为 <code>final</code>。</p>
+</blockquote>
+<h3 id="Question4：Shape"><a class="header-anchor" href="#Question4：Shape">¶ </a>Question4：Shape</h3>
+<p>阅读下面的二维形状类 <code>Shape</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">Shape</span> &#123;</span><br><span class="line">    <span class="keyword">protected</span> <span class="type">double</span> a;</span><br><span class="line">    <span class="keyword">protected</span> <span class="type">double</span> b;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Shape</span><span class="params">()</span> &#123; <span class="built_in">this</span>(<span class="number">0.0</span>, <span class="number">0.0</span>); &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Shape</span><span class="params">(<span class="type">double</span> a, <span class="type">double</span> b)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.a = a;</span><br><span class="line">        <span class="built_in">this</span>.b = b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** calcArea</span></span><br><span class="line"><span class="comment">    * 计算形状的面积</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@return</span> 面积</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">abstract</span> <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">calcArea</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 其他必要的方法，比如 getter 和 setter */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>你的任务是：</p>
+<ul>
+<li>编写 <code>Rectangle </code>类，a 和 b 分别代表矩形两条边的长度（长和宽）；</li>
+<li>编写 <code>Rhombus </code>类，a 和 b 分别代表两条菱形对角线的长度；</li>
+<li>编写 <code>Ellipse</code> 类，a 和 b 分别代表椭圆两个半轴（半长轴和半短轴）的长度；</li>
+<li>编写一个测试类，构造子类对象并测试。</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li>上述三个类都继承自 <code>Shape</code> 类，都必须要 <code>override</code> 方法 <code>calcArea</code>；</li>
+<li>a 和 b 都不能是负数，当通过 <code>constructor</code> 或者 <code>setter</code> 设定为负数时，将对应的值置为 0.0，或 <code>throw</code> 异常；</li>
+<li>a 和 b 的大小关系没有任何约束，没有 a 必须不小于 b 的说法。</li>
+</ul>
+<blockquote>
+<p><strong>题外话</strong></p>
+<p>我们知道属性不设置为 <code>public</code> 是为了保护数据，如果 a 和 b 在 <code>Shape</code> 中的访问权限被设置为 <code>private</code>，在不添加新的属性的情况下，子类想要实现自己的 <code>calcArea()</code>该怎么办？在解答中写出你的思考。</p>
+</blockquote>
+<h3 id="Question5：车车"><a class="header-anchor" href="#Question5：车车">¶ </a>Question5：车车</h3>
+<p>定义一个 <code>Vehicle</code>类，在其中声明一个属性代表这个交通工具有多少个轮子，提供对这个属性的 <code>setter</code>。提供轮子类、引擎类。创建几个 <code>Vehicle</code> 的导出类：<code>Motorbike</code>、<code>Car</code>、<code>Tank</code>。自由发挥，在测试类中构造这几种交通工具，并测试功能。</p>
+<p>其中 <code>Motorbike</code> 类需增加两个属性：<code>driver</code> 和 <code>passenger</code> 表示司机和乘客。增加你觉得合适的方法。</p>
+<p>定义一个 <code>Person</code> 类，加入你觉得合适的属性和方法，生成 <code>brother</code> 和 <code>sister</code> 两个对象，结合 <code>Motorbike</code> 试图实现以下场景：</p>
+<ul>
+<li>生成三个对象（<code>Motorbike</code> 实例 <code>motorbike</code>，<code>Person</code> 实例 <code>brother</code>、<code>sister</code>）</li>
+<li>设置 <code>motorbike</code> 的司机与乘客为 <code>brother</code> 和 <code>sister</code></li>
+<li>打印 <code>motorbike</code> 的信息（尽可能详细）</li>
+<li>调用 <code>sister</code> 的 <code>say()</code> 方法，输出“不像我，我只会心疼 giegie~”</li>
+</ul>
+<blockquote>
+<p>备注：这道题目绝不是 2221 同学们的助教出的。</p>
+</blockquote>
+<h3 id="Question6：其实-OOP-Lab-里面也可以写操作系统"><a class="header-anchor" href="#Question6：其实-OOP-Lab-里面也可以写操作系统">¶ </a>Question6：其实 OOP Lab 里面也可以写操作系统</h3>
+<p>操作系统中，有一个概念叫做文件系统。以 Windows 为例，其文件系统中的文件可以粗略地分为以下几种：</p>
+<ul>
+<li>文件夹（包含一个子目录）</li>
+<li>快捷方式（打开它等价于打开其所指向的文件）</li>
+<li>可执行文件（.exe 这种不需要借助其他程序就能直接运行的文件）</li>
+<li>不可执行文件（本身无法运行，需要借助其他程序（打开方式）才能正确使用）</li>
+</ul>
+<p>以上四种，都是“文件”。所有文件的属性都有：</p>
+<ul>
+<li>名称（不能为空，字符集是 ASCII 可打印字符）</li>
+<li>创建时间（年月日时分秒）</li>
+<li>大小（以 byte 为单位，是整数）</li>
+<li>内容（字节序列）</li>
+<li>位置（直接包含此文件的文件夹）</li>
+</ul>
+<p><strong>文件夹</strong></p>
+<blockquote>
+<ul>
+<li>不考虑 OS 层面的内存对齐，文件夹的大小等于其内部所有文件的大小的加和；</li>
+<li>文件夹的额外属性是，它的直接子目录中包含的文件夹数和其他文件数；</li>
+<li>打开文件夹，会切换当前的工作路径到该文件夹下，初始工作路径我们认为是 C 盘；</li>
+<li>可以在文件夹中添加新的文件。</li>
+</ul>
+</blockquote>
+<p><strong>快捷方式</strong></p>
+<blockquote>
+<ul>
+<li>本质是一个类型为 .lnk 的文件；</li>
+<li>快捷方式的额外属性是其指向的文件（可以是任何文件，包括快捷方式和文件夹）；</li>
+<li>打开快捷方式，等价于打开其指向的文件；指向的文件被删除后，无法打开快捷方式；</li>
+<li>注意，快捷方式的所有属性，都代表其本身，不代表其指向的文件。</li>
+</ul>
+</blockquote>
+<p><strong>可执行文件</strong></p>
+<blockquote>
+<p>打开就是运行其内容。</p>
+</blockquote>
+<p><strong>不可执行文件</strong></p>
+<blockquote>
+<p>没有给出打开方式的情况下，无法被正确打开。</p>
+</blockquote>
+<p><strong>你的任务是</strong></p>
+<ul>
+<li>抽象出上述文本中的属性、方法、继承和组合信息，编写多个类描述上述关系。</li>
+<li>不用实现很具体的功能，甚至不用实现可以运行的程序。但是不能有逻辑硬伤和编译错误。</li>
+</ul>
+<blockquote>
+<p><strong>题外话</strong></p>
+<p>你可能需要回忆一下 C 中的结构体，学习一下 Java 中的 enum 类。</p>
+</blockquote>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure class="avatar avatar-lg">
+          <img src="/avatar.svg" alt="...">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>Love. T.A. 🥰</div>
+      <div>2023-10-10</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+<!-- hexo injector body_end start -->
+<script src="/js/collapse.js"></script>
+<!-- hexo injector body_end end --></body>
+</html>
+
+
+<script src="/js/book.js"></script>
