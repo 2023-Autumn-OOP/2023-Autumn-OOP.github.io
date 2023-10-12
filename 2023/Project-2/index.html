@@ -312,7 +312,7 @@ function sidebar_toggle() {
 </ol>
 <p><strong>商品名称</strong></p>
 <ol>
-<li>由英文字母、连接符<code>-</code>、下划线<code>_</code>组成。</li>
+<li>由英文字母、连接符 <code>-</code>、下划线 <code>_</code> 组成。</li>
 <li>第一位必须为英文字母。</li>
 <li>长度在 1～50 个字符之间。</li>
 </ol>
@@ -354,7 +354,7 @@ function sidebar_toggle() {
 <p>需满足要求如下</p>
 <ul>
 <li>该店铺已上架此商品，相当于补充商品数量。</li>
-<li>该店铺未上架此商品，此商品在该商家其它店铺上架过。</li>
+<li>该店铺未上架此商品，此商品在该商家其它店铺上架过。<strong>即商品状态仍为已上架。</strong></li>
 </ul>
 <p><strong>店铺编号</strong></p>
 <ol>
@@ -378,7 +378,7 @@ function sidebar_toggle() {
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal argument count</span><br></pre></td></tr></table></figure>
 <p><strong>2.2.3 未登录</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please log in first</span><br></pre></td></tr></table></figure>
-<p><strong>2.2.4 登录用户身份不是<code>Merchant</code></strong></p>
+<p><strong>2.2.4 登录用户身份不是 <code>Merchant</code></strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Permission denied</span><br></pre></td></tr></table></figure>
 <p><strong>2.2.5 店铺编号不合法</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal shop id</span><br></pre></td></tr></table></figure>
@@ -398,7 +398,7 @@ function sidebar_toggle() {
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal argument count</span><br></pre></td></tr></table></figure>
 <p><strong>2.2.12 未登录</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please log in first</span><br></pre></td></tr></table></figure>
-<p><strong>2.2.13 登录用户身份不是<code>Merchant</code></strong></p>
+<p><strong>2.2.13 登录用户身份不是 <code>Merchant</code></strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Permission denied</span><br></pre></td></tr></table></figure>
 <p><strong>2.2.14 店铺编号不合法</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal shop id</span><br></pre></td></tr></table></figure>
@@ -433,9 +433,9 @@ function sidebar_toggle() {
 <h4 id="3-2-命令反馈说明"><a class="header-anchor" href="#3-2-命令反馈说明">¶ </a>3.2 命令反馈说明</h4>
 <p><strong>3.2.1 成功打印信息</strong></p>
 <p>每家店铺占一行，按店铺编号由小到大输出。</p>
-<p>顾客与商家打印格式为<code>店铺id 店铺名称</code></p>
+<p>顾客与商家打印格式为 <code>店铺id 店铺名称</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 举例</span><br><span class="line">S-1 Buaa</span><br><span class="line">S-3 Al_1</span><br></pre></td></tr></table></figure>
-<p>管理员打印格式为<code>Kakafee卡号 店铺id 店铺名称</code></p>
+<p>管理员打印格式为 <code>Kakafee卡号 店铺id 店铺名称</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 举例</span><br><span class="line">000117871002 S-1 Buaa</span><br><span class="line">000117871002 S-2 QLBL</span><br></pre></td></tr></table></figure>
 <p><strong>无参数</strong></p>
 <p><strong>3.2.2 参数数量不合法</strong></p>
@@ -456,7 +456,7 @@ function sidebar_toggle() {
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal Kakafee number</span><br></pre></td></tr></table></figure>
 <p><strong>3.2.8 Kakafee 卡号对应的用户未注册</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Kakafee number not exists</span><br></pre></td></tr></table></figure>
-<p><strong>3.2.9 Kakafee 卡号对应的用户身份不是<code>Merchant</code></strong></p>
+<p><strong>3.2.9 Kakafee 卡号对应的用户身份不是 <code>Merchant</code></strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Kakafee number does not belong to a Merchant</span><br></pre></td></tr></table></figure>
 <p><strong>3.2.10 Kakafee 卡号对应的商家名下无店铺</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Shop not exists</span><br></pre></td></tr></table></figure>
@@ -482,7 +482,10 @@ function sidebar_toggle() {
 </ul>
 <h4 id="4-2-命令反馈说明"><a class="header-anchor" href="#4-2-命令反馈说明">¶ </a>4.2 命令反馈说明</h4>
 <p><strong>4.2.1 成功打印信息</strong></p>
-<p>每件商品占一行，按照 shopId 从小到大输出；对于同一商店的商品，按照 commodityId 从小到大输出。格式为<code>店铺id: 商品id 商品名称 商品价格 商品数量</code>，其中，商品价格保留两位小数，单位为 yuan。</p>
+<p>每件商品占一行，按照 shopId 从小到大输出；对于同一商店的商品，按照 commodityId 从小到大输出。格式为 <code>店铺id: 商品id 商品名称 商品价格 商品数量</code>，其中，商品价格保留两位小数，单位为 yuan。</p>
+<div class="admonition warning"><p class="admonition-title">提示
+</p><p>库存为 0 的商品也需要打印，不打印该店铺被下架的商品。（但是<a href="#5-1-%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E">查找商品</a>时库存为 0 的商品不打印。）</p>
+</div>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 举例</span><br><span class="line"># (按照 shopId 由小到大的顺序，先打印编号为 1 店铺的商品信息)</span><br><span class="line">S-1: C-2 book 10.00yuan 999</span><br><span class="line">S-1: C-4 pencil 2.00yuan 20</span><br><span class="line"># ... (按照 commodityId 的顺序打印该商店其他商品信息)</span><br><span class="line">S-2: C-1 potato 3.50yuan 50</span><br><span class="line">S-2: C-3 tomato 1.20yuan 40</span><br></pre></td></tr></table></figure>
 <p><strong>无参数</strong></p>
 <p><strong>4.2.2 参数数量不合法</strong></p>
@@ -564,7 +567,7 @@ function sidebar_toggle() {
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal argument count</span><br></pre></td></tr></table></figure>
 <p><strong>6.2.3 未登录</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please log in first</span><br></pre></td></tr></table></figure>
-<p><strong>6.2.4 登录用户身份不是<code>Customer</code></strong></p>
+<p><strong>6.2.4 登录用户身份不是 <code>Customer</code></strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Permission denied</span><br></pre></td></tr></table></figure>
 <p><strong>6.2.5 店铺编号不合法</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal shop id</span><br></pre></td></tr></table></figure>
@@ -596,9 +599,12 @@ function sidebar_toggle() {
 </table>
 <ul>
 <li>参数仅有商品编号：下架商品。商家仅可以下架自己店铺的商品，管理员可以下架任意商家的商品。对于下架的商品 C，不仅要清空 C 在所有店铺中的库存，同时未来商家也不能再重新上架 C。</li>
-<li>参数为商品编号和店铺编号：清空库存。商家仅可以清空自己某店铺的某商品的库存，管理员可以清空任意店铺的任意商品的库存。对于店铺 S 中商品 C 的下架，指的是清空 C 在 S 中的库存，未来商家仍可在 S 中上架 C。</li>
+<li>参数为商品编号和店铺编号：清空库存。商家仅可以清空自己某店铺的某商品的库存，管理员可以清空任意店铺的任意商品的库存。对于店铺 S 中商品 C 的下架，指的是<strong>清空 C 在 S 中的库存，并在 S 中删除 C 的记录</strong>，但未来商家仍可在 S 中上架 C。</li>
 <li>以上两种情况均需要清空库存，当库存为 0 时也不报错。</li>
 </ul>
+<div class="admonition warning"><p class="admonition-title">提示
+</p><p>对于有可选参数的命令，即清空某店铺中某商品的库存，并<strong>不改变</strong>商品的上架状态，即使分别下架了所有店铺中的某商品，该商品状态仍然是“已上架”，且未来仍<strong>可以</strong>被添加到该商家的任意店铺。</p>
+</div>
 <h4 id="7-2-命令反馈说明"><a class="header-anchor" href="#7-2-命令反馈说明">¶ </a>7.2 命令反馈说明</h4>
 <p><strong>无可选参数</strong></p>
 <p><strong>7.2.1 下架商品成功</strong></p>
@@ -649,7 +655,7 @@ function sidebar_toggle() {
 <ul>
 <li>商家可以注销自己的店铺。</li>
 <li>管理员可以注销任意店铺。</li>
-<li>注销 店铺后，需将店铺中所有商品下架。</li>
+<li>注销店铺后，需将店铺中所有商品下架。</li>
 </ul>
 <h4 id="8-2-命令反馈说明"><a class="header-anchor" href="#8-2-命令反馈说明">¶ </a>8.2 命令反馈说明</h4>
 <p><strong>8.2.1 注销店铺成功</strong></p>
@@ -674,10 +680,10 @@ function sidebar_toggle() {
 <p>关于两种下架商品命令的区别</p>
 <ul>
 <li>下架某编号所有商品：将所有店铺中的该商品删除，并且商品状态标记为已下架。</li>
-<li>下架某店铺中某编号商品：只是将该店铺中该商品删除，并减少商家该商品数量。该商品仍可在该商家的其他商店上架，状态仍为已上架。</li>
+<li>下架某店铺中某编号商品：只是将该店铺中该商品删除，并减少商家该商品数量。该商品仍可在该商家的其他商店上架，状态<strong>仍为已上架</strong>。</li>
 </ul>
-<p>注销店铺后，需要下架店铺中的商品。</p>
-<h4 id="3-1-3-同意命令的不同格式"><a class="header-anchor" href="#3-1-3-同意命令的不同格式">¶ </a>3.1.3 同意命令的不同格式</h4>
+<p>注销店铺后，需要下架店铺中的商品。 此处的下架仅下架该店铺中的所有商品，即<strong>不改变</strong>商品的上架状态。</p>
+<h4 id="3-1-3-同一命令的不同格式"><a class="header-anchor" href="#3-1-3-同一命令的不同格式">¶ </a>3.1.3 同一命令的不同格式</h4>
 <p>对于同一命令不同格式，在命令反馈说明中将不同情况均分开进行了说明。实际编写过程中会有一些判断是共通的，大家可以视情况简化重复的代码。</p>
 <h3 id="3-2-实现思路"><a class="header-anchor" href="#3-2-实现思路">¶ </a>3.2 实现思路</h3>
 <h4 id="3-2-1-商品类的设计"><a class="header-anchor" href="#3-2-1-商品类的设计">¶ </a>3.2.1 商品类的设计</h4>
@@ -686,9 +692,9 @@ function sidebar_toggle() {
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Commodity 类</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回一个新的 Commodity 实例，其拥有与原对象除 count 属性以外相同的属性值</span></span><br><span class="line"><span class="keyword">public</span> Commodity <span class="title function_">getNewCommodity</span><span class="params">(<span class="type">int</span> count)</span> &#123;</span><br><span class="line">    <span class="type">Commodity</span> <span class="variable">newCommodity</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Commodity</span>(name, price, count);</span><br><span class="line">    newCommodity.setId(id);</span><br><span class="line">    <span class="keyword">return</span> newCommodity;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回一个新的 Commodity 实例，其拥有与原对象相同的属性值</span></span><br><span class="line"><span class="keyword">public</span> Commodity <span class="title function_">getNewCommodity</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 这个 count 是该对象的 count 属性，也就是 this.count</span></span><br><span class="line">    <span class="keyword">return</span> getNewCommodity(count);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>通过以上代码，我们可以获取一个全新的商品类的实例。<br>
 但其实本系统中并没有要求对于商品数量进行一个全局的统计，那我们不如在全局就干脆不要数量这个属性，只对店铺中的商品保留这个属性，也省去了维护数量关系的麻烦。</p>
-<p>相关实体类</p>
+<p>相关实体类：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CommodityUnit</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span> price;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Commodity</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> CommodityUnit commodityUnit;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>相关静态类</p>
+<p>相关静态类：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> HashMap&lt;String, CommodityUnit&gt; </span><br><span class="line">    commodityUnits = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span> <span class="variable">currentCommodityId</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title function_">getCommodityId</span><span class="params">()</span> &#123;</span><br><span class="line">    currentCommodityId++;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;C-&quot;</span> + currentCommodityId;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成一个新的 CommodityUnit 实例（对应上架一种新商品）</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Commodity <span class="title function_">getCommodity</span><span class="params">(String commodityName, </span></span><br><span class="line"><span class="params">                                     <span class="type">double</span> commodityPrice, </span></span><br><span class="line"><span class="params">                                     <span class="type">int</span> commodityCount)</span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">CommodityUnit</span> <span class="variable">commodityUnit</span> <span class="operator">=</span> </span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">CommodityUnit</span>(getCommodityId(), commodityName, commodityPrice);</span><br><span class="line">  </span><br><span class="line">    commodityUnits.put(commodityUnit.getId(), commodityUnit);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Commodity</span>(commodityUnit, commodityCount);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取一种已有商品的实例（对应上架一种已有商品）</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Commodity <span class="title function_">getCommodity</span><span class="params">(String CommodityId, </span></span><br><span class="line"><span class="params">                                     <span class="type">int</span> commodityCount)</span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">CommodityUnit</span> <span class="variable">commodityUnit</span> <span class="operator">=</span> commodityUnits.get(CommodityId);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Commodity</span>(commodityUnit, commodityCount);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 上架商品时如果该店铺已有该商品，视作补充数量，获取到对应商品对象添加数量即可</span></span><br><span class="line"><span class="comment">// 与享元模式无关，在此不做赘述</span></span><br></pre></td></tr></table></figure>
 <p>这里只是提供一个简单的思路以便参考。实际编写中，商品可能还需要记录所在商店的信息，大家可以视具体情况而定。<br>
 通过如上代码的实现，我们可以发现：尽管不同商店均存储着不同的商品实例，但是对于同一种商品，他们的<code>CommodityUnit</code> 属性均为同一个实例。</p>
