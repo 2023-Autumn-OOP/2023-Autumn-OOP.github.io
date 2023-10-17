@@ -171,7 +171,7 @@ function sidebar_toggle() {
 <h2 id="四、相关资料"><a class="header-anchor" href="#四、相关资料">¶ </a>四、相关资料</h2>
 <ol>
 <li><a target="_blank" rel="noopener" href="https://docs.qq.com/doc/DR3hpTmhTY2tVV1pX">常见问题解答 Q &amp; A</a></li>
-<li><a href="/2023/Java-Features-Summary/">Java 8 - 17 新特性总结</a>（其中的<code>Stream</code>与<code>Collection</code>很有用）</li>
+<li><a href="/2023/Java-Features-Summary/">Java 8 - 17 新特性总结</a>（其中的 <code>Stream</code> 与 <code>Collection</code> 很有用）</li>
 <li>对于商品类的设计，可以选择参考享元模式。感兴趣的同学可以看<a target="_blank" rel="noopener" href="https://www.runoob.com/design-pattern/flyweight-pattern.html">这个链接</a>。如果觉得这个概念有些抽象也没有关系，我们在 <a href="#%E5%9B%9B%E3%80%81HINTS">HINTS</a> 中也有讲解。</li>
 </ol>
 <h2 id="五、DDL及其他要求"><a class="header-anchor" href="#五、DDL及其他要求">¶ </a>五、DDL及其他要求</h2>
@@ -599,13 +599,22 @@ function sidebar_toggle() {
 </tbody>
 </table>
 <ul>
-<li>参数仅有商品编号：下架商品。商家仅可以下架自己店铺的商品，管理员可以下架任意商家的商品。对于下架的商品 C，不仅要清空 C 在所有店铺中的库存，同时未来商家也不能再重新上架 C。</li>
-<li>参数为商品编号和店铺编号：清空库存。商家仅可以清空自己某店铺的某商品的库存，管理员可以清空任意店铺的任意商品的库存。对于店铺 S 中商品 C 的下架，指的是<strong>清空 C 在 S 中的库存，并在 S 中删除 C 的记录</strong>，但未来商家仍可在 S 中上架 C。</li>
+<li>参数仅有商品编号：在所有店铺中下架该商品。商家仅可以下架自己所有店铺的商品，管理员可以下架任意商家的商品。对于下架的商品 C，不仅要清空 C 在所有店铺中的库存，同时未来商家也不能再重新上架 C。</li>
+<li>参数为商品编号和店铺编号：在商家的指定店铺下架该商品。商家仅可以下架自己某店铺的某商品，管理员可下架任意店铺的任意商品。对于店铺 S 中商品 C 的下架，指的是<strong>清空 C 在 S 中的库存，并在 S 中删除 C 的记录</strong>，商家仍可在他的所有店铺中上架该商品。</li>
 <li>以上两种情况均需要清空库存，当库存为 0 时也不报错。</li>
 </ul>
-<div class="admonition warning"><p class="admonition-title">提示
-</p><p>对于有可选参数的命令，即清空某店铺中某商品的库存，并<strong>不改变</strong>商品的上架状态，即使分别下架了所有店铺中的某商品，该商品状态仍然是“已上架”，且未来仍<strong>可以</strong>被添加到该商家的任意店铺。</p>
-</div>
+<p><strong>提示：</strong></p>
+<p>商品最终归属于商家。对于两条下架商品指令，都需要清空库存，它们的区别如下：</p>
+<ul>
+<li>
+<p>当商品在某个店铺下架时，它是店铺的下架商品，<strong>仍是商家的上架商品</strong>，商家<strong>可以</strong>在自己的所有店铺上架。</p>
+<p>再次在该店铺下架：输出商品不存在。</p>
+<p>查看商店商品：不打印该商品（因为该商品已下架）。</p>
+</li>
+<li>
+<p>当商品在全局下架时，它是店铺的下架商品，<strong>同时是商家的下架商品</strong>，商家<strong>不能</strong>再次上架。</p>
+</li>
+</ul>
 <h4 id="7-2-命令反馈说明"><a class="header-anchor" href="#7-2-命令反馈说明">¶ </a>7.2 命令反馈说明</h4>
 <p><strong>无可选参数</strong></p>
 <p><strong>7.2.1 下架商品成功</strong></p>
