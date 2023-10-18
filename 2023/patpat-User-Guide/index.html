@@ -167,7 +167,7 @@ function sidebar_toggle() {
 <h1 id="2-patpat-使用方法"><a class="header-anchor" href="#2-patpat-使用方法">¶ </a>2. patpat 使用方法</h1>
 <h2 id="2-1-评测文件准备"><a class="header-anchor" href="#2-1-评测文件准备">¶ </a>2.1 评测文件准备</h2>
 <p>请<strong>严格按照</strong>如下的目录层级与命名准备好评测相关文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/                 <span class="comment"># 存放所有评测文件的根目录</span></span><br><span class="line">├── patpat.exe        <span class="comment"># Mac 与 Linux 用户程序无后缀，可重命名</span></span><br><span class="line">├── 1-22******-Name/  <span class="comment"># 第几次作业-学号-姓名</span></span><br><span class="line">│   └── src/              <span class="comment"># Java 项目源代码</span></span><br><span class="line">│       ├── Test.java         <span class="comment"># 程序入口</span></span><br><span class="line">│       ├── *.java            <span class="comment"># 其余 Java 文件</span></span><br><span class="line">│       └── com/buaa/main     <span class="comment"># Java 包（可选）</span></span><br><span class="line">└── <span class="built_in">test</span>/             <span class="comment"># 本地测评文件</span></span><br><span class="line">    ├── judge.yaml        <span class="comment"># 用于告知评测机需要评测哪些测试点</span></span><br><span class="line">    ├── testcase1.yaml    <span class="comment"># 具体测试点 1</span></span><br><span class="line">    ├── testcase2.yaml    <span class="comment"># 具体测试点 2</span></span><br><span class="line">    └── ...</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/                 <span class="comment"># 存放所有评测文件的根目录</span></span><br><span class="line">├── patpat.exe        <span class="comment"># Mac 与 Linux 用户程序无后缀，可重命名</span></span><br><span class="line">├── 1-22******-Name/  <span class="comment"># 第几次作业-学号-姓名</span></span><br><span class="line">│   └── src/              <span class="comment"># Java 项目源代码</span></span><br><span class="line">│       ├── Test.java         <span class="comment"># 程序入口</span></span><br><span class="line">│       ├── *.java            <span class="comment"># 其余 Java 文件</span></span><br><span class="line">│       └── com/buaa/main     <span class="comment"># Java 包（可选）</span></span><br><span class="line">├── report/           <span class="comment"># 评测报告目录</span></span><br><span class="line">└── <span class="built_in">test</span>/             <span class="comment"># 本地测评文件</span></span><br><span class="line">    ├── judge.yaml        <span class="comment"># 用于告知评测机需要评测哪些测试点</span></span><br><span class="line">    ├── testcase1.yaml    <span class="comment"># 具体测试点 1</span></span><br><span class="line">    ├── testcase2.yaml    <span class="comment"># 具体测试点 2</span></span><br><span class="line">    └── ...</span><br></pre></td></tr></table></figure>
 <div class="admonition info"><p>在 <code>1-22******-Name/src/</code> 目录下，必须有 <code>Test.java</code> 作为程序入口。其他 Java 文件可以与 <code>Test.java</code> 并列，但是推荐按照一定结构放在单独的 Java 包中。😉</p>
 </div>
 <div class="admonition error"><p><code>Test.java</code> 不能在任何包下！即不能有 <code>package</code> 声明。</p>
@@ -185,15 +185,23 @@ function sidebar_toggle() {
 <div class="admonition error"><p>对于 Windows，命令中的 <code>./patpat</code> 需要改为 <code>.\patpat</code> 或 <code>.\patpat.exe</code>，或者直接使用 <code>patpat</code> 或 <code>patpat.exe</code>。</p>
 </div>
 <p><strong>评测结果</strong></p>
-<p>详细评测结果见生成的<code>$testcase$_result.md</code>。(其与 <code>patpat</code> 程序在同级目录。)</p>
+<p>详细评测结果见生成的 <code>$testcase$_result.md</code>，报告会被统一输出到 <code>report</code> 目录下。</p>
 <p><strong>离线模式</strong></p>
 <p>仅在 <code>stu</code> 模式下有效，添加参数 <code>-online=0</code>。</p>
+<p><strong>历史迭代评测</strong></p>
+<p>迭代在截止之后将无法评测，如果同学们想再次测试，可以在对应迭代名前加 <code>10</code> 来评测历史迭代，更改文件名即可。</p>
+<div class="admonition info"><p>如，第一次迭代 <code>1-学号-姓名</code> 对应的历史评测为 <code>101-学号-姓名</code>。</p>
+</div>
+<div class="admonition warning"><p>历史评测仅用于辅助测试，不计入最终成绩。</p>
+</div>
+<hr>
 <h2 id="2-3-查询助教评测结果"><a class="header-anchor" href="#2-3-查询助教评测结果">¶ </a>2.3 查询助教评测结果</h2>
+<div class="admonition note"><p>该功能只是查询历史评测结果，并不进行评测。</p>
+</div>
 <h3 id="2-3-1-注册账号"><a class="header-anchor" href="#2-3-1-注册账号">¶ </a>2.3.1  注册账号</h3>
 <p>查询助教评测结果前，需要注册账号 (<code>sid</code> 为您的学号)，注册命令如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./patpat reg -sid your_sid -<span class="built_in">pwd</span> your_password</span><br><span class="line"><span class="comment"># 例：./patpat reg -sid 18373722 -pwd buaa-se-oop</span></span><br></pre></td></tr></table></figure>
-<div class="admonition error"><p class="admonition-title">Danger 
-</p><p>账号创建后，密码<strong>不支持修改</strong>。如需修改，请联系助教。</p>
+<div class="admonition error"><p>账号创建后，密码<strong>不支持修改</strong>。如需修改，请联系助教。</p>
 </div>
 <h3 id="2-3-2-查询评测结果"><a class="header-anchor" href="#2-3-2-查询评测结果">¶ </a>2.3.2 查询评测结果</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./patpat query -sid your_sid -<span class="built_in">pwd</span> your_password</span><br></pre></td></tr></table></figure>
