@@ -351,8 +351,8 @@ function sidebar_toggle() {
 <h4 id="2-1-格式说明"><a class="header-anchor" href="#2-1-格式说明">¶ </a>2.1 格式说明</h4>
 <p>顾客购买商品后自动生成一个订单，订单描述如下</p>
 <ul>
-<li>每个订单都有一个编号，编号格式为 <code>O-数字</code>（大写字母 O），例如 <code>O-1</code>，<code>O-2</code>。该编号根据商品上架的顺序获得，从 1 开始，订单编号同样是全局的 。</li>
-<li>订单有三种状态：待处理（<code>pending</code> ）、已取消（<code>canceled</code> )、已完成（<code>finished</code> ）。</li>
+<li>每个订单都有一个编号，编号格式为 <code>O-数字</code>（大写字母 O），例如 <code>O-1</code>，<code>O-2</code>。每次购买商品都会生成一个新的订单编号，从 1 开始，订单编号同样是全局的 。</li>
+<li>订单有三种状态：待处理（<code>pending</code>）、已取消（<code>canceled</code>)、已完成（<code>finished</code>）。</li>
 <li>新生成的订单状态为<strong>待处理</strong>（<code>pending</code>）。</li>
 </ul>
 <h4 id="2-2-命令反馈说明"><a class="header-anchor" href="#2-2-命令反馈说明">¶ </a>2.2 命令反馈说明</h4>
