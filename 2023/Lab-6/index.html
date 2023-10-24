@@ -66,14 +66,16 @@ document.addEventListener('DOMContentLoaded', function () {
 <li><a href="/2023/Lab-2"><s>Lab 2</s></a></li>
 <li><a href="/2023/Lab-3"><s>Lab 3</s></a></li>
 <li><a href="/2023/Lab-4"><s>Lab 4</s></a></li>
-<li><a href="/2023/Lab-5">Lab 5</a> ⌛</li>
-<li><a href="/2023/Lab-6">Lab 6</a> ✨</li>
+<li><a href="/2023/Lab-5"><s>Lab 5</s></a></li>
+<li><a href="/2023/Lab-6">Lab 6</a> ⌛</li>
+<li><a href="/2023/Lab-7">Lab 7</a> ✨</li>
 <li>To Be Continued… 🫣</li>
 </ul>
 <h1 id="迭代任务-📽️"><a class="header-anchor" href="#迭代任务-📽️">¶ </a><strong>迭代任务 📽️</strong></h1>
 <ul>
 <li><a href="/2023/Project-1"><s>迭代一</s></a></li>
-<li><a href="/2023/Project-2">迭代二</a> ✨</li>
+<li><a href="/2023/Project-2">迭代二</a> ⌛</li>
+<li><a href="/2023/Project-3">迭代三（即将上线）</a> ✨</li>
 <li>To Be Continued… 🙈</li>
 </ul>
 <h1 id="帮助中心-💁🏻"><a class="header-anchor" href="#帮助中心-💁🏻">¶ </a><strong>帮助中心 💁🏻</strong></h1>
@@ -287,7 +289,7 @@ function sidebar_toggle() {
 <p><code>interface</code> 在这里的作用，就是定义一个标准，定义一种框架。如果没有 interface，那么我们就需要像第五题的 ShapeFacotry 一样，通过参数指定处理器的类型，为原有代码增加更多的特殊情况判断。</p>
 <p>使用 <code>interface</code> 而不使用继承的另一个原因是：现实场景下，<code>Splitter</code> 等可能需要继承其他类，而 <code>TextProcess</code> 并没有必须要有的属性，所以没有必要让他们都继承一个 abstract class <code>TextProcessor</code>。如果出现了不得不同时继承多个类的情况，后续实验会提到装饰器模式（Decorator Pattern），也可以通过拆解类结构来化继承为组合。</p>
 <h3 id="Extra-2：真-·-工厂方法模式-（编程题）"><a class="header-anchor" href="#Extra-2：真-·-工厂方法模式-（编程题）">¶ </a>Extra 2：真 · 工厂方法模式 <em>（编程题）</em></h3>
-<p>在 <a href="/2023/Lab-4/">Lab 4</a> 的 Shape 的基础上，定义一个满足如下需求的 <code>IShapeFactory</code> 接口：</p>
+<p>在 <a href="/2023/Lab-5/">Lab 5</a> 的 Shape 的基础上，定义一个满足如下需求的 <code>IShapeFactory</code> 接口：</p>
 <ul>
 <li>
 <p>具有方法 <code>Shape makeShape(double a, double b)</code> ，返回一个由 a 和 b 指定大小的形状。</p>
