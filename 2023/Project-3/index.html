@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          Project 3 - BUAA 2023 OOP
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="/css/collapse.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>BUAA 2023 OOP</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <h1 id="Lab-🔬"><a class="header-anchor" href="#Lab-🔬">¶ </a><strong>Lab 🔬</strong></h1>
+<ul>
+<li><a href="/2023/Lab-1"><s>Lab 1</s></a></li>
+<li><a href="/2023/Lab-2"><s>Lab 2</s></a></li>
+<li><a href="/2023/Lab-3"><s>Lab 3</s></a></li>
+<li><a href="/2023/Lab-4"><s>Lab 4</s></a></li>
+<li><a href="/2023/Lab-5"><s>Lab 5</s></a></li>
+<li><a href="/2023/Lab-6">Lab 6</a> ⌛</li>
+<li><a href="/2023/Lab-7">Lab 7</a> ✨</li>
+<li>To Be Continued… 🫣</li>
+</ul>
+<h1 id="迭代任务-📽️"><a class="header-anchor" href="#迭代任务-📽️">¶ </a><strong>迭代任务 📽️</strong></h1>
+<ul>
+<li><a href="/2023/Project-1"><s>迭代一</s></a></li>
+<li><a href="/2023/Project-2">迭代二</a> ⌛</li>
+<li><a href="/2023/Project-3">迭代三</a> ✨</li>
+<li>To Be Continued… 🙈</li>
+</ul>
+<h1 id="大作业-🎯"><a class="header-anchor" href="#大作业-🎯">¶ </a><strong>大作业 🎯</strong></h1>
+<ul>
+<li><a href="/2023/Teamwork">大作业要求</a></li>
+</ul>
+<h1 id="帮助中心-💁🏻"><a class="header-anchor" href="#帮助中心-💁🏻">¶ </a><strong>帮助中心 💁🏻</strong></h1>
+<ul>
+<li><a href="/2023/Configure-Java-Environment">Java 环境配置</a></li>
+<li><a href="/2023/Java-Features-Summary">Java 8 - 17 新特性总结</a></li>
+<li><a href="/2023/Lab-Template">Lab 问答报告模板</a></li>
+<li><a href="/2023/patpat-User-Guide">patpat 使用指南</a> 🌟</li>
+<li><a href="/2023/Q-A">Q &amp; A</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <h1 id="OOP-迭代三"><a class="header-anchor" href="#OOP-迭代三">¶ </a>OOP 迭代三</h1>
+<h2 id="写在前面"><a class="header-anchor" href="#写在前面">¶ </a>写在前面</h2>
+<p>同学们，我们用了两周时间完成了 TMS 的部分功能，包括上架、购买商品等。在 TMS-3 中，我们将会实现数据导入导出等一系列相关命令，同时完善购买机制，加入订单相关操作。</p>
+<p>在开始编码之前，建议大家先<strong>仔细阅读需求说明</strong>和文末的 <a href="#%E4%B8%89%E3%80%81HINTS">HINTS</a>。</p>
+<p>编写好的代码需要经过 patpat 评测。通过所有的测试点后，<strong>需将整个项目文件打包上传到云平台</strong>，即可完成本次实验。希望大家能够认真完成，<strong>不作弊不抄袭</strong>。</p>
+<p>从迭代三开始，<strong>旧版本 patpat 将不再可用</strong>，请参考 <a href="/2023/patpat-User-Guide/">patpat 使用指南</a> 下载最新版本。</p>
+<hr>
+<p>本次实验<strong>需要额外的文件</strong>，下发文件的链接如下，包含在 <code>迭代三.zip</code> 中。</p>
+<p><a target="_blank" rel="noopener" href="https://bhpan.buaa.edu.cn/link/AADF4AD810189148A4B0DCF35F9E5C63E6">https://bhpan.buaa.edu.cn/link/AADF4AD810189148A4B0DCF35F9E5C63E6</a></p>
+<p>Expires: 2024-05-04 23:59</p>
+<hr>
+<h1 id="实验说明"><a class="header-anchor" href="#实验说明">¶ </a>实验说明</h1>
+<h2 id="一、实验目标"><a class="header-anchor" href="#一、实验目标">¶ </a>一、实验目标</h2>
+<ol>
+<li>熟练掌握 Java 文件操作</li>
+<li>了解文件输入输出流的区别与用法</li>
+<li>了解重定向概念</li>
+</ol>
+<h2 id="二、实验的重难点"><a class="header-anchor" href="#二、实验的重难点">¶ </a>二、实验的重难点</h2>
+<ol>
+<li>文件操作。</li>
+<li>重定向。</li>
+<li>Java 异常处理。</li>
+</ol>
+<h2 id="三、关键技术"><a class="header-anchor" href="#三、关键技术">¶ </a>三、关键技术</h2>
+<h3 id="1-Java-io-包"><a class="header-anchor" href="#1-Java-io-包">¶ </a>1. <code>Java.io</code> 包</h3>
+<h4 id="File-类"><a class="header-anchor" href="#File-类">¶ </a><code>File</code> 类</h4>
+<ul>
+<li>
+<p><code>File</code> 类可以表示一个文件，还可以表示一个目录（Directory）。</p>
+</li>
+<li>
+<p><code>File</code> 类的对象不能直接对文件进行读写操作，只能修改文件的属性，比如文件的名称，修改日期的日期。</p>
+</li>
+<li>
+<p>举例如下</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test02</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">path</span> <span class="operator">=</span> <span class="string">&quot;C:/windows/&quot;</span>; </span><br><span class="line">        <span class="type">File</span> <span class="variable">f</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(path, <span class="string">&quot;notepad.exe&quot;</span>); </span><br><span class="line">        System.out.println(<span class="string">&quot;============================================&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;文件长度：&quot;</span> + f.length() + <span class="string">&quot;字节&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;文件或者目录：&quot;</span> + (f.isFile() ? <span class="string">&quot;是文件&quot;</span> : <span class="string">&quot;不是文件&quot;</span>));</span><br><span class="line">        System.out.println(<span class="string">&quot;文件或者目录：&quot;</span> + (f.isDirectory() ? <span class="string">&quot;是目录&quot;</span> : <span class="string">&quot;不是目录&quot;</span>));</span><br><span class="line">        System.out.println(<span class="string">&quot;最后修改日期：&quot;</span> + <span class="keyword">new</span> <span class="title class_">Date</span>(f.lastModified()));</span><br><span class="line">        System.out.println(<span class="string">&quot;文件名称：&quot;</span> + f.getName());</span><br><span class="line">        System.out.println(<span class="string">&quot;文件路径：&quot;</span> + f.getPath());</span><br><span class="line">        System.out.println(<span class="string">&quot;绝对路径：&quot;</span> + f.getAbsolutePath());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Stream-流"><a class="header-anchor" href="#Stream-流">¶ </a><code>Stream</code> 流</h4>
+<ul>
+<li>流是指一连串流动的数据信号，通过先进先出的方式接收和发送数据。</li>
+<li>数据流包括输入流和输出流，输入输出流又分为字节流和字符流。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th style="text-align:left">说明</th>
+<th style="text-align:left">用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>字节流</td>
+<td style="text-align:left">以字节为基本单位 ，无法读取中文字符</td>
+<td style="text-align:left">继承 <code>InputStream</code>（输入字节流）类和 <code>OutputStream</code>（输出字节流）类</td>
+</tr>
+<tr>
+<td>字符流</td>
+<td style="text-align:left">两个字节为基本单位，专门处理字符串和文本</td>
+<td style="text-align:left">继承 <code>Reader</code>（读取流）类和 <code>Writer</code>（写入流）类</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-重定向"><a class="header-anchor" href="#2-重定向">¶ </a>2. 重定向</h3>
+<p>一个命令通常从一个叫标准输入的地方读取输入，默认情况下，这就是你的终端。同样，一个命令通常将其输出写入到标准输出，默认情况下，这也是你的终端。<br>
+本次迭代重定向指的是：将输入/输出重定向到指定文件，采用符号为 <code>&lt;</code> 或 <code>&gt;</code>。如果要将新内容添加在文件末尾，则使用 <code>&lt;&lt;</code> 或 <code>&gt;&gt;</code>。</p>
+<h3 id="3-Java-异常处理"><a class="header-anchor" href="#3-Java-异常处理">¶ </a>3. Java 异常处理</h3>
+<p>异常处理是 Java 中处理运行时错误的一种十分有效的手段，可以实现逻辑与错误处理的分离，从而更优雅地处理程序中出现的错误。异常的出现表明你的程序中出现了错误，但并不是所有的错误都是致命的，因此你可以通过捕获异常来相应地处理这些情况。</p>
+<div class="admonition warning"><p>同学们评测时出现的 RE 往往就是因为有异常没有被捕获，从而导致程序异常结束。可以试试用 <code>try</code> 和 <code>catch</code> 将 <code>main</code> 方法包裹起来，输出捕获的异常，看看到底是什么导致了 RE。</p>
+</div>
+<h3 id="4-目录、文件和路径"><a class="header-anchor" href="#4-目录、文件和路径">¶ </a>4. 目录、文件和路径</h3>
+<p>**目录就是文件夹，目录中有文件，同时，目录也是一种特殊的文件。**程序运行总是在一个目录下（当前目录、工作目录），一般是项目所在的目录，<strong>当前目录可以用 <code>.</code> 指代（或者不写），当前目录的父目录可以用 <code>..</code> 指代</strong>。</p>
+<p>“C 盘下的 User 下的 Desktop 下的 Test 下的 src 下的 com 下的 Test.java 文件”，我们就可以用这样的路径来描述它的位置：<code>C:/User/Desktop/Test/src/com/Test.java</code> （这种写法不太符合 Windows 的规范但是足够我们理解路径了）。<strong>如果这里的 Test 就是我们项目，那么程序就运行在该目录下，则 Test.java 也可以用 <code>./src/com/Test.java</code> 表示，其中的 <code>./</code> 也可以省略。<strong>对于前者，路径从一个根位置出发，一路深入到指定位置，这种路径称为</strong>绝对路径</strong>；对于后者，路径从一个参考点出发，目标位置根据参考点而定，这种路径叫做<strong>相对路径</strong>。</p>
+<p>以下示例有助于我们理解相对路径 —— 本次迭代主要涉及的文件操作问题。假定当前位置就是项目 Test，则其他文件/目录的相对路径以“注释”的形式标注。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Desktop                 # 父目录: ..</span><br><span class="line">└── a.jpg                   # ../a.jpg</span><br><span class="line">    ├── Test                    # 当前目录: .</span><br><span class="line">    │   ├── src                     # ./src 或 src</span><br><span class="line">    │   │   ├── com                     # ./src/com 或 src/com</span><br><span class="line">    │   │   │   ├── Test.java           # ./src/com/Test.java 或 src/com/Test.java</span><br><span class="line">    │   │   │   ├── Hello.java          # ./src/com/Hello.java 或 src/com/Hello.java</span><br><span class="line">    │   │   │   └── Person.java         # ./src/com/Person.java 或 src/com/Person.java</span><br><span class="line">    │   │   └── ui                  # ./src/ui 或 src/ui</span><br><span class="line">    │   │       ├── MainWindow.java     #./src/ui/MainWindow.java 或 src/ui/MainWindow.java</span><br><span class="line">    │   │       └── Decoration.java     #./src/ui/Decoration.java 或 src/ui/Decoration.java</span><br><span class="line">    │   ├── out                     # ./out 或 out</span><br><span class="line">    │   │   ├── Test.class              # ./out/Test.class 或 out/Test.class</span><br><span class="line">    │   │   ├── Main.class              # ./out/Main.class 或 out/Main.class</span><br><span class="line">    │   │   ├── ...</span><br><span class="line">    │   └── data                    # ./data 或 data</span><br><span class="line">    │       └── a.txt                   # ./data/a.txt 或 data/a.txt</span><br><span class="line">    └── OOP                     # ../OOP</span><br><span class="line">        ├── OOP_01.pdf              # ../OOP/OOP_01.pdf</span><br><span class="line">        └── OOP_02.pptx             # ../OOP/OOP_02.pptx</span><br></pre></td></tr></table></figure>
+<p>在本次迭代中，一种参考的项目结构如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/                 # 存放所有评测文件的根目录</span><br><span class="line">├── patpat.exe</span><br><span class="line">├── commodity.txt     # 下发文件</span><br><span class="line">├── 3-22******-Name/  # 第几次作业-学号-姓名</span><br><span class="line">│   └── src/              # Java 项目源代码</span><br><span class="line">├── report/           # 评测报告目录</span><br><span class="line">├── data/             # 运行时生成的 data 文件夹</span><br><span class="line">└── test/             # 本地测评文件</span><br></pre></td></tr></table></figure>
+<p>默认情况下，<strong>patpat 运行程序的目录即 <code>项目</code></strong>，但所有命令中的路径参数均以 <code>data</code> 为基准点。假设我们不切换程序运行的目录，则对于形如 <code>./a.txt</code> <code>./data/bb.txt</code> 这样的路径，应改写成 <code>data/a.txt</code> <code>data/data/bb.txt</code>；对于形如 <code>123.txt</code> <code>data/aa/456.txt</code> 这样的路径，应改写成 <code>data/123.txt</code> <code>data/data/aa/456.txt</code>。</p>
+<p>开发过程中，同学们如果想在 IDEA 中运行程序，则需要将 <code>commodity.txt</code> 放在项目的<strong>工作目录</strong>下，默认工作目录为项目根目录，因此可以将下发文件放在如下的位置。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/                 # IDEA 项目根目录</span><br><span class="line">├── .idea/</span><br><span class="line">├── commodity.txt     # 下发文件</span><br><span class="line">├── ...</span><br></pre></td></tr></table></figure>
+<div class="admonition note"><p>实际上，IDEA 中更好的做法是<strong>配置工作目录</strong>，具体可参考</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.jetbrains.com/help/idea/run-debug-configuration-java-application.html">https://www.jetbrains.com/help/idea/run-debug-configuration-java-application.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_37450089/article/details/85616712">https://blog.csdn.net/m0_37450089/article/details/85616712</a></li>
+</ul>
+</div>
+<h2 id="四、相关资料"><a class="header-anchor" href="#四、相关资料">¶ </a>四、相关资料</h2>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://docs.qq.com/doc/DR3hpTmhTY2tVV1pX">常见问题解答 Q &amp; A</a></li>
+<li><a href="/2023/Java-Features-Summary/">Java 8 - 17 新特性总结</a>（其中的 <code>Stream</code> 与 <code>Collection</code> 很有用）</li>
+<li>文件相关操作见：<a target="_blank" rel="noopener" href="http://c.biancheng.net/view/1133.html">http://c.biancheng.net/view/1133.html</a></li>
+<li>流相关操作见：<a target="_blank" rel="noopener" href="https://www.runoob.com/java/java-files-io.html">https://www.runoob.com/java/java-files-io.html</a></li>
+<li>输入输出重定向的相关概念见：<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-shell-io-redirections.html">https://www.runoob.com/linux/linux-shell-io-redirections.html</a></li>
+<li>异常处理：<a target="_blank" rel="noopener" href="https://www.runoob.com/java/java-exceptions.html">https://www.runoob.com/java/java-exceptions.html</a></li>
+</ol>
+<h2 id="五、DDL-及其他要求"><a class="header-anchor" href="#五、DDL-及其他要求">¶ </a>五、DDL 及其他要求</h2>
+<ol>
+<li>本次实验持续 2 周，截止时间以云平台为准。</li>
+<li>在所有指令中，有流程图的指令输出以<strong>流程图</strong>为主，文字部分只是辅助复制粘贴。</li>
+</ol>
+<hr>
+<h1 id="实验内容"><a class="header-anchor" href="#实验内容">¶ </a>实验内容</h1>
+<h2 id="一、命令概览"><a class="header-anchor" href="#一、命令概览">¶ </a>一、命令概览</h2>
+<p>本次迭代需要完成的命令如下</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">需求</th>
+<th style="text-align:left">命令符</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">新增</td>
+<td style="text-align:left">putCommodityBatch</td>
+<td style="text-align:left">批量上架商品</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>修改</strong></td>
+<td style="text-align:left">buyCommodity</td>
+<td style="text-align:left">购买商品</td>
+</tr>
+<tr>
+<td style="text-align:left">新增</td>
+<td style="text-align:left">cancelOrder</td>
+<td style="text-align:left">取消订单</td>
+</tr>
+<tr>
+<td style="text-align:left">新增</td>
+<td style="text-align:left">finishOrder</td>
+<td style="text-align:left">完成订单</td>
+</tr>
+<tr>
+<td style="text-align:left">新增</td>
+<td style="text-align:left">listOrder</td>
+<td style="text-align:left">查看订单</td>
+</tr>
+<tr>
+<td style="text-align:left">新增</td>
+<td style="text-align:left">exportMerchantOrder</td>
+<td style="text-align:left">导出商家订单</td>
+</tr>
+<tr>
+<td style="text-align:left">新增</td>
+<td style="text-align:left">openFile</td>
+<td style="text-align:left">打开文件</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>修改</strong></td>
+<td style="text-align:left">removeCommodity</td>
+<td style="text-align:left">下架商品</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>修改</strong></td>
+<td style="text-align:left">cancelShop</td>
+<td style="text-align:left">注销店铺</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note"><p>对于修改中新增的错误情况，其判断顺序位于原有情况之后。</p>
+</div>
+<h2 id="二、功能描述"><a class="header-anchor" href="#二、功能描述">¶ </a>二、功能描述</h2>
+<h3 id="1-批量上架商品"><a class="header-anchor" href="#1-批量上架商品">¶ </a>1. 批量上架商品</h3>
+<h4 id="1-1-格式说明"><a class="header-anchor" href="#1-1-格式说明">¶ </a>1.1 格式说明</h4>
+<p>批量上传商品的命令符为 <code>putCommodityBatch</code>。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令符</th>
+<th style="text-align:left">参数1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">putCommodityBatch</td>
+<td style="text-align:left">店铺编号</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>商家可将指定文件（<code>./commodity.txt</code>）的所有商品上传到自己的店铺。</li>
+<li>文件中每一行代表一种商品（每一行为：<code>商品名称</code> <code>商品价格</code> <code>商品数量</code>），数据保证合法。</li>
+<li>对于文件中的每一行，不需要额外输出信息。对于该条命令，只需要按照下列信息输出即可。</li>
+</ul>
+<h4 id="1-2-命令反馈说明"><a class="header-anchor" href="#1-2-命令反馈说明">¶ </a>1.2 命令反馈说明</h4>
+<p><strong>1.2.1 上传成功</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Put commodity batch success</span><br></pre></td></tr></table></figure>
+<p><strong>1.2.2 参数不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal argument count</span><br></pre></td></tr></table></figure>
+<p><strong>1.2.3 未登录</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please log in first</span><br></pre></td></tr></table></figure>
+<p><strong>1.2.4 登录用户身份不是 <code>Merchant</code></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Permission denied</span><br></pre></td></tr></table></figure>
+<p><strong>1.2.5 店铺编号不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal shop id</span><br></pre></td></tr></table></figure>
+<p><strong>1.2.6 店铺不存在、店铺不属于当前商家</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Shop id not exists</span><br></pre></td></tr></table></figure>
+<h3 id="2-购买商品（修改）"><a class="header-anchor" href="#2-购买商品（修改）">¶ </a>2. 购买商品（修改）</h3>
+<h4 id="2-1-格式说明"><a class="header-anchor" href="#2-1-格式说明">¶ </a>2.1 格式说明</h4>
+<p>顾客购买商品后自动生成一个订单，订单描述如下</p>
+<ul>
+<li>每个订单都有一个编号，编号格式为 <code>O-数字</code>（大写字母 O），例如 <code>O-1</code>，<code>O-2</code>。该编号根据商品上架的顺序获得，从 1 开始，订单编号同样是全局的 。</li>
+<li>订单有三种状态：待处理（<code>pending</code> ）、已取消（<code>canceled</code> )、已完成（<code>finished</code> ）。</li>
+<li>新生成的订单状态为<strong>待处理</strong>（<code>pending</code>）。</li>
+</ul>
+<h4 id="2-2-命令反馈说明"><a class="header-anchor" href="#2-2-命令反馈说明">¶ </a>2.2 命令反馈说明</h4>
+<p><strong>购买成功</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Buy commodity success (orderId: O-X)</span><br></pre></td></tr></table></figure>
+<p>其中<code>X</code>为订单编号的数字。</p>
+<p>其余输出无变化。</p>
+<h3 id="3-取消订单"><a class="header-anchor" href="#3-取消订单">¶ </a>3. 取消订单</h3>
+<h4 id="3-1-格式说明"><a class="header-anchor" href="#3-1-格式说明">¶ </a>3.1 格式说明</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令符</th>
+<th style="text-align:left">参数1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">cancelOrder</td>
+<td style="text-align:left">订单编号</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>对于已登录的身份为顾客的用户可执行此命令。</li>
+<li>取消订单后，订单状态变为<strong>已取消</strong>（<code>canceled</code> ) ，相应店铺的相应商品数量需恢复。</li>
+</ul>
+<h4 id="3-2-命令反馈说明"><a class="header-anchor" href="#3-2-命令反馈说明">¶ </a>3.2 命令反馈说明</h4>
+<p><strong>3.2.1 取消订单成功</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cancel order success</span><br></pre></td></tr></table></figure>
+<p><strong>3.2.2 参数数量不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal argument count</span><br></pre></td></tr></table></figure>
+<p><strong>3.2.3 未登录</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please log in first</span><br></pre></td></tr></table></figure>
+<p><strong>3.2.4 登录用户身份不是 <code>Customer</code></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Permission denied</span><br></pre></td></tr></table></figure>
+<p><strong>3.2.5 订单编号不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal order id</span><br></pre></td></tr></table></figure>
+<p><strong>3.2.6 订单编号不存在或不属于当前用户</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Order id not exists</span><br></pre></td></tr></table></figure>
+<p><strong>3.2.7 该编号订单已取消</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Order already canceled</span><br></pre></td></tr></table></figure>
+<p><strong>3.2.8 该编号订单已完成</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Order already finished</span><br></pre></td></tr></table></figure>
+<h3 id="4-完成订单"><a class="header-anchor" href="#4-完成订单">¶ </a>4. 完成订单</h3>
+<h4 id="4-1-格式说明"><a class="header-anchor" href="#4-1-格式说明">¶ </a>4.1 格式说明</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>命令符</strong></th>
+<th style="text-align:left"><strong>参数1</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">finishOrder</td>
+<td style="text-align:left">订单编号</td>
+</tr>
+</tbody>
+</table>
+<p>只有已登录的身份为顾客的用户可执行此命令，命令成功执行后，订单状态变成已完成（<code>finished</code>）。</p>
+<h4 id="4-2-命令反馈说明"><a class="header-anchor" href="#4-2-命令反馈说明">¶ </a>4.2 命令反馈说明</h4>
+<p><strong>4.2.1 完成订单成功</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Finish order success</span><br></pre></td></tr></table></figure>
+<p><strong>4.2.2 参数数量不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal argument count</span><br></pre></td></tr></table></figure>
+<p><strong>4.2.3 未登录</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please log in first</span><br></pre></td></tr></table></figure>
+<p><strong>4.2.4 登录用户身份不是 <code>Customer</code></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Permission denied</span><br></pre></td></tr></table></figure>
+<p><strong>4.2.5 订单编号不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal order id</span><br></pre></td></tr></table></figure>
+<p><strong>4.2.6 订单编号不存在或不属于当前用户</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Order id not exists</span><br></pre></td></tr></table></figure>
+<p><strong>4.2.7 该编号订单已取消</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Order already canceled</span><br></pre></td></tr></table></figure>
+<p><strong>4.2.8 该编号订单已完成</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Order already finished</span><br></pre></td></tr></table></figure>
+<h3 id="5-查看订单"><a class="header-anchor" href="#5-查看订单">¶ </a>5. 查看订单</h3>
+<h4 id="5-1-格式说明"><a class="header-anchor" href="#5-1-格式说明">¶ </a>5.1 格式说明</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>命令符</strong></th>
+<th style="text-align:left"><strong>可选参数</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">listOrder</td>
+<td style="text-align:left">[店铺编号]</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>无参数：管理员可以查看所有订单，顾客和商家可以查看与自己相关的订单。</li>
+<li>参数为店铺编号：管理员可查看店铺的所有订单，商家可查看自己店铺的订单。</li>
+<li>**即使订单相关商品下架或店铺注销，仍要保存订单信息。**具体处理情况见对应命令说明。</li>
+</ul>
+<h4 id="5-2-命令反馈说明"><a class="header-anchor" href="#5-2-命令反馈说明">¶ </a>5.2 命令反馈说明</h4>
+<p><strong>5.2.1 查看订单成功</strong></p>
+<p>每件订单占一行，按订单编号从小到大输出，格式为如下。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OrderId: shopId commodityId commodityQuantity cost orderStatus</span><br></pre></td></tr></table></figure>
+<p><code>cost</code> 的单位为 yuan，保留两位小数，具体示例如下。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">O-1: S-2 C-1 20 10.00yuan pending</span><br><span class="line">O-2: S-2 C-2 10 10.00yuan pending</span><br></pre></td></tr></table></figure>
+<p><strong>无参数输出</strong></p>
+<p><strong>5.2.2 参数数量不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal argument count</span><br></pre></td></tr></table></figure>
+<p><strong>5.2.3 未登录</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please log in first</span><br></pre></td></tr></table></figure>
+<p><strong>5.2.4 订单为空</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Order not exists</span><br></pre></td></tr></table></figure>
+<p><strong>参数为店铺编号输出</strong></p>
+<p><strong>5.2.5 参数数量不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal argument count</span><br></pre></td></tr></table></figure>
+<p><strong>5.2.6 未登录</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please log in first</span><br></pre></td></tr></table></figure>
+<p><strong>5.2.7 登录用户身份为顾客</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Permission denied</span><br></pre></td></tr></table></figure>
+<p><strong>5.2.8 店铺编号不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal shop id</span><br></pre></td></tr></table></figure>
+<p><strong>5.2.9 店铺不存在、店铺编号不属于该商家</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Shop id not exists</span><br></pre></td></tr></table></figure>
+<p><strong>5.2.10 订单为空</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Order not exists</span><br></pre></td></tr></table></figure>
+<h3 id="6-导出商家订单"><a class="header-anchor" href="#6-导出商家订单">¶ </a>6. 导出商家订单</h3>
+<h4 id="6-1-格式说明"><a class="header-anchor" href="#6-1-格式说明">¶ </a>6.1 格式说明</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令符</th>
+<th style="text-align:left">可选参数1</th>
+<th style="text-align:left">可选参数2</th>
+<th style="text-align:left">可选参数3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">exportMerchantOrder</td>
+<td style="text-align:left">[ &gt; ，&gt;&gt; ]</td>
+<td style="text-align:left">[重定向路径]</td>
+<td style="text-align:left">[KakafeeNumber]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>命令功能如下</strong></p>
+<ol>
+<li>导出商家订单到<strong>保存路径</strong>。</li>
+<li>若存在重定向路径，在 1 的基础上，还需要将订单信息输出到<strong>重定向路径</strong>，不存在则<strong>输出到终端</strong>。</li>
+</ol>
+<p><strong>参数功能如下</strong></p>
+<ul>
+<li>可选参数 3 存在：<strong>管理员</strong>可导出 <code>KakafeeNumber</code> 对应商家的所有订单，<strong>商家和顾客无权限</strong>。</li>
+<li>可选参数 3 不存在：<strong>商家</strong>可导出自己的所有订单，<strong>管理员和顾客无权限</strong>。</li>
+<li>可选参数参数 1 和可选参数 2 同时存在且合法：<strong>控制台无输出</strong>，所有命令反馈都重定向到文件。</li>
+<li>可选参数参数 1 和可选参数 2 不同时存在、可选参数 2 不合法：在终端打印对应信息。</li>
+<li><code>&gt;</code> 的作用：清空文件，从头写入；<code>&gt;&gt;</code> 的作用：追加写入。</li>
+</ul>
+<p>以下流程图为命令执行流程的详细说明（图片尺寸较大，可下载到本地查看）。</p>
+<div class='collapse'>
+      <div class='collapse-ctrl collapse-cardtitle' onclick='collapseToggle(this)'><div class='collapse-hint-ico'><img style="pointer-events: none;" width="12" height="12" src="/expand.png"/></div><span class='collapse-hint-show'>Show</span><span class='collapse-hint-hide'>Hide</span></div>
+      <div class='collapse-content'><div class='content-flex collapse-cardborder'><div>
+          <p><img src="https://buaa-2023-oop-1308383348.cos.ap-nanjing.myqcloud.com/blog/proj-3/order.drawio.svg" alt=""></p>
+</div></div>
+      </div>
+  </div>
+<p><strong>保存路径</strong>为 <code>./data/order/&#123;&#123;KakafeeNumber&#125;&#125;.txt</code>（这里的 <code>&#123;&#123;KakafeeNumber&#125;&#125;</code> 指的是需要替换成参数中的卡号），若保存路径存在同名文件则<strong>覆盖其内容</strong>。每件订单占一行，按订单编号从小到大输出，格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OrderId: shopId commodityId commodityQuantity cost（单位为yuan，保留两位小数） orderStatus</span><br></pre></td></tr></table></figure>
+<p>具体地，如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">O-3: S-1 C-1 10 15.00yuan canceled</span><br><span class="line">O-4: S-2 C-2 100 50.00yuan pending</span><br></pre></td></tr></table></figure>
+<div class="admonition warning"><p>所有文件路径不能含有非法字符：<code>*</code>, <code>?</code>,  <code>&quot;</code> （英文双引号）, <code>&lt;</code>, <code>&gt;</code>, <code>|</code>。如有，按照路径不合法处理。</p>
+</div>
+<p><strong>重定向文件需要放置在 data 目录下</strong>，换言之，<strong>重定向文件的相对路径以 data 目录为参考点</strong>。举例如下</p>
+<ul>
+<li>若重定向路径为 <code>./help.txt</code> 或 <code>help.txt</code>，则重定向文件保存路径为 <code>项目/data/help.txt</code>。这里的 <code>项目</code> 指的是包含 <code>patpat</code> 和 <code>3-学号-姓名</code> 的那个目录。</li>
+<li>若重定向路径为 <code>./data/help.txt</code> 或 <code>data/help.txt</code>，则重定向文件保存路径为 <code>项目/data/data/help.txt</code>。这里的 <code>项目</code> 指的是包含 <code>patpat</code> 和 <code>3-学号-姓名</code> 的那个目录。</li>
+</ul>
+<h4 id="6-2-命令反馈说明"><a class="header-anchor" href="#6-2-命令反馈说明">¶ </a>6.2 命令反馈说明</h4>
+<p>以下情况<strong>输出到终端</strong></p>
+<p><strong>6.2.1 重定向符号存在，无重定向路径</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please input the redirect path</span><br></pre></td></tr></table></figure>
+<p><strong>6.2.2 重定向符号存在，重定向路径不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal redirect path</span><br></pre></td></tr></table></figure>
+<p><strong>6.2.3 重定向路径和保存路径相同</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The save path is the same as the redirect path</span><br></pre></td></tr></table></figure>
+<p>以下情况，若<strong>重定向符号存在 + 重定向路径合法</strong>则输出到重定向路径，<strong>否则输出到终端</strong>。</p>
+<div class="admonition warning"><p>错误信息同样受到重定向的影响。</p>
+</div>
+<p><strong>6.2.4 成功打印商品信息</strong></p>
+<p>每件订单占一行，按订单编号从小到大输出，每行格式如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OrderId: shopId commodityId commodityQuantity cost orderStatus</span><br></pre></td></tr></table></figure>
+<p><code>cost</code> 单位为 yuan，保留两位小数。</p>
+<p><strong>6.2.5 参数数量不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal argument count</span><br></pre></td></tr></table></figure>
+<p><strong>6.2.6 未登录</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please log in first</span><br></pre></td></tr></table></figure>
+<p><strong>6.2.7 顾客调用该方法、商家调用有 KakafeeNumber 的方法、管理员调用无 KakafeeNumber 的方法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Permission denied</span><br></pre></td></tr></table></figure>
+<p><strong>6.2.8 KakafeeNumber 不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal Kakafee number</span><br></pre></td></tr></table></figure>
+<p><strong>6.2.9 KakafeeNumber 未注册</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Kakafee number not exists</span><br></pre></td></tr></table></figure>
+<p><strong>6.2.10 KakafeeNumber 对应身份不为 <code>Merchant</code></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Kakafee number does not belong to a Merchant</span><br></pre></td></tr></table></figure>
+<p><strong>6.2.11 商家无订单</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Order not exists</span><br></pre></td></tr></table></figure>
+<p><strong>6.2.12 文件操作失败</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File operation failed</span><br></pre></td></tr></table></figure>
+<h3 id="7-打开文件"><a class="header-anchor" href="#7-打开文件">¶ </a>7. 打开文件</h3>
+<h4 id="7-1-格式说明"><a class="header-anchor" href="#7-1-格式说明">¶ </a>7.1 格式说明</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令符</th>
+<th style="text-align:left">可选参数1</th>
+<th style="text-align:left">可选参数2</th>
+<th style="text-align:left">可选参数3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">openFile</td>
+<td style="text-align:left">[文件路径]</td>
+<td style="text-align:left">[&lt;]</td>
+<td style="text-align:left">[重定向路径]</td>
+</tr>
+</tbody>
+</table>
+<p>所有人可使用该命令，该命令的作用是将指定路径的文件打印到控制台。</p>
+<p>当重定向路径存在时，<strong>忽略文件路径</strong>。</p>
+<p><strong>所有路径（文件路径、重定向路径）均以 data 目录为参考</strong>，举例如下</p>
+<ul>
+<li>文件路径为 <code>./aa.txt</code> 或 <code>aa.txt</code>，则打开 <code>项目/data/aa.txt</code>。这里的 <code>项目</code> 指的是包含 <code>patpat</code> 和 <code>3-学号-姓名</code> 的那个目录。</li>
+<li>重定向路径为 <code>./bb/aa.txt</code> 或 <code>bb/aa.txt</code>，则打开 <code>项目/data/bb/aa.txt</code>。这里的 <code>项目</code> 指的是包含 <code>patpat</code> 和 <code>3-学号-姓名</code> 的那个目录。</li>
+</ul>
+<p>以下流程图为命令执行流程的详细说明（图片尺寸较大，可下载到本地查看）。</p>
+<div class='collapse'>
+      <div class='collapse-ctrl collapse-cardtitle' onclick='collapseToggle(this)'><div class='collapse-hint-ico'><img style="pointer-events: none;" width="12" height="12" src="/expand.png"/></div><span class='collapse-hint-show'>Show</span><span class='collapse-hint-hide'>Hide</span></div>
+      <div class='collapse-content'><div class='content-flex collapse-cardborder'><div>
+          <p><img src="https://buaa-2023-oop-1308383348.cos.ap-nanjing.myqcloud.com/blog/proj-3/open.drawio.svg" alt=""></p>
+</div></div>
+      </div>
+  </div>
+<h4 id="7-2-命令反馈说明"><a class="header-anchor" href="#7-2-命令反馈说明">¶ </a>7.2 命令反馈说明</h4>
+<p><strong>7.2.1 打开文件成功</strong></p>
+<p>输出对应文件内容到控制台。</p>
+<p><strong>7.2.2 参数数量不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal argument count</span><br></pre></td></tr></table></figure>
+<p><strong>7.2.3 未登录</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please log in first</span><br></pre></td></tr></table></figure>
+<p><strong>7.2.4 重定向符号不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal redirector</span><br></pre></td></tr></table></figure>
+<p><strong>7.2.5 使用重定向符号但缺失重定向路径</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please input the path to open the file</span><br></pre></td></tr></table></figure>
+<p><strong>7.2.6 重定向路径不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal redirect path</span><br></pre></td></tr></table></figure>
+<p><strong>7.2.7 重定向路径不存在、重定向文件为文件夹</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File not exists</span><br></pre></td></tr></table></figure>
+<p><strong>7.2.8 文件路径不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal path</span><br></pre></td></tr></table></figure>
+<p><strong>7.2.9 文件不存在，文件为文件夹</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File not exists</span><br></pre></td></tr></table></figure>
+<p><strong>7.2.10 文件操作失败</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File operation failed</span><br></pre></td></tr></table></figure>
+<h3 id="8-下架商品（修改）"><a class="header-anchor" href="#8-下架商品（修改）">¶ </a>8. 下架商品（修改）</h3>
+<h4 id="8-2-新增输出"><a class="header-anchor" href="#8-2-新增输出">¶ </a>8.2 新增输出</h4>
+<p><strong>新增判断，当下架的该商品有待处理的订单时</strong></p>
+<p>此时，商品下架失败。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please process order for commodity</span><br></pre></td></tr></table></figure>
+<p>其余输出无变化。</p>
+<h3 id="9-注销店铺（修改）"><a class="header-anchor" href="#9-注销店铺（修改）">¶ </a>9. 注销店铺（修改）</h3>
+<h4 id="9-2-新增输出"><a class="header-anchor" href="#9-2-新增输出">¶ </a>9.2 新增输出</h4>
+<p><strong>新增判断，当该店铺有待处理的订单时</strong></p>
+<p>此时店铺注销失败。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please process order for shop</span><br></pre></td></tr></table></figure>
+<p>其余输出无变化。</p>
+<h2 id="三、HINTS"><a class="header-anchor" href="#三、HINTS">¶ </a>三、HINTS</h2>
+<ol>
+<li>建议把所有的文件操作用类封装起来，比如判断文件的合法性、创建文件、打开文件、输出文件、删除文件夹。</li>
+<li>开始测试前务必<strong>把前一次测试生成的文件删去</strong>，建议在每次输入 <code>quit</code> 指令后，调用工具类的方法删除 <code>data</code> 文件夹。</li>
+</ol>
+<h2 id="四、测试样例"><a class="header-anchor" href="#四、测试样例">¶ </a>四、测试样例</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line">register 000117861001 aaaa adddh7hhh@ adddh7hhh@ Administrator</span><br><span class="line">Register success</span><br><span class="line">register 046418112296 zXOYXO Y0$_5ujbis Y0$_5ujbis Merchant</span><br><span class="line">Register success</span><br><span class="line">register 217918521598 hKPACtyQySyJ Y0@kig8@4 Y0@kig8@4 Customer</span><br><span class="line">Register success</span><br><span class="line">login 046418112296 Y0$_5ujbis</span><br><span class="line">Welcome to TMS</span><br><span class="line">registerShop Online_Boutique</span><br><span class="line">Register shop success (shopId: S-1)</span><br><span class="line">registerShop Pet_Paradise</span><br><span class="line">Register shop success (shopId: S-2)</span><br><span class="line">registerShop Tech-Trends</span><br><span class="line">Register shop success (shopId: S-3)</span><br><span class="line">putCommodityBatch S-1</span><br><span class="line">Put commodity batch success</span><br><span class="line">putCommodity S-2 C-1 22</span><br><span class="line">Put commodity success (commodityId: C-1)</span><br><span class="line">putCommodity S-3 C-1 44</span><br><span class="line">Put commodity success (commodityId: C-1)</span><br><span class="line">putCommodity S-2 C-3 22</span><br><span class="line">Put commodity success (commodityId: C-3)</span><br><span class="line">listShop</span><br><span class="line">S-1 Online_Boutique</span><br><span class="line">S-2 Pet_Paradise</span><br><span class="line">S-3 Tech-Trends</span><br><span class="line">logout</span><br><span class="line">Bye~</span><br><span class="line">login 217918521598 Y0@kig8@4</span><br><span class="line">Welcome to TMS</span><br><span class="line">listShop</span><br><span class="line">S-1 Online_Boutique</span><br><span class="line">S-2 Pet_Paradise</span><br><span class="line">S-3 Tech-Trends</span><br><span class="line">listCommodity</span><br><span class="line">S-1: C-1 Laptop-001 999.99yuan 50</span><br><span class="line">S-1: C-2 PhoneCase_1 12.50yuan 100</span><br><span class="line">S-1: C-3 CoffeeMug-2 8.99yuan 200</span><br><span class="line">S-1: C-4 Headphones 59.95yuan 30</span><br><span class="line">S-1: C-5 Notebook-007 15.75yuan 80</span><br><span class="line">S-1: C-6 Sneakers 79.99yuan 60</span><br><span class="line">S-1: C-7 Backpack-2021 39.99yuan 120</span><br><span class="line">S-1: C-8 SmartWatch 199.00yuan 25</span><br><span class="line">S-1: C-9 GamingMouse 29.99yuan 150</span><br><span class="line">S-1: C-10 USB-Cable 5.50yuan 300</span><br><span class="line">S-1: C-11 BluetoothSpeaker 49.95yuan 40</span><br><span class="line">S-1: C-12 Keyboard-123 18.50yuan 90</span><br><span class="line">S-1: C-13 T-Shirt-Blue 14.99yuan 70</span><br><span class="line">S-1: C-14 Jeans-Denim 39.95yuan 50</span><br><span class="line">S-1: C-15 Dress-Black 29.99yuan 120</span><br><span class="line">S-1: C-16 Sunglasses 25.50yuan 80</span><br><span class="line">S-1: C-17 WaterBottle 9.99yuan 200</span><br><span class="line">S-1: C-18 Handbag-Leather 89.95yuan 30</span><br><span class="line">S-1: C-19 RunningShoes 99.00yuan 40</span><br><span class="line">S-1: C-20 FitnessBand 79.99yuan 20</span><br><span class="line">S-2: C-1 Laptop-001 999.99yuan 22</span><br><span class="line">S-2: C-3 CoffeeMug-2 8.99yuan 22</span><br><span class="line">S-3: C-1 Laptop-001 999.99yuan 44</span><br><span class="line">searchCommodity Laptop-001</span><br><span class="line">Illegal commodity name</span><br><span class="line">buyCommodity S-3 C-1 20</span><br><span class="line">Buy commodity success (orderId: O-1)</span><br><span class="line">buyCommodity S-2 C-2 10</span><br><span class="line">Commodity id not exists</span><br><span class="line">buyCommodity S-1 C-2 30</span><br><span class="line">Buy commodity success (orderId: O-2)</span><br><span class="line">finishOrder O-1</span><br><span class="line">Finish order success</span><br><span class="line">cancelOrder O-2</span><br><span class="line">Cancel order success</span><br><span class="line">listOrder</span><br><span class="line">O-1: S-3 C-1 20 19999.80yuan finished</span><br><span class="line">O-2: S-1 C-2 30 375.00yuan canceled</span><br><span class="line">logout</span><br><span class="line">Bye~</span><br><span class="line">login 046418112296 Y0$_5ujbis</span><br><span class="line">Welcome to TMS</span><br><span class="line">removeCommodity C-1 S-1</span><br><span class="line">Remove commodity success</span><br><span class="line">removeCommodity C-2 S-1</span><br><span class="line">Remove commodity success</span><br><span class="line">cancelShop S-1</span><br><span class="line">Cancel shop success</span><br><span class="line">cancelShop S-3</span><br><span class="line">Cancel shop success</span><br><span class="line">exportMerchantOrder &gt; 22|</span><br><span class="line">Illegal redirect path</span><br><span class="line">exportMerchantOrder &gt;&gt; a.txt（注意：控制台无输出）</span><br><span class="line">exportMerchantOrder</span><br><span class="line">O-1: S-3 C-1 20 19999.80yuan finished</span><br><span class="line">O-2: S-1 C-2 30 375.00yuan canceled</span><br><span class="line">exportMerchantOrder &gt; order/046418112296.txt</span><br><span class="line">The save path is the same as the redirect path</span><br><span class="line">openFile a.txt</span><br><span class="line">O-1: S-3 C-1 20 19999.80yuan finished</span><br><span class="line">O-2: S-1 C-2 30 375.00yuan canceled</span><br><span class="line">openFile b.txt &gt; a.txt</span><br><span class="line">Illegal redirector</span><br><span class="line">openFile b.txt &lt; ./a.txt</span><br><span class="line">O-1: S-3 C-1 20 19999.80yuan finished</span><br><span class="line">O-2: S-1 C-2 30 375.00yuan canceled</span><br><span class="line">logout</span><br><span class="line">Bye~</span><br><span class="line">login 000117861001 adddh7hhh@</span><br><span class="line">Welcome to TMS</span><br><span class="line">removeCommodity C-2 S-1</span><br><span class="line">Shop id not exists</span><br><span class="line">removeCommodity C-1 S-1</span><br><span class="line">Shop id not exists</span><br><span class="line">cancelShop S-1</span><br><span class="line">Shop id not exists</span><br><span class="line">exportMerchantOrder &gt;&gt; c.txt 046418112296（注意：控制台无输出）</span><br><span class="line">openFile &lt; c.txt</span><br><span class="line">O-1: S-3 C-1 20 19999.80yuan finished</span><br><span class="line">O-2: S-1 C-2 30 375.00yuan canceled</span><br><span class="line">listShop</span><br><span class="line">046418112296 S-2 Pet_Paradise</span><br><span class="line">quit</span><br><span class="line">----- Good Bye! -----</span><br></pre></td></tr></table></figure>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure class="avatar avatar-lg">
+          <img src="/avatar.svg" alt="...">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>Love. T.A. 🥰</div>
+      <div>2023-10-24</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+<!-- hexo injector body_end start -->
+<script src="/js/collapse.js"></script>
+<!-- hexo injector body_end end --></body>
+</html>
+
+
+<script src="/js/book.js"></script>

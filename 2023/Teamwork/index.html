@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          Teamwork - BUAA 2023 OOP
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="/css/collapse.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>BUAA 2023 OOP</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <h1 id="Lab-🔬"><a class="header-anchor" href="#Lab-🔬">¶ </a><strong>Lab 🔬</strong></h1>
+<ul>
+<li><a href="/2023/Lab-1"><s>Lab 1</s></a></li>
+<li><a href="/2023/Lab-2"><s>Lab 2</s></a></li>
+<li><a href="/2023/Lab-3"><s>Lab 3</s></a></li>
+<li><a href="/2023/Lab-4"><s>Lab 4</s></a></li>
+<li><a href="/2023/Lab-5"><s>Lab 5</s></a></li>
+<li><a href="/2023/Lab-6">Lab 6</a> ⌛</li>
+<li><a href="/2023/Lab-7">Lab 7</a> ✨</li>
+<li>To Be Continued… 🫣</li>
+</ul>
+<h1 id="迭代任务-📽️"><a class="header-anchor" href="#迭代任务-📽️">¶ </a><strong>迭代任务 📽️</strong></h1>
+<ul>
+<li><a href="/2023/Project-1"><s>迭代一</s></a></li>
+<li><a href="/2023/Project-2">迭代二</a> ⌛</li>
+<li><a href="/2023/Project-3">迭代三</a> ✨</li>
+<li>To Be Continued… 🙈</li>
+</ul>
+<h1 id="大作业-🎯"><a class="header-anchor" href="#大作业-🎯">¶ </a><strong>大作业 🎯</strong></h1>
+<ul>
+<li><a href="/2023/Teamwork">大作业要求</a></li>
+</ul>
+<h1 id="帮助中心-💁🏻"><a class="header-anchor" href="#帮助中心-💁🏻">¶ </a><strong>帮助中心 💁🏻</strong></h1>
+<ul>
+<li><a href="/2023/Configure-Java-Environment">Java 环境配置</a></li>
+<li><a href="/2023/Java-Features-Summary">Java 8 - 17 新特性总结</a></li>
+<li><a href="/2023/Lab-Template">Lab 问答报告模板</a></li>
+<li><a href="/2023/patpat-User-Guide">patpat 使用指南</a> 🌟</li>
+<li><a href="/2023/Q-A">Q &amp; A</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <h1 id="《面向对象程序设计》大作业要求"><a class="header-anchor" href="#《面向对象程序设计》大作业要求">¶ </a>《面向对象程序设计》大作业要求</h1>
+<blockquote>
+<p>2023 秋季学期《面向对象程序设计》大作业要求</p>
+</blockquote>
+<h2 id="一、选题与内容要求"><a class="header-anchor" href="#一、选题与内容要求">¶ </a>一、选题与内容要求</h2>
+<h3 id="1-选题参考"><a class="header-anchor" href="#1-选题参考">¶ </a>1. 选题参考</h3>
+<div class="admonition note"><p>以下选题仅供参考，选题和需求均不作限制，欢迎与助教和老师讨论。</p>
+</div>
+<h4 id="多线程与网络编程"><a class="header-anchor" href="#多线程与网络编程">¶ </a>多线程与网络编程</h4>
+<p>例如在线聊天室（实现跨机聊天功能，利用 WebSocket 等实时更新消息）、天气软件（调用接口获取数据）、备忘录/笔记软件（可能需要一个小型的后端和数据库）等。</p>
+<h4 id="实用小工具"><a class="header-anchor" href="#实用小工具">¶ </a>实用小工具</h4>
+<p><strong>实用代码编辑器</strong></p>
+<p>需求参考如下：</p>
+<ul>
+<li>单一语言即可。可以不实现实时错误检测等复杂功能，但最好<strong>实现一个现代代码编辑器最基本的功能</strong>。</li>
+<li>实现多文件打开、新建保存另存为重命名等文件相关功能。最好能支持一些快捷键。</li>
+<li>实现复制剪切粘贴、撤回重做等编辑相关功能。最好能支持一些快捷键。</li>
+<li>实现关键字高亮、显示/关闭行数统计等编程实用功能。</li>
+<li>实现字体字号设置、颜色主题自定义等美观方面的功能。</li>
+<li>最好能连接上本机的终端，以便直接命令行运行代码。</li>
+</ul>
+<p><strong>画图工具、图像编辑工具</strong></p>
+<p>需求参考如下：</p>
+<ul>
+<li>实现画图、修改图像风格、添加滤镜等功能，并能导出作品。</li>
+<li>这类工具的功能非常多，<strong>你可以任意选择其中的一个子集，但是要确保该子集功能的全面</strong>。例如，你可以只针对一种特定的图片格式，但保证该格式图片的打开编辑导出功能齐全；你可以只选择画图这个功能，但应该做到随机线条、几何图形等都能绘制，缩放旋转扭曲、颜色选择、线条粗细设置等功能都支持。</li>
+</ul>
+<p><strong>支持复杂运算功能的科学计算工具</strong></p>
+<p>需求参考如下：</p>
+<ul>
+<li>可以执行各种复杂的数学和科学运算，包括但不限于基本的算术运算、代数方程、微积分、线性代数、概率统计、离散数学等。该工具还应该支持单位转换、复数运算、函数图像绘制等高级数学功能。</li>
+<li>用户应该能够保存和加载他们的计算，以便将来继续工作。</li>
+<li>提供一个直观的用户界面，让用户能够轻松输入复杂的数学表达式，查看计算结果的同时支持数学符号的美观显示，方便用户理解。</li>
+<li>支持用户定义函数和变量，以及快速的函数查找和调用功能。</li>
+</ul>
+<p><strong>支持识别磁盘文件并提供预览功能的文件管理器</strong></p>
+<p>需求参考如下：</p>
+<ul>
+<li>提供一个直观的用户界面，让用户能够轻松地浏览文件系统、切换目录及查看文件和文件夹的详细信息，包括文件大小、创建日期、修改日期等。</li>
+<li>实现文件检索功能。</li>
+<li>提供预览功能，用户可以在不打开文件的情况下预览文件的内容。例如，显示文本文件的前几行文字，显示图像文件的缩略图，不用打开即可播放音频文件，显示视频文件的第一帧截图等。</li>
+<li>支持文件的压缩和解压缩功能。</li>
+</ul>
+<h4 id="游戏相关"><a class="header-anchor" href="#游戏相关">¶ </a>游戏相关</h4>
+<p>题材不限，也可以为特定的游戏添加 AI。</p>
+<h4 id="其他选项"><a class="header-anchor" href="#其他选项">¶ </a>其他选项</h4>
+<p>例如实现⼀个动画库、安卓开发、为某产品定制 SDK，或基于产品与开源项目编写插件等。</p>
+<h3 id="2-选题限制"><a class="header-anchor" href="#2-选题限制">¶ </a>2. 选题限制</h3>
+<ol>
+<li>
+<p>接受使用 Spring Boot 等 Java 后端框架实现的交付物，<strong>但这类作品的所有框架代码和前端部分的 html、css、JavaScript 代码将不计入工作量统计</strong>。</p>
+</li>
+<li>
+<p>**不接受任何与以往学期项目雷同的项目作为大作业的交付物。**选择 Web 开发的，选题不应与软工、软分和后续小学期的选题相同（如音乐播放平台、视频播放平台、团队协作平台、学术成果分享平台等）。<strong>该限制仅限于网页</strong>，纯 Java 应用仍可以是相关选题。</p>
+</li>
+<li>
+<p>不接受编译课的课设作为交付物，即 C 语言子集的编译器。</p>
+</li>
+</ol>
+<h3 id="3-说明与注意事项"><a class="header-anchor" href="#3-说明与注意事项">¶ </a>3. 说明与注意事项</h3>
+<ol>
+<li>
+<p>限定主要开发语言为 Java。</p>
+</li>
+<li>
+<p>**小组人数 3～4 人，可跨班组队。**需要选出一位同学当组长。</p>
+</li>
+<li>
+<p>代码需要经过测试，至少不应在正常使用中出现错误。</p>
+</li>
+<li>
+<p><strong>代码需要遵循 JavaDoc 标准编写代码注释</strong>，本条作为给分的重要依据之一。</p>
+</li>
+<li>
+<p>允许合理使用第三方库。</p>
+</li>
+</ol>
+<h2 id="二、提交要求"><a class="header-anchor" href="#二、提交要求">¶ </a>二、提交要求</h2>
+<ol>
+<li>
+<p><strong>第 13 周将会进行一次中期检查，主要检查项目选题及开发进度，时间暂定为实验课。</strong></p>
+</li>
+<li>
+<p><strong>提交 DDL 是 16 周周日晚（2023 年 12 月 24 日晚 23:59:59）。没有延期的余地，不交即 0 分。</strong></p>
+</li>
+<li>
+<p>以小组为单位提交，交到云平台，每组只需要组长提交。</p>
+</li>
+<li>
+<p><strong>交付物：zip 压缩包</strong>，命名为 <code>组号-组名-作品名</code>，其中应包含</p>
+</li>
+</ol>
+<ul>
+<li>
+<p><strong>项目的全部代码</strong>，命名为 <code>组号-作品名-项目代码</code>。</p>
+</li>
+<li>
+<p><strong>项目开发文档</strong>，命名为 <code>组号-作品名-项目开发文档</code>，格式为 PDF，内容包含：</p>
+<ul>
+<li>
+<p>作品名称和小组名称。</p>
+</li>
+<li>
+<p>小组成员的姓名、学号、在项目中的任务职责、<strong>分工权重（限制 0.9～1.1，默认为 1）</strong>。</p>
+</li>
+<li>
+<p><strong>团队协作方式的描述</strong>，可以是你们怎样规划进度、怎样设计项目、怎样收集资料、怎样编码代码等，内容自由发挥。<strong>要求说明协同编码的方式</strong>，如微信发压缩包/在线同步编辑/代码托管平台（GitHub、Gitee、阿里云云效等），最好能提供截图。</p>
+<ul>
+<li>项目介绍/背景/目的。</li>
+<li>项目开发环境，例如硬件种类、JDK 版本、操作系统、IDE 等。</li>
+<li>项目运行环境，例如硬件种类、JDK 版本、操作系统、数据库（可选）、服务器（可选）等。</li>
+<li>（可选）按点列明使用到的比较高级的算法或技术，以及其他任何你认为出彩的设计，如 UI 等。</li>
+<li>（可选）如果使用了第三方库或参考了开源项目的，说明其来源以及你使用的原因。参考了开源项目的，需要说明你的改进与创新点。</li>
+<li>（可选）对于作品中的各类素材（如音视频、插图等），如果是从网络上获取或者请第三方的个人或组织制作的，列出其来源。例如从某素材网站上下载的小图标、请非本团队的同学绘制的插画等。</li>
+</ul>
+</li>
+<li>
+<p><strong>用户使用说明书</strong>，命名为 <code>组号-作品名-用户使用说明书</code>，格式为 PDF，内容包含</p>
+</li>
+<li>
+<p>对于程序各部分、各功能使用方式的引导（文字 + 图片）。</p>
+<ul>
+<li>使用时可能发生的错误、错误原因与解决方案。</li>
+</ul>
+</li>
+<li>
+<p>（可选）其他任何你认为应说明的问题。</p>
+</li>
+<li>
+<p><strong>展示 ppt</strong>，命名为 <code>组号-作品名-展示ppt</code>。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>由 IDE 生成的 JavaDoc</strong>，命名为 <code>组号-作品名-JavaDoc</code>，详情参靠</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/IManiy/article/details/125293509">规范注释模板的设置</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42013035/article/details/103507039">IDEA 导出 JavaDoc</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="三、评分依据"><a class="header-anchor" href="#三、评分依据">¶ </a>三、评分依据</h2>
+<ol>
+<li>
+<p>工作量（30%）</p>
+<p>根据小组人数粗略裁定，<strong>3 人组参考标准 2k～3k 行，4 人组参考标准 3k～4k 行</strong>。安卓开发及使用了框架的项目不适用此标准。<strong>框架代码、非 Java 代码均不计入统计</strong>。</p>
+<p>不要刻意使用大量无意义空行、无关注释、冗余代码来凑行数。</p>
+</li>
+<li>
+<p>答辩和展示效果（20%）</p>
+</li>
+<li>
+<p>产品的使用体验、易用性、错误处理和反馈等（约 15%）</p>
+</li>
+<li>
+<p>项目的技术水平（10%）</p>
+</li>
+<li>
+<p>代码风格统一、命名缩进空格换行规范、按照 JavaDoc 标准写注释（10%）</p>
+</li>
+<li>
+<p>文档内容完整（10%）</p>
+</li>
+<li>
+<p>小组成员分工合理（5%）</p>
+</li>
+</ol>
+<h2 id="四、建议"><a class="header-anchor" href="#四、建议">¶ </a>四、建议</h2>
+<h3 id="1-功能实现"><a class="header-anchor" href="#1-功能实现">¶ </a>1. 功能实现</h3>
+<ul>
+<li>项目作品应完整，不要有残缺功能（指的是留了功能按键，但实际功能还未实现等情况）。</li>
+<li>对用户友好，用户只根据界面的提示和说明书就能正常使用所有功能。细节也很重要，例如当应用的窗口关闭时，应确认关闭操作，或支持自动保存等。</li>
+<li>不要让用户猜测下一步该如何操作，也不要报出让用户摸不着头脑的错误。（可以把错误写进一个文件，如 <code>error.log</code>）</li>
+</ul>
+<h3 id="2-错误处理与测试"><a class="header-anchor" href="#2-错误处理与测试">¶ </a>2. 错误处理与测试</h3>
+<ul>
+<li>对于各种常见情况，应该提供正确的错误处理（如新建文件、重新命名、超时重试等）。</li>
+<li>在任何情况下，程序不应该因为代码抛出 <code>Exception</code> 而爆炸（哪怕是反馈错误后强制退出也比莫名崩溃好）。</li>
+<li>开发命令行应用，可以不考虑 <code>Ctrl+Z</code> <code>Ctrl+C</code> 这种强制结束程序的操作；开发图形界面应用，可以不考虑任务管理器、<code>kill</code> 命令等强制结束程序的操作。</li>
+</ul>
+<blockquote>
+<p>为了避免被<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/39441398/answer/1636650160">点炒饭</a>，同学们应当开展基础的测试，如各类边界情况、空输入、短时间大量输入大量网络请求等。我们不要求程序具备极强的健壮性，但至少不应该在正常使用中崩溃。</p>
+</blockquote>
+<h3 id="3-美观"><a class="header-anchor" href="#3-美观">¶ </a>3. 美观</h3>
+<p>这是—个很主观的标准，因此不会有很多约束，但还是希望大家做的作品尽可能好看 ~ 😋</p>
+<hr>
+<p>预祝同学们大作业开发顺利！🥳</p>
+<p>Love,<br>
+T.A. 😉</p>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure class="avatar avatar-lg">
+          <img src="/avatar.svg" alt="...">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>Love. T.A. 🥰</div>
+      <div>2023-10-24</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+<!-- hexo injector body_end start -->
+<script src="/js/collapse.js"></script>
+<!-- hexo injector body_end end --></body>
+</html>
+
+
+<script src="/js/book.js"></script>
