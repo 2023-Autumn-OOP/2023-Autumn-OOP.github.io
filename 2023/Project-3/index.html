@@ -220,7 +220,7 @@ function sidebar_toggle() {
 <div class="admonition warning"><p>同学们评测时出现的 RE 往往就是因为有异常没有被捕获，从而导致程序异常结束。可以试试用 <code>try</code> 和 <code>catch</code> 将 <code>main</code> 方法包裹起来，输出捕获的异常，看看到底是什么导致了 RE。</p>
 </div>
 <h3 id="4-目录、文件和路径"><a class="header-anchor" href="#4-目录、文件和路径">¶ </a>4. 目录、文件和路径</h3>
-<p>**目录就是文件夹，目录中有文件，同时，目录也是一种特殊的文件。**程序运行总是在一个目录下（当前目录、工作目录），一般是项目所在的目录，<strong>当前目录可以用 <code>.</code> 指代（或者不写），当前目录的父目录可以用 <code>..</code> 指代</strong>。</p>
+<p>目录就是文件夹，目录中有文件，同时，目录也是一种特殊的文件。程序运行总是在一个目录下（当前目录、工作目录），一般是项目所在的目录， <strong>当前目录可以用 <code>.</code> 指代（或者不写），当前目录的父目录可以用 <code>..</code> 指代</strong>。</p>
 <p>“C 盘下的 User 下的 Desktop 下的 Test 下的 src 下的 com 下的 Test.java 文件”，我们就可以用这样的路径来描述它的位置：<code>C:/User/Desktop/Test/src/com/Test.java</code> （这种写法不太符合 Windows 的规范但是足够我们理解路径了）。<strong>如果这里的 Test 就是我们项目，那么程序就运行在该目录下，则 Test.java 也可以用 <code>./src/com/Test.java</code> 表示，其中的 <code>./</code> 也可以省略。<strong>对于前者，路径从一个根位置出发，一路深入到指定位置，这种路径称为</strong>绝对路径</strong>；对于后者，路径从一个参考点出发，目标位置根据参考点而定，这种路径叫做<strong>相对路径</strong>。</p>
 <p>以下示例有助于我们理解相对路径 —— 本次迭代主要涉及的文件操作问题。假定当前位置就是项目 Test，则其他文件/目录的相对路径以“注释”的形式标注。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Desktop                 # 父目录: ..</span><br><span class="line">└── a.jpg                   # ../a.jpg</span><br><span class="line">    ├── Test                    # 当前目录: .</span><br><span class="line">    │   ├── src                     # ./src 或 src</span><br><span class="line">    │   │   ├── com                     # ./src/com 或 src/com</span><br><span class="line">    │   │   │   ├── Test.java           # ./src/com/Test.java 或 src/com/Test.java</span><br><span class="line">    │   │   │   ├── Hello.java          # ./src/com/Hello.java 或 src/com/Hello.java</span><br><span class="line">    │   │   │   └── Person.java         # ./src/com/Person.java 或 src/com/Person.java</span><br><span class="line">    │   │   └── ui                  # ./src/ui 或 src/ui</span><br><span class="line">    │   │       ├── MainWindow.java     #./src/ui/MainWindow.java 或 src/ui/MainWindow.java</span><br><span class="line">    │   │       └── Decoration.java     #./src/ui/Decoration.java 或 src/ui/Decoration.java</span><br><span class="line">    │   ├── out                     # ./out 或 out</span><br><span class="line">    │   │   ├── Test.class              # ./out/Test.class 或 out/Test.class</span><br><span class="line">    │   │   ├── Main.class              # ./out/Main.class 或 out/Main.class</span><br><span class="line">    │   │   ├── ...</span><br><span class="line">    │   └── data                    # ./data 或 data</span><br><span class="line">    │       └── a.txt                   # ./data/a.txt 或 data/a.txt</span><br><span class="line">    └── OOP                     # ../OOP</span><br><span class="line">        ├── OOP_01.pdf              # ../OOP/OOP_01.pdf</span><br><span class="line">        └── OOP_02.pptx             # ../OOP/OOP_02.pptx</span><br></pre></td></tr></table></figure>
@@ -456,14 +456,18 @@ function sidebar_toggle() {
 <p><strong>5.2.1 查看订单成功</strong></p>
 <p>每件订单占一行，按订单编号从小到大输出，格式为如下。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OrderId: shopId commodityId commodityQuantity cost orderStatus</span><br></pre></td></tr></table></figure>
-<p><code>cost</code> 的单位为 yuan，保留两位小数，具体示例如下。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">O-1: S-2 C-1 20 10.00yuan pending</span><br><span class="line">O-2: S-2 C-2 10 10.00yuan pending</span><br></pre></td></tr></table></figure>
+<p><code>cost</code> 为该订单的<strong>商品总价</strong>，的单位为 yuan，保留两位小数，具体示例如下。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">O-1: S-2 C-1 20 10.00yuan pending</span><br><span class="line">O-2: S-2 C-2 10 10.00yuan finished</span><br></pre></td></tr></table></figure>
 <p><strong>无参数输出</strong></p>
 <p><strong>5.2.2 参数数量不合法</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal argument count</span><br></pre></td></tr></table></figure>
 <p><strong>5.2.3 未登录</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please log in first</span><br></pre></td></tr></table></figure>
 <p><strong>5.2.4 订单为空</strong></p>
+<ul>
+<li>管理员查看所有订单，但当前系统无订单，显示订单为空。</li>
+<li>顾客和商家查看与自己相关的订单，但无相关订单，显示订单为空。</li>
+</ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Order not exists</span><br></pre></td></tr></table></figure>
 <p><strong>参数为店铺编号输出</strong></p>
 <p><strong>5.2.5 参数数量不合法</strong></p>
@@ -477,6 +481,7 @@ function sidebar_toggle() {
 <p><strong>5.2.9 店铺不存在、店铺编号不属于该商家</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Shop id not exists</span><br></pre></td></tr></table></figure>
 <p><strong>5.2.10 订单为空</strong></p>
+<p>管理员/商家查看店铺所有订单，但店铺无订单，显示订单为空。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Order not exists</span><br></pre></td></tr></table></figure>
 <h3 id="6-导出商家订单"><a class="header-anchor" href="#6-导出商家订单">¶ </a>6. 导出商家订单</h3>
 <h4 id="6-1-格式说明"><a class="header-anchor" href="#6-1-格式说明">¶ </a>6.1 格式说明</h4>
