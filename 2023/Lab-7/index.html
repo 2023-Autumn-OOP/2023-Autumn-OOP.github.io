@@ -233,6 +233,8 @@ function sidebar_toggle() {
 <h3 id="Question-4：ShapeSequence（编程题）"><a class="header-anchor" href="#Question-4：ShapeSequence（编程题）">¶ </a>Question 4：ShapeSequence（编程题）</h3>
 <div class="admonition warning"><p>这是一个主动要求大家造轮子的题，因此不允许继承或组合任何 Java 自带的容器（除了数组）。</p>
 </div>
+<div class="admonition info"><p>关于内部类实现迭代器，可以参考：<a target="_blank" rel="noopener" href="https://www.cs.cornell.edu/courses/JavaAndDS/iteratorIterable/04stackIterator.pdf">An iterator that is an inner class</a>。</p>
+</div>
 <p>在 <code>Shape</code> 的基础上，定义一个满足如下需求的 <code>ShapeSequence</code> 类：</p>
 <ul>
 <li>具有属性 <code>private Shape[] shapes</code></li>
@@ -254,7 +256,8 @@ function sidebar_toggle() {
 <li>格式中的 <code>Type</code> 是形状类型的全小写英文单词，比如 <code>rectangle、ellipse</code></li>
 </ul>
 </li>
-<li>方法 <code>public SequenceIterator iterator() &#123;return new SequenceIterator(); &#125;</code></li>
+<li>方法 <code>public SequenceIterator iterator() &#123;return new SequenceIterator(); &#125;</code><br>
+思考：结合之后内部类的访问权限，这个返回值有问题吗？</li>
 <li>具有内部类 <code>private class SequenceIterator</code>，它用于序列遍历的迭代器
 <ul>
 <li>默认构造方法，在被构造时，迭代器指向的位置代表数组下标 <code>0</code></li>
@@ -277,6 +280,7 @@ function sidebar_toggle() {
 </ul>
 </li>
 </ul>
+<p>对于 <code>ShapeSequence</code> 的 <code>iterator</code> 方法，由于内部类是 <code>private</code>的，如果直接返回 <code>SequenceIterator</code>，是无法编译通过的。因此，你可能需要使用<strong>接口来进行实现的隐藏</strong>，具体可以参考 <a target="_blank" rel="noopener" href="https://www.cs.cornell.edu/courses/JavaAndDS/iteratorIterable/04stackIterator.pdf">An iterator that is an inner class</a>。为此，你<strong>可以更改</strong>上文给出的需求。</p>
 <p><strong>编写测试类并描述你的测试计划。提交项目代码文件夹。</strong></p>
 <p><strong>注意：</strong><code>toString</code> 和 <code>equals</code> 是 override 继承自 <code>Object</code> 的方法，尽量避免出现诸如 <code>ToString</code>、 <code>equals</code> 的参数类型不是 <code>Object</code> 等情况。</p>
 <p>题目中省略了一些实现上必要但是方式不唯一的属性：比如你可以在 <code>ShapeSequence</code> 类中声明一个 <code>int</code> 属性来表示当前容器被填充到了什么位置；给 <code>SequenceIterator</code> 一个 <code>int</code> 属性表示当前迭代器指向的位置，当使用 <code>isEnd</code> 时，判断迭代器位置和外部类容器的填充位置进行比较。当然，你可以按自己的想法设计。</p>
