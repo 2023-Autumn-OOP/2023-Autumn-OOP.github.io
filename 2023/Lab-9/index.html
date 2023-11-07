@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          Lab 9 - BUAA 2023 OOP
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="/css/collapse.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>BUAA 2023 OOP</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <h1 id="课程通知"><a class="header-anchor" href="#课程通知">¶ </a><strong>课程通知</strong></h1>
+<ul>
+<li><a href="/2023/Homework-Notice/">作业注意事项</a></li>
+</ul>
+<h1 id="Lab-🔬"><a class="header-anchor" href="#Lab-🔬">¶ </a><strong>Lab 🔬</strong></h1>
+<ul>
+<li><a href="/2023/Lab-1/"><s>Lab 1</s></a></li>
+<li><a href="/2023/Lab-2/"><s>Lab 2</s></a></li>
+<li><a href="/2023/Lab-3/"><s>Lab 3</s></a></li>
+<li><a href="/2023/Lab-4/"><s>Lab 4</s></a></li>
+<li><a href="/2023/Lab-5/"><s>Lab 5</s></a></li>
+<li><a href="/2023/Lab-6/"><s>Lab 6</s></a></li>
+<li><a href="/2023/Lab-8/">Lab 8</a> ⌛</li>
+<li><a href="/2023/Lab-9/">Lab 9</a> ✨</li>
+<li>To Be Continued… 🫣</li>
+</ul>
+<h1 id="迭代任务-📽️"><a class="header-anchor" href="#迭代任务-📽️">¶ </a><strong>迭代任务 📽️</strong></h1>
+<ul>
+<li><a href="/2023/Project-1/"><s>迭代一</s></a></li>
+<li><a href="/2023/Project-2/"><s>迭代二</s></a></li>
+<li><a href="/2023/Project-3/">迭代三</a> ✨</li>
+<li>迭代四（即将开始）⚒️</li>
+<li>To Be Continued… 🙈</li>
+</ul>
+<h1 id="大作业-🎯"><a class="header-anchor" href="#大作业-🎯">¶ </a><strong>大作业 🎯</strong></h1>
+<ul>
+<li><a href="/2023/Teamwork/">大作业要求</a></li>
+</ul>
+<h1 id="帮助中心-💁🏻"><a class="header-anchor" href="#帮助中心-💁🏻">¶ </a><strong>帮助中心 💁🏻</strong></h1>
+<ul>
+<li><a href="/2023/Configure-Java-Environment/">Java 环境配置</a></li>
+<li><a href="/2023/Java-Features-Summary/">Java 8 - 17 新特性总结</a></li>
+<li><a href="/2023/Lab-Template/">Lab 问答报告模板</a></li>
+<li><a href="/2023/patpat-User-Guide/">patpat 使用指南</a> 💫</li>
+<li><a href="/2023/Q-A/">Q &amp; A</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <h1 id="Lab-9-异常（Exception）"><a class="header-anchor" href="#Lab-9-异常（Exception）">¶ </a>Lab 9: 异常（Exception）</h1>
+<div class="admonition error"><p>本次 Lab 时长为 <strong>2</strong> 周，DDL 为 <strong>11 月 20 日 23:59</strong>。</p>
+</div>
+<div class="admonition note"><p>附件下载（包括问答题和实验报告模板）：<a target="_blank" rel="noopener" href="https://bhpan.buaa.edu.cn/link/AA96D0CA694BB74ABFA070F38B6C527AC6">https://bhpan.buaa.edu.cn/link/AA96D0CA694BB74ABFA070F38B6C527AC6</a></p>
+</div>
+<p style="text-align:right"><i>&dash;“对方不想跟您说话，并向您抛出了一个异常。"</i></p>
+<blockquote>
+<p>完备的异常处理机制是 Java 程序安全可靠的一大原因，灵活地使用异常可以提高程序的鲁棒性（Robust），在编写代码中也能够以更优雅的方式处理潜在的错误，即使无法恢复，也能提供有效的信息供开发人员 Debug。</p>
+</blockquote>
+<h2 id="实验目的"><a class="header-anchor" href="#实验目的">¶ </a>实验目的</h2>
+<ul>
+<li>掌握异常处理机制</li>
+<li>掌握使用 <code>try... catch... finally</code> 处理异常</li>
+<li>掌握使用 <code>throws</code> 关键字</li>
+<li>掌握使用 <code>throw</code> 关键字</li>
+<li>创建用户自定义异常，并处理这种异常</li>
+</ul>
+<div class="admonition error"><p>异常并<strong>不等于</strong>错误！异常只是表明程序没有按照期望的方式执行，我们捕获异常是为了让程序恢复正常运行，而错误往往是不可恢复的。当然，可以认为不可恢复的异常是错误。</p>
+</div>
+<h2 id="实验题目"><a class="header-anchor" href="#实验题目">¶ </a>实验题目</h2>
+<h3 id="Question-1-Java中的检查型异常-checked-exception-和非检查型异常-unchecked-exception-有什么区别？（简答）"><a class="header-anchor" href="#Question-1-Java中的检查型异常-checked-exception-和非检查型异常-unchecked-exception-有什么区别？（简答）">¶ </a>Question 1: Java中的检查型异常 <code>(checked exception)</code> 和非检查型异常 <code>(unchecked exception)</code> 有什么区别？（简答）</h3>
+<h3 id="Question-2-简述Java异常处理中-throws-和-throw-关键字的作用。-（简答）"><a class="header-anchor" href="#Question-2-简述Java异常处理中-throws-和-throw-关键字的作用。-（简答）">¶ </a>Question 2: 简述Java异常处理中 <code>throws</code> 和 <code>throw</code> 关键字的作用。 （简答）</h3>
+<h3 id="Question-3-请列出2个常见的运行时异常和2个非运行时异常。-（简答）"><a class="header-anchor" href="#Question-3-请列出2个常见的运行时异常和2个非运行时异常。-（简答）">¶ </a>Question 3: 请列出2个常见的运行时异常和2个非运行时异常。 （简答）</h3>
+<h3 id="Question-4-指出下列程序的错误并改正。（改错）"><a class="header-anchor" href="#Question-4-指出下列程序的错误并改正。（改错）">¶ </a>Question 4: 指出下列程序的错误并改正。（改错）</h3>
+<div class='collapse'>
+      <div class='collapse-ctrl collapse-cardtitle' onclick='collapseToggle(this)'><div class='collapse-hint-ico'><img style="pointer-events: none;" width="12" height="12" src="/expand.png"/></div><span class='collapse-hint-show'>Show</span><span class='collapse-hint-hide'>Hide</span></div>
+      <div class='collapse-content'><div class='content-flex collapse-cardborder'><div>
+          <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Question4</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">start</span><span class="params">()</span> <span class="keyword">throws</span> IOException, RuntimeException &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">&quot;Unable to Start&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            start();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception ex) &#123;</span><br><span class="line">            ex.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (RuntimeException re) &#123;</span><br><span class="line">            re.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</div></div>
+      </div>
+  </div>
+<h3 id="Question-5-指出下列程序的错误并改正。（改错）"><a class="header-anchor" href="#Question-5-指出下列程序的错误并改正。（改错）">¶ </a>Question 5: 指出下列程序的错误并改正。（改错）</h3>
+<div class='collapse'>
+      <div class='collapse-ctrl collapse-cardtitle' onclick='collapseToggle(this)'><div class='collapse-hint-ico'><img style="pointer-events: none;" width="12" height="12" src="/expand.png"/></div><span class='collapse-hint-show'>Show</span><span class='collapse-hint-hide'>Hide</span></div>
+      <div class='collapse-content'><div class='content-flex collapse-cardborder'><div>
+          <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// SuperClass.java</span></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SuperClass</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">start</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IOException</span>(<span class="string">&quot;Unable to start&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// SubClass.java</span></span><br><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SubClass</span> <span class="keyword">extends</span> <span class="title class_">SuperClass</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">start</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Exception</span>(<span class="string">&quot;Unable to open file&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">open</span><span class="params">(String fileName)</span>&#123;</span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(fileName);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</div></div>
+      </div>
+  </div>
+<h3 id="Question-6-写出以下程序的输出。（程序输出）"><a class="header-anchor" href="#Question-6-写出以下程序的输出。（程序输出）">¶ </a>Question 6: 写出以下程序的输出。（程序输出）</h3>
+<div class='collapse'>
+      <div class='collapse-ctrl collapse-cardtitle' onclick='collapseToggle(this)'><div class='collapse-hint-ico'><img style="pointer-events: none;" width="12" height="12" src="/expand.png"/></div><span class='collapse-hint-show'>Show</span><span class='collapse-hint-hide'>Hide</span></div>
+      <div class='collapse-content'><div class='content-flex collapse-cardborder'><div>
+          <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Question4</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            methodA();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            methodB();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">methodA</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;methodA 抛出一个异常！&quot;</span>);</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;执行 methodA 的 finally!&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">methodB</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;methodB 执行！&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;执行 methodB 的 finally!&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</div></div>
+      </div>
+  </div>
+<h3 id="Question-7-写出以下程序的输出，试着解释三个函数不同输出的原因。（程序输出）"><a class="header-anchor" href="#Question-7-写出以下程序的输出，试着解释三个函数不同输出的原因。（程序输出）">¶ </a>Question 7: 写出以下程序的输出，试着解释三个函数不同输出的原因。（程序输出）</h3>
+<div class='collapse'>
+      <div class='collapse-ctrl collapse-cardtitle' onclick='collapseToggle(this)'><div class='collapse-hint-ico'><img style="pointer-events: none;" width="12" height="12" src="/expand.png"/></div><span class='collapse-hint-show'>Show</span><span class='collapse-hint-hide'>Hide</span></div>
+      <div class='collapse-content'><div class='content-flex collapse-cardborder'><div>
+          <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Question7</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;-----------------------&quot;</span>);</span><br><span class="line">        System.out.println(get0());</span><br><span class="line">        System.out.println(<span class="string">&quot;-----------------------&quot;</span>);</span><br><span class="line">        System.out.println(get1());</span><br><span class="line">        System.out.println(<span class="string">&quot;-----------------------&quot;</span>);</span><br><span class="line">        System.out.println(get2());</span><br><span class="line">        System.out.println(<span class="string">&quot;-----------------------&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">get0</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Exception</span>();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;error&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            i++;</span><br><span class="line">            System.out.println(<span class="string">&quot;i in finally block:&quot;</span> + i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">get1</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">i</span> <span class="operator">=</span> <span class="string">&quot;ok&quot;</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Exception</span>();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;error&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            i += <span class="string">&quot; finally&quot;</span>;</span><br><span class="line">            System.out.println(<span class="string">&quot;i in finally: &quot;</span> + i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> StringBuilder <span class="title function_">get2</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">i</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>(<span class="string">&quot;ok&quot;</span>);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Exception</span>();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;error&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            i.append(<span class="string">&quot; finally&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;i in finally: &quot;</span> + i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</div></div>
+      </div>
+  </div>
+<h3 id="Question-8-编写程序完成以下要求。（编程）"><a class="header-anchor" href="#Question-8-编写程序完成以下要求。（编程）">¶ </a>Question 8: 编写程序完成以下要求。（编程）</h3>
+<ul>
+<li>自定义类 <code>Triangle</code> ，其中有成员 <code>x</code>，<code>y</code>，<code>z</code> 作为三边长，类型为 <code>double</code> ，构造方法 <code>Triangle(a, b, c)</code> 分别给 <code>x</code>，<code>y</code>，<code>z</code> 赋值</li>
+<li>求面积方法 <code>public double getArea()</code></li>
+<li>显示三角形信息（三个边长）<code>public void showInfo()</code></li>
+<li>上述两个方法中当三条边不能构成一个三角形时要抛出自定义异常 <code>NotTriangleException</code> ，否则显示正确信息。</li>
+<li>在测试类 <code>TriangleTest</code> 中的主方法中构造一组 <code>Triangle</code> 对象，显示三角形信息和面积，要求捕获异常。</li>
+</ul>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure class="avatar avatar-lg">
+          <img src="/avatar.svg" alt="...">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>Love. T.A. 🥰</div>
+      <div>2023-11-07</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+<!-- hexo injector body_end start -->
+<script src="/js/collapse.js"></script>
+<!-- hexo injector body_end end --></body>
+</html>
+
+
+<script src="/js/book.js"></script>
