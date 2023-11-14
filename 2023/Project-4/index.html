@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          Project 4 - BUAA 2023 OOP
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="/css/collapse.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>BUAA 2023 OOP</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <h1 id="课程通知"><a class="header-anchor" href="#课程通知">¶ </a><strong>课程通知</strong></h1>
+<ul>
+<li><a href="/2023/Homework-Notice/">作业注意事项</a></li>
+</ul>
+<h1 id="Lab-🔬"><a class="header-anchor" href="#Lab-🔬">¶ </a><strong>Lab 🔬</strong></h1>
+<ul>
+<li><a href="/2023/Lab-1/"><s>Lab 1</s></a></li>
+<li><a href="/2023/Lab-2/"><s>Lab 2</s></a></li>
+<li><a href="/2023/Lab-3/"><s>Lab 3</s></a></li>
+<li><a href="/2023/Lab-4/"><s>Lab 4</s></a></li>
+<li><a href="/2023/Lab-5/"><s>Lab 5</s></a></li>
+<li><a href="/2023/Lab-6/"><s>Lab 6</s></a></li>
+<li><a href="/2023/Lab-7/"><s>Lab 7</s></a></li>
+<li><a href="/2023/Lab-8/"><s>Lab 8</s></a></li>
+<li><a href="/2023/Lab-9/">Lab 9</a> ⌛</li>
+<li><a href="/2023/Lab-10/">Lab 10</a> ✨</li>
+<li>To Be Continued… 🫣</li>
+</ul>
+<h1 id="迭代任务-📽️"><a class="header-anchor" href="#迭代任务-📽️">¶ </a><strong>迭代任务 📽️</strong></h1>
+<ul>
+<li><a href="/2023/Project-1/"><s>迭代一</s></a></li>
+<li><a href="/2023/Project-2/"><s>迭代二</s></a></li>
+<li><a href="/2023/Project-3/"><s>迭代三</s></a></li>
+<li><a href="/2023/Project-4/">迭代四</a> ✨</li>
+<li>All released! 🎉</li>
+</ul>
+<h1 id="大作业-🎯"><a class="header-anchor" href="#大作业-🎯">¶ </a><strong>大作业 🎯</strong></h1>
+<ul>
+<li><a href="/2023/Teamwork/">大作业要求</a></li>
+</ul>
+<h1 id="帮助中心-💁🏻"><a class="header-anchor" href="#帮助中心-💁🏻">¶ </a><strong>帮助中心 💁🏻</strong></h1>
+<ul>
+<li><a href="/2023/Configure-Java-Environment/">Java 环境配置</a></li>
+<li><a href="/2023/Java-Features-Summary/">Java 8 - 17 新特性总结</a></li>
+<li><a href="/2023/Lab-Template/">Lab 问答报告模板</a></li>
+<li><a href="/2023/patpat-User-Guide/">patpat 使用指南</a> 💫</li>
+<li><a href="/2023/Q-A/">Q &amp; A</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <h1 id="OOP-迭代四"><a class="header-anchor" href="#OOP-迭代四">¶ </a>OOP 迭代四</h1>
+<h2 id="写在前面"><a class="header-anchor" href="#写在前面">¶ </a>写在前面</h2>
+<p>同学们，我们目前已经完成了 TMS 的文件操作等。在最后一次迭代 TMS-4 中，我们将会实现收藏商品、序列化等一系列相关命令。</p>
+<p>在开始编写代码之前，建议大家先仔细阅读需求说明和文末的 HINTS，再开始编写代码。编写好的代码需要经过 patpat 评测。通过所有的测试点后，需将整个项目文件打包上传到云平台，即可完成本次实验。希望大家能够认真完成，不作弊不抄袭。</p>
+<hr>
+<h1 id="实验说明"><a class="header-anchor" href="#实验说明">¶ </a>实验说明</h1>
+<h2 id="一、实验目标"><a class="header-anchor" href="#一、实验目标">¶ </a>一、实验目标</h2>
+<ol>
+<li>了解 Java 序列化和反序列化技术</li>
+</ol>
+<h2 id="二、实验的重难点"><a class="header-anchor" href="#二、实验的重难点">¶ </a>二、实验的重难点</h2>
+<ol>
+<li>Java 序列化和反序列化技术</li>
+<li>收藏商品类的设计</li>
+</ol>
+<h2 id="三、关键技术"><a class="header-anchor" href="#三、关键技术">¶ </a>三、关键技术</h2>
+<p><strong>序列化与反序列化</strong></p>
+<ul>
+<li>Java <strong>序列化</strong>就是指把 Java 对象转换为字节序列的过程。</li>
+<li>Java <strong>反序列化</strong>就是指把字节序列恢复为 Java 对象的过程。</li>
+</ul>
+<p>序列化最重要的作用：在传递和保存对象时，保证对象的完整性和可传递性。对象转换为有序字节流，以便在网络上传输或者保存在本地文件中。</p>
+<p>反序列化的最重要的作用：根据字节流中保存的对象状态及描述信息，通过反序列化重建对象。</p>
+<p>总结：核心作用就是对象状态的保存和重建。（整个过程核心点就是字节流中所保存的对象状态及描述信息）。</p>
+<h2 id="四、相关资料"><a class="header-anchor" href="#四、相关资料">¶ </a>四、相关资料</h2>
+<p>理论：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45433031/article/details/115364830">序列化和反序列化的详解</a></p>
+<p>实践：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/com-Jacob/p/16207339.html">序列化与反序列化</a></p>
+<blockquote>
+<p>例如，你实例化了一个对象，名字为小明，此时这个小明对象只在你程序运行期间存在，运行结束后就消失了，但是你可以通过序列化，将小明对象转换为字节序列（在运行期间这个对象本质也只是一串数据）存储到本地文件中，之后即可通过反序列化将这个文件中存储的字节序列转换回一个名字叫小明的对象。</p>
+</blockquote>
+<h2 id="五、DDL及其他要求"><a class="header-anchor" href="#五、DDL及其他要求">¶ </a>五、DDL及其他要求</h2>
+<ol>
+<li><strong>本次实验持续 2 周</strong>，截止时间以云平台为准。</li>
+</ol>
+<hr>
+<h1 id="实验内容"><a class="header-anchor" href="#实验内容">¶ </a>实验内容</h1>
+<h2 id="一、命令概览"><a class="header-anchor" href="#一、命令概览">¶ </a>一、命令概览</h2>
+<p>本次迭代需要完成的命令如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">需求</th>
+<th style="text-align:left">命令符</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">新增</td>
+<td style="text-align:left">favoriteCommodity</td>
+<td style="text-align:left">收藏商品</td>
+</tr>
+<tr>
+<td style="text-align:left">新增</td>
+<td style="text-align:left">cancelFavoriteCommodity</td>
+<td style="text-align:left">取消收藏商品</td>
+</tr>
+<tr>
+<td style="text-align:left">新增</td>
+<td style="text-align:left">listFavoriteCommodity</td>
+<td style="text-align:left">查看收藏商品</td>
+</tr>
+<tr>
+<td style="text-align:left">新增</td>
+<td style="text-align:left">uploadFavoriteCommodity</td>
+<td style="text-align:left">上传收藏商品</td>
+</tr>
+<tr>
+<td style="text-align:left">新增</td>
+<td style="text-align:left">readFavoriteCommodity</td>
+<td style="text-align:left">读取收藏商品</td>
+</tr>
+<tr>
+<td style="text-align:left">新增</td>
+<td style="text-align:left">buyFavoriteCommodity</td>
+<td style="text-align:left">购买收藏商品</td>
+</tr>
+</tbody>
+</table>
+<h2 id="二、功能描述"><a class="header-anchor" href="#二、功能描述">¶ </a>二、功能描述</h2>
+<h3 id="1-收藏商品"><a class="header-anchor" href="#1-收藏商品">¶ </a>1. 收藏商品</h3>
+<h4 id="1-1-格式说明"><a class="header-anchor" href="#1-1-格式说明">¶ </a>1.1 格式说明</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令符</th>
+<th style="text-align:left">参数1</th>
+<th style="text-align:left">参数2</th>
+<th style="text-align:left">参数3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">favoriteCommodity</td>
+<td style="text-align:left">店铺编号</td>
+<td style="text-align:left">商品编号</td>
+<td style="text-align:left">商品数量</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>仅<strong>顾客</strong>可收藏商品。</li>
+<li>当商品<strong>再次</strong>被收藏，则改变收藏的商品总数量。</li>
+<li>可以考虑新建一个类来存放收藏商品信息，方便后续指令编写。</li>
+</ul>
+<h4 id="1-2-命令反馈说明"><a class="header-anchor" href="#1-2-命令反馈说明">¶ </a>1.2 命令反馈说明</h4>
+<p><strong>1.2.1 收藏成功</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Favorite commodity success</span><br></pre></td></tr></table></figure>
+<p><strong>1.2.2 参数数量不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal argument count</span><br></pre></td></tr></table></figure>
+<p><strong>1.2.3 未登录</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please log in first</span><br></pre></td></tr></table></figure>
+<p><strong>1.2.4 登录用户身份不为 <code>Customer</code></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Permission denied</span><br></pre></td></tr></table></figure>
+<p><strong>1.2.5 店铺编号不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal shop id</span><br></pre></td></tr></table></figure>
+<p><strong>1.2.6 店铺不存在</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Shop id not exists</span><br></pre></td></tr></table></figure>
+<p><strong>1.2.7 商品编号不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal commodity id</span><br></pre></td></tr></table></figure>
+<p><strong>1.2.8 商品不存在、不属于当前店铺</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Commodity id not exists</span><br></pre></td></tr></table></figure>
+<p><strong>1.2.9 商品数量不合法</strong>（参考上架商品）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal commodity quantity</span><br></pre></td></tr></table></figure>
+<div class="admonition warning"><p class="admonition-title">注意
+</p><p>此处无需判断收藏数量是否大于商品实际数量。</p>
+</div>
+<h3 id="2-取消收藏商品"><a class="header-anchor" href="#2-取消收藏商品">¶ </a>2. 取消收藏商品</h3>
+<h4 id="2-1-格式说明"><a class="header-anchor" href="#2-1-格式说明">¶ </a>2.1 格式说明</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令符</th>
+<th style="text-align:left">参数1</th>
+<th style="text-align:left">参数2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">cancelFavoriteCommodity</td>
+<td style="text-align:left">店铺编号</td>
+<td style="text-align:left">商品编号</td>
+</tr>
+</tbody>
+</table>
+<p>仅顾客可取消收藏商品。</p>
+<h4 id="2-2-命令反馈说明"><a class="header-anchor" href="#2-2-命令反馈说明">¶ </a>2.2 命令反馈说明</h4>
+<p><strong>2.2.1 收藏成功</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cancel favorite commodity success</span><br></pre></td></tr></table></figure>
+<p><strong>2.2.2 参数不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal argument count</span><br></pre></td></tr></table></figure>
+<p><strong>2.2.3 未登录</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please log in first</span><br></pre></td></tr></table></figure>
+<p><strong>2.2.4 登录用户身份不为 <code>Customer</code></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Permission denied</span><br></pre></td></tr></table></figure>
+<p><strong>2.2.5 店铺编号不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal shop id</span><br></pre></td></tr></table></figure>
+<p><strong>2.2.6 商品编号不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal commodity id</span><br></pre></td></tr></table></figure>
+<p><strong>2.2.7 商品未收藏</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Favorite not exists</span><br></pre></td></tr></table></figure>
+<div class="admonition warning"><p class="admonition-title">注意
+</p><p>此处只关心收藏中有无对应店铺和商品信息，故无需判断实际上的店铺和商品是否存在。</p>
+</div>
+<h3 id="3-查看收藏商品"><a class="header-anchor" href="#3-查看收藏商品">¶ </a>3. 查看收藏商品</h3>
+<h4 id="3-1-格式说明"><a class="header-anchor" href="#3-1-格式说明">¶ </a>3.1 格式说明</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令符</th>
+<th style="text-align:left">参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">listFavoriteCommodity</td>
+<td style="text-align:left">无</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>仅顾客可列出收藏商品。</li>
+<li>按照收藏的先后顺序进行排序</li>
+</ul>
+<h4 id="3-2-命令反馈说明"><a class="header-anchor" href="#3-2-命令反馈说明">¶ </a>3.2 命令反馈说明</h4>
+<p><strong>3.2.1 成功输出信息格式为</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shopId: commodityId 商品收藏数量 commodityPrice（单位为 yuan，保留两位小数）</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">S-2: C-1 20 20.00yuan</span><br></pre></td></tr></table></figure>
+<p><strong>3.2.2 参数不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal argument count</span><br></pre></td></tr></table></figure>
+<p><strong>3.2.3 未登录</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please log in first</span><br></pre></td></tr></table></figure>
+<p><strong>3.2.4 登录用户身份不为 <code>Customer</code></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Permission denied</span><br></pre></td></tr></table></figure>
+<p><strong>3.2.5 无收藏商品</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Favorite not exists</span><br></pre></td></tr></table></figure>
+<h3 id="4-上传收藏商品"><a class="header-anchor" href="#4-上传收藏商品">¶ </a>4. 上传收藏商品</h3>
+<h4 id="4-1-格式说明"><a class="header-anchor" href="#4-1-格式说明">¶ </a>4.1 格式说明</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令符</th>
+<th style="text-align:left">参数1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">uploadFavoriteCommodity</td>
+<td style="text-align:left">路径</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>仅顾客可上传收藏商品。</li>
+<li>请使用<strong>序列化</strong>技术，将顾客的收藏商品保存到对应路径，若路径文件不存在则创建，若存在则覆盖。</li>
+<li><strong>文件需放在 <code>./data</code> 路径下</strong>。例如：若路径为 <code>./help.txt</code>，则序列化文件保存路径为<code>./data/help.txt</code>；若路径为 <code>data/help.txt</code>，则序列化文件保存路径为 <code>./data/data/help.txt</code>。</li>
+</ul>
+<h4 id="4-2-命令反馈说明"><a class="header-anchor" href="#4-2-命令反馈说明">¶ </a>4.2 命令反馈说明</h4>
+<p><strong>4.2.1 成功输出信息</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Upload favorite commodity success</span><br></pre></td></tr></table></figure>
+<p><strong>4.2.2 参数不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal argument count</span><br></pre></td></tr></table></figure>
+<p><strong>4.2.3 未登录</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please log in first</span><br></pre></td></tr></table></figure>
+<p><strong>4.2.4 登录用户身份不为 <code>Customer</code></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Permission denied</span><br></pre></td></tr></table></figure>
+<p><strong>4.2.5 无收藏商品</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Favorite not exists</span><br></pre></td></tr></table></figure>
+<p><strong>4.2.6 文件操作失败</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File operation failed</span><br></pre></td></tr></table></figure>
+<h3 id="5-读取收藏商品"><a class="header-anchor" href="#5-读取收藏商品">¶ </a>5. 读取收藏商品</h3>
+<h4 id="5-1-格式说明"><a class="header-anchor" href="#5-1-格式说明">¶ </a>5.1 格式说明</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令符</th>
+<th style="text-align:left">参数1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">readFavoriteCommodity</td>
+<td style="text-align:left">路径</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>仅<strong>顾客</strong>可读取收藏商品。</li>
+<li>将路径对应文件<strong>反序列化</strong>得到收藏商品对象并持有，读取而来的收藏商品对象与顾客本身持有的收藏商品对象<strong>合并</strong>。若有店铺编号和商品编号<strong>均相同</strong>则商品数量相加，若<strong>有不相同</strong>则加入顾客本身持有的收藏商品对象末尾。</li>
+<li>路径需在前面<strong>加上 ./data</strong>，同迭代三的打开文件指令。注：数据保证路径对应的文件为序列化文件，无需考虑文件的正确性。</li>
+</ul>
+<h4 id="5-2-命令反馈说明"><a class="header-anchor" href="#5-2-命令反馈说明">¶ </a>5.2 命令反馈说明</h4>
+<p><strong>5.2.1 成功输出信息</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Read favorite commodity success</span><br></pre></td></tr></table></figure>
+<p><strong>5.2.2 参数不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal argument count</span><br></pre></td></tr></table></figure>
+<p><strong>5.2.3 未登录</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please log in first</span><br></pre></td></tr></table></figure>
+<p><strong>5.2.4 登录用户身份不为 <code>Customer</code></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Permission denied</span><br></pre></td></tr></table></figure>
+<p><strong>5.2.5 文件不存在</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File not exists</span><br></pre></td></tr></table></figure>
+<p><strong>5.2.6 文件操作失败</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File operation failed</span><br></pre></td></tr></table></figure>
+<h3 id="6-购买收藏商品"><a class="header-anchor" href="#6-购买收藏商品">¶ </a>6. 购买收藏商品</h3>
+<h4 id="6-1-格式说明"><a class="header-anchor" href="#6-1-格式说明">¶ </a>6.1 格式说明</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令符</th>
+<th style="text-align:left">参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">buyFavoriteCommodity</td>
+<td style="text-align:left">无参数</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>顾客可一键购买收藏的所有商品。</li>
+<li>每成功购买<strong>一种商品算一个订单</strong>。</li>
+<li>购买后需将收藏商品<strong>清空</strong>。</li>
+<li>按照收藏的<strong>先后顺序</strong>进行购买。</li>
+</ul>
+<p><strong>注意</strong></p>
+<ul>
+<li>购买收藏商品的整个过程<strong>不会</strong>因为某个商品购买出错而终止。</li>
+<li>购买失败的商品也会被清空。</li>
+</ul>
+<h4 id="6-2-命令反馈说明"><a class="header-anchor" href="#6-2-命令反馈说明">¶ </a>6.2 命令反馈说明</h4>
+<p><strong>6.2.1 单件商品购买成功</strong></p>
+<p>打印订单信息，格式如下。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OrderId: shopId commodityId commodityQuantity cost（单位为yuan，保留两位小数） orderStatus</span><br></pre></td></tr></table></figure>
+<p>若有多件商品，则按顺序输出所有订单信息。</p>
+<p><strong>6.2.2 参数不合法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Illegal argument count</span><br></pre></td></tr></table></figure>
+<p><strong>6.2.3 未登录</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please log in first</span><br></pre></td></tr></table></figure>
+<p><strong>6.2.4 登录用户身份不为 <code>Customer</code></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Permission denied</span><br></pre></td></tr></table></figure>
+<p><strong>6.2.5 无收藏商品</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Favorite not exists</span><br></pre></td></tr></table></figure>
+<p>单件商品购买失败的其他错误输出，参考<a href="/2023/Project-2/#6-%E8%B4%AD%E4%B9%B0%E5%95%86%E5%93%81">购买单件商品</a>。</p>
+<h2 id="三、Hints"><a class="header-anchor" href="#三、Hints">¶ </a>三、Hints</h2>
+<p>开始测试前务必<strong>把前一次测试生成的文件删去</strong>。</p>
+<h2 id="四、测试样例"><a class="header-anchor" href="#四、测试样例">¶ </a>四、测试样例</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br></pre></td><td class="code"><pre><span class="line">register 047417901855 qcCJQVCAo M1_@%i4@%$_%n M1_@%i4@%$_%n Merchant</span><br><span class="line">Register success</span><br><span class="line">register 000117861001 aaaa adddh7hhh@ adddh7hhh@ Administrator</span><br><span class="line">Register success</span><br><span class="line">register 046418112296 aamofe Y0$_5ujbis Y0$_5ujbis Merchant</span><br><span class="line">Register success</span><br><span class="line">register 106317921260 zXOYXO K8%7c5_%_ K8%7c5_%_ Administrator</span><br><span class="line">Register success</span><br><span class="line">register 217918521598 hKPACtyQySyJ Y0@kig8@4 Y0@kig8@4 Customer</span><br><span class="line">Register success</span><br><span class="line">register 203717851000 GuoLan p@ssw0rd p@ssw0rd Customer</span><br><span class="line">Register success</span><br><span class="line">login 046418112296 Y0$_5ujbis</span><br><span class="line">Welcome to TMS</span><br><span class="line">buyFavoriteCommodity</span><br><span class="line">Permission denied</span><br><span class="line">registerShop valorant</span><br><span class="line">Register shop success (shopId: S-1)</span><br><span class="line">registerShop apex</span><br><span class="line">Register shop success (shopId: S-2)</span><br><span class="line">putCommodity S-1 Vandal 2900 100</span><br><span class="line">Put commodity success (commodityId: C-1)</span><br><span class="line">putCommodity S-2 Odin 3300 200</span><br><span class="line">Put commodity success (commodityId: C-2)</span><br><span class="line">putCommodity S-1 C-1 50</span><br><span class="line">Put commodity success (commodityId: C-1)</span><br><span class="line">putCommodity S-2 C-1 100</span><br><span class="line">Put commodity success (commodityId: C-1)</span><br><span class="line">listShop</span><br><span class="line">S-1 valorant</span><br><span class="line">S-2 apex</span><br><span class="line">logout</span><br><span class="line">Bye~</span><br><span class="line">login 047417901855 M1_@%i4@%$_%n</span><br><span class="line">Welcome to TMS</span><br><span class="line">registerShop aimLab</span><br><span class="line">Register shop success (shopId: S-3)</span><br><span class="line">putCommodity S-3 Spectre 1600 50</span><br><span class="line">Put commodity success (commodityId: C-3)</span><br><span class="line">logout</span><br><span class="line">Bye~</span><br><span class="line">login 217918521598 Y0@kig8@4</span><br><span class="line">Welcome to TMS</span><br><span class="line">buyFavoriteCommodity</span><br><span class="line">Favorite not exists</span><br><span class="line">listShop</span><br><span class="line">S-1 valorant</span><br><span class="line">S-2 apex</span><br><span class="line">S-3 aimLab</span><br><span class="line">listCommodity</span><br><span class="line">S-1: C-1 Vandal 2900.00yuan 150 </span><br><span class="line">S-2: C-1 Vandal 2900.00yuan 100</span><br><span class="line">S-2: C-2 Odin 3300.00yuan 200</span><br><span class="line">S-3: C-3 Spectre 1600.00yuan 50</span><br><span class="line">favoriteCommodity S-99 C-1 1</span><br><span class="line">Shop id not exists</span><br><span class="line">favoriteCommodity S-1 C-1 1</span><br><span class="line">Favorite commodity success</span><br><span class="line">favoriteCommodity S-2 C-1 1</span><br><span class="line">Favorite commodity success</span><br><span class="line">listFavoriteCommodity</span><br><span class="line">S-1: C-1 1 2900.00yuan</span><br><span class="line">S-2: C-1 1 2900.00yuan</span><br><span class="line">buyFavoriteCommodity</span><br><span class="line">O-1: S-1 C-1 1 2900.00yuan pending</span><br><span class="line">O-2: S-2 C-1 1 2900.00yuan pending</span><br><span class="line">buyFavoriteCommodity</span><br><span class="line">Favorite not exists</span><br><span class="line">uploadFavoriteCommodity ./fps.out</span><br><span class="line">Favorite not exists</span><br><span class="line">favoriteCommodity S-1 C-1 1</span><br><span class="line">Favorite commodity success</span><br><span class="line">favoriteCommodity S-2 C-1 1</span><br><span class="line">Favorite commodity success</span><br><span class="line">favoriteCommodity S-2 C-2 2000</span><br><span class="line">Favorite commodity success</span><br><span class="line">favoriteCommodity S-3 C-3 10</span><br><span class="line">Favorite commodity success</span><br><span class="line">cancelFavoriteCommodity S-1 C-1</span><br><span class="line">Cancel favorite commodity success</span><br><span class="line">cancelFavoriteCommodity S-99 C-1</span><br><span class="line">Favorite not exists</span><br><span class="line">listFavoriteCommodity</span><br><span class="line">S-2: C-1 1 2900.00yuan</span><br><span class="line">S-2: C-2 2000 3300.00yuan</span><br><span class="line">S-3: C-3 10 1600.00yuan</span><br><span class="line">uploadFavoriteCommodity ./fps.out</span><br><span class="line">Upload favorite commodity success</span><br><span class="line">readFavoriteCommodity ./fps.out</span><br><span class="line">Read favorite commodity success</span><br><span class="line">listFavoriteCommodity</span><br><span class="line">S-2: C-1 2 2900.00yuan</span><br><span class="line">S-2: C-2 4000 3300.00yuan</span><br><span class="line">S-3: C-3 20 1600.00yuan</span><br><span class="line">logout</span><br><span class="line">Bye~</span><br><span class="line">login 046418112296 Y0$_5ujbis</span><br><span class="line">Welcome to TMS</span><br><span class="line">removeCommodity C-1 S-2</span><br><span class="line">Please process order for commodity</span><br><span class="line">logout</span><br><span class="line">Bye~</span><br><span class="line">login 217918521598 Y0@kig8@4</span><br><span class="line">Welcome to TMS</span><br><span class="line">listOrder</span><br><span class="line">O-1: S-1 C-1 1 2900.00yuan pending</span><br><span class="line">O-2: S-2 C-1 1 2900.00yuan pending</span><br><span class="line">finishOrder O-2</span><br><span class="line">Finish order success</span><br><span class="line">logout</span><br><span class="line">Bye~</span><br><span class="line">login 046418112296 Y0$_5ujbis</span><br><span class="line">Welcome to TMS</span><br><span class="line">removeCommodity C-1 S-2</span><br><span class="line">Remove commodity success</span><br><span class="line">logout</span><br><span class="line">Bye~</span><br><span class="line">login 217918521598 Y0@kig8@4</span><br><span class="line">Welcome to TMS</span><br><span class="line">listFavoriteCommodity</span><br><span class="line">S-2: C-1 2 2900.00yuan</span><br><span class="line">S-2: C-2 4000 3300.00yuan</span><br><span class="line">S-3: C-3 20 1600.00yuan</span><br><span class="line">buyFavoriteCommodity</span><br><span class="line">Commodity id not exists</span><br><span class="line">Illegal buy quantity</span><br><span class="line">O-3: S-3 C-3 20 32000.00yuan pending</span><br><span class="line">buyFavoriteCommodity</span><br><span class="line">Favorite not exists</span><br><span class="line">logout</span><br><span class="line">Bye~</span><br><span class="line">quit</span><br><span class="line">----- Good Bye! -----</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="写在后面"><a class="header-anchor" href="#写在后面">¶ </a>写在后面</h1>
+<p>恭喜你完成了所有四次迭代！🥳</p>
+<p>作为结语，这里引用 Frederick P. Brooks Jr. 的软件工程著作《人月神话》（<em>The Mythical Man-Month: Essays on Software Engineering</em>）中关于 Second-System Effect 的一段内容，希望对你有所帮助。😉</p>
+<p>&quot;The general tendency of a first system is to be excessively ambitious in scope and functionality. The first system is usually built with a certain naivety and enthusiasm, where all the desired features and capabilities are included. However, due to time constraints, limited resources, and a lack of experience, the first system often falls short of expectations. It may be late, over budget, and contain numerous defects.</p>
+<p>However, the trap lies not in the failure of the first system itself, but in the reaction to that failure. The natural inclination is to start afresh and build a second system, believing that the lessons learned from the first system will lead to a better and more perfect result. This is where the second-system effect comes into play. The engineers tend to overcompensate for the perceived shortcomings of the first system and include excessive features, complexity, and unnecessary embellishments in the second system.</p>
+<p>The second system, in turn, becomes bloated, difficult to manage, and prone to delays and defects. The engineers, driven by their desire to address all the perceived deficiencies of the first system, lose sight of the essential simplicity and focus that should guide their efforts.</p>
+<p>Recognizing this trap and resisting the temptation to overdesign and overcomplicate the second system is crucial for successful software development. It is important to strike a balance between learning from the mistakes of the first system and maintaining a pragmatic and disciplined approach to design and implementation.&quot;</p>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure class="avatar avatar-lg">
+          <img src="/avatar.svg" alt="...">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>Love. T.A. 🥰</div>
+      <div>2023-11-14</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+<!-- hexo injector body_end start -->
+<script src="/js/collapse.js"></script>
+<!-- hexo injector body_end end --></body>
+</html>
+
+
+<script src="/js/book.js"></script>

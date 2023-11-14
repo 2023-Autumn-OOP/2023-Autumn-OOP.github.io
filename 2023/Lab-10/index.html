@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          Lab 10 - BUAA 2023 OOP
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="/css/collapse.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>BUAA 2023 OOP</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <h1 id="课程通知"><a class="header-anchor" href="#课程通知">¶ </a><strong>课程通知</strong></h1>
+<ul>
+<li><a href="/2023/Homework-Notice/">作业注意事项</a></li>
+</ul>
+<h1 id="Lab-🔬"><a class="header-anchor" href="#Lab-🔬">¶ </a><strong>Lab 🔬</strong></h1>
+<ul>
+<li><a href="/2023/Lab-1/"><s>Lab 1</s></a></li>
+<li><a href="/2023/Lab-2/"><s>Lab 2</s></a></li>
+<li><a href="/2023/Lab-3/"><s>Lab 3</s></a></li>
+<li><a href="/2023/Lab-4/"><s>Lab 4</s></a></li>
+<li><a href="/2023/Lab-5/"><s>Lab 5</s></a></li>
+<li><a href="/2023/Lab-6/"><s>Lab 6</s></a></li>
+<li><a href="/2023/Lab-7/"><s>Lab 7</s></a></li>
+<li><a href="/2023/Lab-8/"><s>Lab 8</s></a></li>
+<li><a href="/2023/Lab-9/">Lab 9</a> ⌛</li>
+<li><a href="/2023/Lab-10/">Lab 10</a> ✨</li>
+<li>To Be Continued… 🫣</li>
+</ul>
+<h1 id="迭代任务-📽️"><a class="header-anchor" href="#迭代任务-📽️">¶ </a><strong>迭代任务 📽️</strong></h1>
+<ul>
+<li><a href="/2023/Project-1/"><s>迭代一</s></a></li>
+<li><a href="/2023/Project-2/"><s>迭代二</s></a></li>
+<li><a href="/2023/Project-3/"><s>迭代三</s></a></li>
+<li><a href="/2023/Project-4/">迭代四</a> ✨</li>
+<li>All released! 🎉</li>
+</ul>
+<h1 id="大作业-🎯"><a class="header-anchor" href="#大作业-🎯">¶ </a><strong>大作业 🎯</strong></h1>
+<ul>
+<li><a href="/2023/Teamwork/">大作业要求</a></li>
+</ul>
+<h1 id="帮助中心-💁🏻"><a class="header-anchor" href="#帮助中心-💁🏻">¶ </a><strong>帮助中心 💁🏻</strong></h1>
+<ul>
+<li><a href="/2023/Configure-Java-Environment/">Java 环境配置</a></li>
+<li><a href="/2023/Java-Features-Summary/">Java 8 - 17 新特性总结</a></li>
+<li><a href="/2023/Lab-Template/">Lab 问答报告模板</a></li>
+<li><a href="/2023/patpat-User-Guide/">patpat 使用指南</a> 💫</li>
+<li><a href="/2023/Q-A/">Q &amp; A</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <h1 id="Lab-10-高级-I-O"><a class="header-anchor" href="#Lab-10-高级-I-O">¶ </a>Lab 10: 高级 I/O</h1>
+<div class="admonition error"><p>本次 Lab 时长为 <strong>2</strong> 周，DDL 为 <strong>11 月 20 日 23:59</strong>。</p>
+</div>
+<div class="admonition note"><p>附件下载（包括问答题和实验报告模板）：<a target="_blank" rel="noopener" href="https://bhpan.buaa.edu.cn/link/AA96D0CA694BB74ABFA070F38B6C527AC6">https://bhpan.buaa.edu.cn/link/AA96D0CA694BB74ABFA070F38B6C527AC6</a></p>
+</div>
+<h2 id="实验目的"><a class="header-anchor" href="#实验目的">¶ </a>实验目的</h2>
+<ul>
+<li>
+<p>理解并掌握控制台读入数据、标准输入输出、<code>Scanner</code> 类（基础的输入输出）</p>
+</li>
+<li>
+<p>理解并掌握 <code>Java</code> 文件管理（<code>File</code> 类）、输入/输出流类及其派生类的使用（字节流的顺序读写）</p>
+</li>
+<li>
+<p>理解并掌握读写器及其派生类的使用（字符流的顺序读写）</p>
+</li>
+<li>
+<p>理解并掌握对象序列化（对象流的读写）</p>
+</li>
+</ul>
+<h2 id="实验题目"><a class="header-anchor" href="#实验题目">¶ </a>实验题目</h2>
+<h3 id="Question-1-简答"><a class="header-anchor" href="#Question-1-简答">¶ </a>Question 1:  简答</h3>
+<p>如果准备按字节读取一个文件的内容，应当使用 <code>FileInputStream</code> 流还是 <code>FileReader</code> 流，为什么？</p>
+<h3 id="Question-2-简答"><a class="header-anchor" href="#Question-2-简答">¶ </a>Question 2: 简答</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FileInputStreamTest</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">File</span> <span class="variable">f</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;hello.txt&quot;</span>);</span><br><span class="line">        <span class="type">byte</span>[] a = <span class="string">&quot;abcd&quot;</span>.getBytes();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="type">FileOutputStream</span> <span class="variable">out</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(f);</span><br><span class="line">            out.write(a);</span><br><span class="line">            out.close();</span><br><span class="line">            <span class="type">FileInputStream</span> <span class="variable">in</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(f);</span><br><span class="line">            <span class="type">byte</span>[] tom = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">3</span>];</span><br><span class="line">            <span class="comment">// Part Ⅰ</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">m</span> <span class="operator">=</span> in.read(tom, <span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line">            System.out.println(m); <span class="comment">// 3</span></span><br><span class="line">            <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(tom, <span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line">            System.out.println(s); <span class="comment">// abc</span></span><br><span class="line">            <span class="comment">// Part Ⅱ</span></span><br><span class="line">            m = in.read(tom, <span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line">            System.out.println(m);<span class="comment">// 1</span></span><br><span class="line">            s = <span class="keyword">new</span> <span class="title class_">String</span>(tom, <span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line">            System.out.println(s);<span class="comment">// dbc        </span></span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>写出程序的输出；</li>
+<li>解释 <code>Part Ⅰ</code> 和 <code>Part Ⅱ</code> 的输出为什么不同。</li>
+</ol>
+<h3 id="Question-3-编程"><a class="header-anchor" href="#Question-3-编程">¶ </a>Question 3: 编程</h3>
+<p>设计一个方法，用于移除文件中的注释。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">removeComments</span><span class="params">(String inputPath, String outPath)</span> <span class="keyword">throws</span> IOException;</span><br></pre></td></tr></table></figure>
+<p><strong>input.txt</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">File</span> <span class="variable">f</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;./java.oop&quot;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;当前文件是：&quot;</span> + f); <span class="comment">// 这是一条注释</span></span><br><span class="line"><span class="comment">// 这是另一条注释</span></span><br><span class="line">System.out.println(<span class="string">&quot;判断是否存在：&quot;</span> + f.exists());</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  这些还是注释</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">                 <span class="comment">// 这是个位置有点奇怪的注释</span></span><br><span class="line">System.out.println(<span class="string">&quot;判断是否是文件夹：&quot;</span> +<span class="comment">/* 这是位置更奇怪的注释 */</span> f.isDirectory());</span><br></pre></td></tr></table></figure>
+<p><strong>out.txt</strong></p>
+<p>在删除注释后， 你可以<strong>自由选择是否删除空行</strong>。</p>
+<p>一种可能的输出如下。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">File</span> <span class="variable">f</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;D:\\java&quot;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;当前文件是：&quot;</span> + f);</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">&quot;判断是否存在：&quot;</span> + f.exists());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">&quot;判断是否是文件夹：&quot;</span> + f.isDirectory());</span><br></pre></td></tr></table></figure>
+<h3 id="Question-4-编程"><a class="header-anchor" href="#Question-4-编程">¶ </a>Question 4: 编程</h3>
+<p>设计一个方法，使用 Java 的输入、输出流将一个文本文件的内容按行读出，每读出一行就顺序添加行号，并写入到另一个文件中。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">addLineNo</span><span class="params">(String inputPath,String outPath)</span> <span class="keyword">throws</span> IOException;</span><br></pre></td></tr></table></figure>
+<h3 id="Question-5-编程"><a class="header-anchor" href="#Question-5-编程">¶ </a>Question 5: 编程</h3>
+<p>复制文件是常见的 IO 操作，设计如下方法，实现复制源文件 <code>sourceFile</code> 到目标文件 <code>targetFile</code> 的功能。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">copyFile</span> <span class="params">(String sourceFile, String targetFile)</span> <span class="keyword">throws</span> IOException;</span><br></pre></td></tr></table></figure>
+<h3 id="Question-6-编程"><a class="header-anchor" href="#Question-6-编程">¶ </a>Question 6: 编程</h3>
+<p>设计一个方法，复制一个文件夹下面所有文件和后代文件夹内容到另一文件夹，即递归复制。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">copyDirectory</span><span class="params">(String sourceDir, String targetDir)</span> <span class="keyword">throws</span> IOException;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Hint：可以尝试复用 Q5 的代码。</p>
+</blockquote>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure class="avatar avatar-lg">
+          <img src="/avatar.svg" alt="...">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>Love. T.A. 🥰</div>
+      <div>2023-11-14</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+<!-- hexo injector body_end start -->
+<script src="/js/collapse.js"></script>
+<!-- hexo injector body_end end --></body>
+</html>
+
+
+<script src="/js/book.js"></script>
