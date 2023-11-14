@@ -974,3 +974,7 @@ p.admonition-title {
 .admonition>:last-child {
   margin-bottom: 0 !important;
 }
+
+.book-content>.book-post>p {
+  text-align: justify;
+}
