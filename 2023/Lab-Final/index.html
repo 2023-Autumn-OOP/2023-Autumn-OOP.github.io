@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          Lab 11 - BUAA 2023 OOP
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="/css/collapse.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>BUAA 2023 OOP</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <h1 id="课程通知"><a class="header-anchor" href="#课程通知">¶ </a><strong>课程通知</strong></h1>
+<ul>
+<li><a href="/2023/Homework-Notice/">作业注意事项</a></li>
+</ul>
+<h1 id="Lab-🔬"><a class="header-anchor" href="#Lab-🔬">¶ </a><strong>Lab 🔬</strong></h1>
+<ul>
+<li><a href="/2023/Lab-1/"><s>Lab 1</s></a></li>
+<li><a href="/2023/Lab-2/"><s>Lab 2</s></a></li>
+<li><a href="/2023/Lab-3/"><s>Lab 3</s></a></li>
+<li><a href="/2023/Lab-4/"><s>Lab 4</s></a></li>
+<li><a href="/2023/Lab-5/"><s>Lab 5</s></a></li>
+<li><a href="/2023/Lab-6/"><s>Lab 6</s></a></li>
+<li><a href="/2023/Lab-7/"><s>Lab 7</s></a></li>
+<li><a href="/2023/Lab-8/"><s>Lab 8</s></a></li>
+<li><a href="/2023/Lab-9/"><s>Lab 9</s></a></li>
+<li><a href="/2023/Lab-10/">Lab 10</a> ⌛</li>
+<li><a href="/2023/Lab-Final/">Lab Final</a> ✨</li>
+<li>All released! 🎉</li>
+</ul>
+<h1 id="迭代任务-📽️"><a class="header-anchor" href="#迭代任务-📽️">¶ </a><strong>迭代任务 📽️</strong></h1>
+<ul>
+<li><a href="/2023/Project-1/"><s>迭代一</s></a></li>
+<li><a href="/2023/Project-2/"><s>迭代二</s></a></li>
+<li><a href="/2023/Project-3/"><s>迭代三</s></a></li>
+<li><a href="/2023/Project-4/">迭代四</a> ✨</li>
+<li>All released! 🎉</li>
+</ul>
+<h1 id="大作业-🎯"><a class="header-anchor" href="#大作业-🎯">¶ </a><strong>大作业 🎯</strong></h1>
+<ul>
+<li><a href="/2023/Teamwork/">大作业要求</a></li>
+</ul>
+<h1 id="帮助中心-💁🏻"><a class="header-anchor" href="#帮助中心-💁🏻">¶ </a><strong>帮助中心 💁🏻</strong></h1>
+<ul>
+<li><a href="/2023/Configure-Java-Environment/">Java 环境配置</a></li>
+<li><a href="/2023/Java-Features-Summary/">Java 8 - 17 新特性总结</a></li>
+<li><a href="/2023/Lab-Template/">Lab 问答报告模板</a></li>
+<li><a href="/2023/patpat-User-Guide/">patpat 使用指南</a> 💫</li>
+<li><a href="/2023/Q-A/">Q &amp; A</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <h1 id="Lab-Final-多线程（Threading）"><a class="header-anchor" href="#Lab-Final-多线程（Threading）">¶ </a>Lab Final: 多线程（Threading）</h1>
+<div class="admonition error"><p>考虑到理论课进度，本次 Lab 时长为 <strong>4</strong> 周，你可以选择现阶段自学完成或等老师讲授相关内容后再完成，DDL 为 <strong>12 月 18 日 23:59</strong>。</p>
+</div>
+<div class="admonition note"><p>附件下载（包括问答题和实验报告模板，<strong>以及往年的 PPT 参考</strong>）：<a target="_blank" rel="noopener" href="https://bhpan.buaa.edu.cn/link/AA96D0CA694BB74ABFA070F38B6C527AC6">https://bhpan.buaa.edu.cn/link/AA96D0CA694BB74ABFA070F38B6C527AC6</a></p>
+</div>
+<h2 id="实验目的"><a class="header-anchor" href="#实验目的">¶ </a>实验目的</h2>
+<ul>
+<li>
+<p>理解程序、进程和多线程概念及特点</p>
+</li>
+<li>
+<p>理解线程的状态、生命周期及调度策略</p>
+</li>
+<li>
+<p>理解并掌握线程类 <code>Thread</code> 和 <code>Runnable</code> 接口，并能够进行相关应用的程序设计，实现多线程编程</p>
+</li>
+</ul>
+<h2 id="实验题目"><a class="header-anchor" href="#实验题目">¶ </a>实验题目</h2>
+<h3 id="Question-1-简述程序，进程，线程的概念（简答）"><a class="header-anchor" href="#Question-1-简述程序，进程，线程的概念（简答）">¶ </a>Question 1: 简述程序，进程，线程的概念（简答）</h3>
+<h3 id="Question-2-产生死锁的四个条件是什么？（简答）"><a class="header-anchor" href="#Question-2-产生死锁的四个条件是什么？（简答）">¶ </a>Question 2: 产生死锁的四个条件是什么？（简答）</h3>
+<h3 id="Question-3-创建线程的两种方式分别是什么？各有什么优缺点（简答）"><a class="header-anchor" href="#Question-3-创建线程的两种方式分别是什么？各有什么优缺点（简答）">¶ </a>Question 3: 创建线程的两种方式分别是什么？各有什么优缺点（简答）</h3>
+<h3 id="Question-4-判断题"><a class="header-anchor" href="#Question-4-判断题">¶ </a>Question 4: 判断题</h3>
+<p>(1) 进程是线程 <code>Thread</code> 内部的一个执行单元，它是程序中一个单一顺序控制流程。</p>
+<p>(2) 一个进程可以包括多个线程。两者的一个主要区别是：线程是资源分配的单位，而进程是 CPU 调度和执行的单位。</p>
+<p>(3) 线程可以用 <code>yield</code> 使低优先级的线程运行。</p>
+<p>(4) 当一个线程进入一个对象的一个 <code>synchronized</code> 方法后，其它线程可以再进入该对象的其它同步方法执行。</p>
+<p>(5)  <code>notify</code> 是唤醒所在对象 <code>wait pool</code> 中的第一个线程。</p>
+<h3 id="Question-5-程序输出"><a class="header-anchor" href="#Question-5-程序输出">¶ </a>Question 5:  程序输出</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">SyncThread</span> <span class="variable">syncThread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SyncThread</span>();</span><br><span class="line">        <span class="type">Thread</span> <span class="variable">thread1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(syncThread, <span class="string">&quot;SyncThread1&quot;</span>);</span><br><span class="line">        <span class="type">Thread</span> <span class="variable">thread2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(syncThread, <span class="string">&quot;SyncThread2&quot;</span>);</span><br><span class="line">        thread1.start();</span><br><span class="line">        thread2.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SyncThread</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span> count;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">SyncThread</span><span class="params">()</span> &#123;</span><br><span class="line">        count = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                System.out.println(Thread.currentThread().getName() + <span class="string">&quot;: &quot;</span> + (count++));</span><br><span class="line">                Thread.sleep(<span class="number">100</span>); <span class="comment">//【1】</span></span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getCount</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>(1) 写出上述程序的输出</p>
+<p>(2) 用 <code>synchronized</code> 修饰 <code>run ()</code> 的作用是什么？</p>
+<p>(3) 标号【1】处 <code>sleep</code> 的作用是什么？如果改为 <code>wait (100);</code> 输出会发生改变吗，为什么？</p>
+<h3 id="Question-6-程序补全"><a class="header-anchor" href="#Question-6-程序补全">¶ </a>Question 6: 程序补全</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadPrint</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException &#123;</span><br><span class="line">        <span class="type">Object</span> <span class="variable">a</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line">        <span class="type">Object</span> <span class="variable">b</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line">        <span class="type">Object</span> <span class="variable">c</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line">        <span class="type">Thread8</span> <span class="variable">threadA</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread8</span>(<span class="string">&quot;A&quot;</span>, c, a);</span><br><span class="line">        <span class="type">Thread8</span> <span class="variable">threadB</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread8</span>(<span class="string">&quot;B&quot;</span>, a, b);</span><br><span class="line">        <span class="type">Thread8</span> <span class="variable">threadC</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread8</span>(<span class="string">&quot;C&quot;</span>, b, c);</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(threadA).start();</span><br><span class="line">        Thread.sleep(<span class="number">100</span>);</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(threadB).start();</span><br><span class="line">        Thread.sleep(<span class="number">100</span>);</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(threadC).start();</span><br><span class="line">        Thread.sleep(<span class="number">100</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Thread8</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> Object prev;</span><br><span class="line">    <span class="keyword">private</span> Object self;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Thread8</span><span class="params">(String name, Object prev, Object self)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">        <span class="built_in">this</span>.prev = prev;</span><br><span class="line">        <span class="built_in">this</span>.self = self;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">while</span> (count &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (prev) &#123;</span><br><span class="line">                <span class="keyword">synchronized</span> (self) &#123;</span><br><span class="line">                    System.out.print(name);</span><br><span class="line">                    count--;</span><br><span class="line">                    <span class="comment">/*【1】*/</span></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (count == <span class="number">0</span>) &#123;</span><br><span class="line">                        <span class="comment">/*【2】*/</span></span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="comment">/*【3】*/</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>(1) 补全标号处的代码</p>
+<p>(2) 详细说明上述程序的功能</p>
+<p>(3) 主函数 <code>main</code> 中的 <code>Thread.sleep (100)</code> 语句不能省略，请简述原因。</p>
+<p>(4) 主函数 <code>main</code> 中的 <code>Thread.sleep (100)</code> 语句全部去掉后程序可能出现死锁吗？试举例说明。</p>
+<h3 id="Question-7-创建两个线程，其中一个输出-1-52，另外一个输出-A-Z。（编程题）"><a class="header-anchor" href="#Question-7-创建两个线程，其中一个输出-1-52，另外一个输出-A-Z。（编程题）">¶ </a>Question 7: 创建两个线程，其中一个输出 1 - 52，另外一个输出 A - Z。（编程题）</h3>
+<p>输出示例如下，连续输出两个数字，紧接着输出一个字母，除 Z 外，字母后均有一个空格。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">12A 34B 56C 78D 910E 1112F 1314G 1516H 1718I 1920J 2122K 2324L 2526M 2728N 2930O 3132P 3334Q 3536R 3738S 3940T 4142U 4344V 4546W 4748X 4950Y 5152Z</span><br></pre></td></tr></table></figure>
+<p><strong>注意：</strong></p>
+<blockquote>
+<p>(1) 可以参考上一题。</p>
+<p>(2) 12A 34B……  字母与数字之间是有一个空格的，且输出以 Z 结尾，即结尾不能有空格。</p>
+<p>(3) 确保你的程序能够正常结束，不要在输出 Z 之后一直阻塞下去。</p>
+</blockquote>
+<hr>
+<p>恭喜你完成了所有 Lab！🥳</p>
+<p style="text-align:center"><b>- EOF -</b></p>
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure class="avatar avatar-lg">
+          <img src="/avatar.svg" alt="...">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>Love. T.A. 🥰</div>
+      <div>2023-11-21</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+<!-- hexo injector body_end start -->
+<script src="/js/collapse.js"></script>
+<!-- hexo injector body_end end --></body>
+</html>
+
+
+<script src="/js/book.js"></script>
